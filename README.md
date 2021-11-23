@@ -1,2 +1,2 @@
-# capstone-sib-curahan-mental-csd-062
+# Curahan Mental
 Repository for dicoding's submission
