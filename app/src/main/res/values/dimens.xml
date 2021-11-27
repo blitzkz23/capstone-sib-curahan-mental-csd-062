@@ -2,4 +2,9 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Default screen constraint guide in percent. -->
+    <dimen name="constraint_guide_left_percent">0.05</dimen>
+    <dimen name="constraint_guide_right_percent">0.95</dimen>
+    <dimen name="constrain_guide_top_percent">0.10</dimen>
 </resources>
