@@ -7,17 +7,15 @@
     android:background="#FF2A6049"
     tools:context=".ui.welcome.SplashActivity">
 
-    <TextView
-        android:id="@+id/textView"
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:fontFamily="@font/poppins_bold"
-        android:textSize="72sp"
-        android:textAlignment="center"
-        android:textColor="@color/white"
+        android:contentDescription="@string/app_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/curahan_mental" />
 </androidx.constraintlayout.widget.ConstraintLayout>
