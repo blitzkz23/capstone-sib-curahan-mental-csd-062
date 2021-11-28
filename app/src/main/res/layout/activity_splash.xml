@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/curahan_dark_green"
-    tools:context=".ui.welcome.SplashActivity">
+    tools:context=".ui.welcome.SplashActivity"
+    style="@style/FullScreen">
 
     <ImageView
         android:id="@+id/imageView"

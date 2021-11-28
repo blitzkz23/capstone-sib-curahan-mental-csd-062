@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CurahanMental">
         <activity
+            android:name=".ui.welcome.onboarding.OnboardActivity"
+            android:exported="true"
+            android:theme="@style/FullScreen"/>
+        <activity
             android:name=".ui.auth.RegisterActivity"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
             android:exported="false" />
@@ -19,7 +23,7 @@
         <activity
             android:name=".ui.welcome.SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+            android:theme="@style/FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

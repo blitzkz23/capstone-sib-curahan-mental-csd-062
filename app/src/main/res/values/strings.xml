@@ -4,6 +4,18 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="logo_name">Curahan Mental Logo</string>
+
+    <!-- Onboarding Section -->
+    <string name="skip_onboarding">skip</string>
+    <string name="onboarding_start">Lets Get Started</string>
+    <string name="header_onboarding1">Curahkan Mentalmu</string>
+    <string name="overview_onboarding1">Tuliskan keluh kesah anda disini, jangan biarkan semuanya tersimpan dikepala anda.</string>
+    <string name="header_onboarding2">Relaksasikan Jiwa</string>
+    <string name="overview_onboarding2">jiwa dan pikiran anda akan lebih tenang sehingga anda bisa tidur dengan nyenyak</string>
+    <string name="header_onboarding3">Dukungan Hangat</string>
+    <string name="overview_onboarding3">Temukan pesan-pesan yang akan membuat anda termotivasi dan merasa lebih baik!</string>
+
+  <!-- Register Section -->
     <string name="create_account">Membuat sebuah akun</string>
     <string name="hint_name">Nama</string>
     <string name="hint_email">E-mail</string>
@@ -11,4 +23,5 @@
     <string name="buat_akun2">Buat Akun</string>
     <string name="sudah_punya_akun">Sudah punya akun?</string>
     <string name="create_account_tagline">Buat akun untuk memulai petualangan Anda</string>
+
 </resources>
