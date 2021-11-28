@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.CurahanMental" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/curahan_light_green</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -19,30 +19,63 @@
     <style name="Text">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/curahan_black_text</item>
     </style>
+
     <style name="Text2">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="fontFamily">@font/poppins_semibold</item>
     </style>
+
     <style name="Text.Header1">
         <item name="fontFamily">@font/poppins_bold</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">28sp</item>
         <item name="android:letterSpacing">-0.013</item>
     </style>
+
     <style name="Text.Header2">
-        <item name="fontFamily">@font/poppins_regular</item>
-        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">24sp</item>
     </style>
+
     <style name="Text.Header3">
         <item name="fontFamily">@font/poppins_bold</item>
         <item name="android:letterSpacing">-0.013</item>
-        <item name="android:textSize">19sp</item>
+        <item name="android:textSize">18sp</item>
     </style>
+
     <style name="Text.Header4">
-        <item name="fontFamily">@font/poppins_regular</item>
-        <item name="android:textSize">14.5sp</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">16sp</item>
     </style>
+
+    <style name="Text.Header5">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.SubHeader1">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">-0.013</item>
+        <item name="android:textColor">@color/curahan_subtext</item>
+    </style>
+
+    <style name="Text.SubHeader2">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.013</item>
+        <item name="android:textColor">@color/curahan_subtext</item>
+    </style>
+
+    <style name="Text.SubText">
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">-0.013</item>
+        <item name="android:textColor">@color/curahan_subtext</item>
+    </style>
+
     <style name="Text.Paragraph">
         <item name="android:textSize">13.5sp</item>
         <item name="fontFamily">@font/poppins_regular</item>

@@ -11,5 +11,9 @@
     <color name="grey_200">#EBEAE7</color>
     <color name="grey_700">#777D81</color>
     <color name="curahan_dark_green">#FF2A6049</color>
-    <color name="curahan_light_green">#2ECC71</color>
+    <color name="curahan_light_green">#FF2ECC71</color>
+
+    <color name="curahan_black_text">#FF404040</color>
+    <color name="curahan_subtext">#FFC7C9D9</color>
+    <color name="curahan_linktext">#FF6E5DE7</color>
 </resources>
