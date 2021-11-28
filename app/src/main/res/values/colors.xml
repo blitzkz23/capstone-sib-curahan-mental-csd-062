@@ -8,6 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="grey_200">#EBEAE7</color>
+    <color name="grey_700">#777D81</color>
     <color name="curahan_dark_green">#FF2A6049</color>
     <color name="curahan_light_green">#2ECC71</color>
 </resources>

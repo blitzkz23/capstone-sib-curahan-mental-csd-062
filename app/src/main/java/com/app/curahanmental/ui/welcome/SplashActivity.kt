@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.app.curahanmental.MainActivity
 import com.app.curahanmental.R
 import com.app.curahanmental.databinding.ActivitySplashBinding
+import com.app.curahanmental.ui.welcome.onboarding.OnboardActivity
 import kotlinx.coroutines.*
 
 class SplashActivity : AppCompatActivity() {
@@ -20,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
 		CoroutineScope(Dispatchers.Default).launch {
 			delay(1500)
 			withContext(Dispatchers.Main) {
-				val intent = Intent(this@SplashActivity , MainActivity::class.java)
+				val intent = Intent(this@SplashActivity , OnboardActivity::class.java)
 				startActivity(intent)
 				finish()
 			}

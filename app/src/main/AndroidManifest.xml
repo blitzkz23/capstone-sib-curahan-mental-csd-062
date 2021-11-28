@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CurahanMental">
         <activity
+            android:name=".ui.welcome.onboarding.OnboardActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"/>
+        <activity
             android:name=".ui.auth.RegisterActivity"
             android:exported="false" />
         <activity

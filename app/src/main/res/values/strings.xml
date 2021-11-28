@@ -4,4 +4,8 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="logo_name">Curahan Mental Logo</string>
+    <string name="skip_onboarding">skip</string>
+    <string name="header_onboarding1">Curahkan Mentalmu</string>
+    <string name="overview_onboarding1">Your financial journey start here. We are here to help you tracking and handle every transaction 24/Day.</string>
+    <string name="onboarding_start">Lets Get Started</string>
 </resources>
