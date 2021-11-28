@@ -105,7 +105,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButton"
         android:layout_width="350dp"
-        android:layout_height="55dp"
+        android:layout_height="60dp"
         android:layout_marginTop="@dimen/dimens_48dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/buat_akun2"
