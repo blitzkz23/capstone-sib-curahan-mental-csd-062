@@ -54,4 +54,9 @@
         <item name="fontFamily">@font/poppins_semibold</item>
     </style>
 
+    <!-- FullScreen Style -->
+    <style name="FullScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
 </resources>
