@@ -4,4 +4,11 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="logo_name">Curahan Mental Logo</string>
+    <string name="create_account">Membuat sebuah akun</string>
+    <string name="hint_name">Nama</string>
+    <string name="hint_email">E-mail</string>
+    <string name="hint_password">Password</string>
+    <string name="buat_akun2">Buat Akun</string>
+    <string name="sudah_punya_akun">Sudah punya akun?</string>
+    <string name="create_account_tagline">Buat akun untuk memulai petualangan Anda</string>
 </resources>

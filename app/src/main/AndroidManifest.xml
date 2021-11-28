@@ -11,6 +11,7 @@
         android:theme="@style/Theme.CurahanMental">
         <activity
             android:name=".ui.auth.RegisterActivity"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".ui.auth.LoginActivity"
