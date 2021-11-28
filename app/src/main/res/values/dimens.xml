@@ -7,10 +7,12 @@
     <dimen name="dimens_0dp">0dp</dimen>
     <dimen name="dimens_1dp">1dp</dimen>
     <dimen name="dimens_4dp">4dp</dimen>
+    <dimen name="dimens_8dp">8dp</dimen>
     <dimen name="dimens_10dp">10dp</dimen>
     <dimen name="dimens_16dp">16dp</dimen>
     <dimen name="dimens_24dp">24dp</dimen>
     <dimen name="dimens_32dp">32dp</dimen>
+    <dimen name="dimens_48dp">48dp</dimen>
     <dimen name="dimens_120dp">120dp</dimen>
     <dimen name="dimens_160dp">160dp</dimen>
     <dimen name="dimens_240dp">240dp</dimen>
