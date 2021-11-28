@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF2A6049"
+    android:background="@color/curahan_dark_green"
     tools:context=".ui.welcome.SplashActivity">
 
     <ImageView
@@ -17,5 +17,5 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/curahan_mental" />
+        app:srcCompat="@drawable/curahan_logo1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
