@@ -1,12 +1,10 @@
 package com.app.curahanmental.ui.welcome
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.app.curahanmental.MainActivity
-import com.app.curahanmental.R
+import androidx.appcompat.app.AppCompatActivity
 import com.app.curahanmental.databinding.ActivitySplashBinding
-import com.app.curahanmental.ui.welcome.onboarding.OnboardActivity
+import com.app.curahanmental.ui.auth.RegisterActivity
 import kotlinx.coroutines.*
 
 class SplashActivity : AppCompatActivity() {
@@ -21,7 +19,7 @@ class SplashActivity : AppCompatActivity() {
 		CoroutineScope(Dispatchers.Default).launch {
 			delay(1500)
 			withContext(Dispatchers.Main) {
-				val intent = Intent(this@SplashActivity , OnboardActivity::class.java)
+				val intent = Intent(this@SplashActivity , RegisterActivity::class.java)
 				startActivity(intent)
 				finish()
 			}

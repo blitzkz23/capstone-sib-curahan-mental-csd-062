@@ -60,6 +60,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
 
 
+
     //testing
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$junitExtversion"
@@ -80,4 +81,5 @@ dependencies {
     //firebase
     implementation platform('com.google.firebase:firebase-bom:29.0.0')
     implementation "com.google.firebase:firebase-auth-ktx"
+    implementation 'com.google.firebase:firebase-database-ktx'
 }

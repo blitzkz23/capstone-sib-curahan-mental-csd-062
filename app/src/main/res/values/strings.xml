@@ -26,4 +26,13 @@
     <string name="create_account_tagline">Buat akun untuk memulai perjalanan Anda</string>
     <string name="login">Masuk</string>
 
+    <!-- Error -->
+    <string name="error_firstname">Mohon masukkan nama depan</string>
+    <string name="error_lastname">Mohon masukkan nama belakang</string>
+    <string name="error_email">Mohon masukkan e-mail</string>
+    <string name="error_email2">Mohon masukkan format E-mail yang benar</string>
+    <string name="error_password">Mohon masukkan password</string>
+    <string name="error_password2">Password tidak boleh kurang dari 6 karakter.</string>
+
+
 </resources>
