@@ -78,5 +78,6 @@ dependencies {
     implementation "androidx.paging:paging-runtime-ktx:$pagingVersion"
 
     //firebase
-    implementation "com.google.firebase:firebase-auth-ktx:$firebaseAuthVersion"
+    implementation platform('com.google.firebase:firebase-bom:29.0.0')
+    implementation "com.google.firebase:firebase-auth-ktx"
 }

@@ -45,7 +45,6 @@ ext {
     lifecycleVersion = '2.4.0'
     legacyVersion = '1.0.0'
     activityKtxVersion = '1.4.0'
-    firebaseAuthVersion ='21.0.1'
 
     materialVersion = '1.4.0'
     recyclerViewVersion = '1.2.1'
