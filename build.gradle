@@ -8,6 +8,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.3"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
+        classpath 'com.google.gms:google-services:4.3.10'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -44,6 +45,7 @@ ext {
     lifecycleVersion = '2.4.0'
     legacyVersion = '1.0.0'
     activityKtxVersion = '1.4.0'
+    firebaseAuthVersion ='21.0.1'
 
     materialVersion = '1.4.0'
     recyclerViewVersion = '1.2.1'

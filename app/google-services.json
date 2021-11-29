@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "238352706301",
+    "project_id": "curahan-mental-e9fc4",
+    "storage_bucket": "curahan-mental-e9fc4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238352706301:android:779de14a97b4d234ab6c94",
+        "android_client_info": {
+          "package_name": "com.app.curahanmental"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238352706301-gd2v2po5nlve04bi7rcdo6gr8upustcp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0WGnMt01W3iwX4qOoC6gD20T0n2wHbaE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238352706301-gd2v2po5nlve04bi7rcdo6gr8upustcp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

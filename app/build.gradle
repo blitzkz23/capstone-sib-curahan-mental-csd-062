@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -58,6 +59,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
 
+
     //testing
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$junitExtversion"
@@ -74,4 +76,7 @@ dependencies {
 
     //paging
     implementation "androidx.paging:paging-runtime-ktx:$pagingVersion"
+
+    //firebase
+    implementation "com.google.firebase:firebase-auth-ktx:$firebaseAuthVersion"
 }
