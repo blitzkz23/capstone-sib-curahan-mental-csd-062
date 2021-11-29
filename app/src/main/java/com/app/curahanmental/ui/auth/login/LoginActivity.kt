@@ -58,7 +58,6 @@ class LoginActivity : AppCompatActivity() {
 
 		binding.signinToRegisterFlow.setOnClickListener{
 			startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
-			finish()
 		}
 	}
 }
