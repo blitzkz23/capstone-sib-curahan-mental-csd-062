@@ -76,7 +76,7 @@ class RegisterActivity : AppCompatActivity() {
 								email = email,
 								password = password
 							)
-							database.child("users").child("awdoiawdjOIWDJOWDAI").setValue(user)
+							auth.currentUser?.let { database.child("users").child(it.uid).setValue(user) }
 
 						} else {
 							// If sign in fails, display a message to the user.
