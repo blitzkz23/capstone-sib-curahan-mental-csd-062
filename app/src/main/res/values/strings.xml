@@ -25,8 +25,15 @@
     <string name="sudah_punya_akun">Sudah punya akun?</string>
     <string name="create_account_tagline">Buat akun untuk memulai perjalanan Anda</string>
     <string name="login">Masuk</string>
-
-    <!-- Error -->
+  
+    <!-- Sign In Section -->
+    <string name="signin_account">Masuk</string>
+    <string name="signin_account_tagline">Silakan masuk dengan akun anda</string>
+    <string name="signout_account">Keluar dari akun</string>
+    <string name="signin_question">Belum memiliki akun?</string>
+    <string name="signin_register_flow">Daftar sekarang</string>
+  
+   <!-- Error -->
     <string name="error_firstname">Mohon masukkan nama depan</string>
     <string name="error_lastname">Mohon masukkan nama belakang</string>
     <string name="error_email">Mohon masukkan e-mail</string>
