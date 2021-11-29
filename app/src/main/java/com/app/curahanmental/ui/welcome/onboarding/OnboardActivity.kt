@@ -1,7 +1,6 @@
 package com.app.curahanmental.ui.welcome.onboarding
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,7 +9,6 @@ import android.view.View.VISIBLE
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.viewpager2.widget.ViewPager2
-import com.app.curahanmental.MainActivity
 import com.app.curahanmental.R
 import com.app.curahanmental.databinding.ActivityOnboardBinding
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT

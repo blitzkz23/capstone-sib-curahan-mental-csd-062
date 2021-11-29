@@ -64,10 +64,13 @@ class RegisterActivity : AppCompatActivity() {
 			}
 
 			if (email.isEmpty()) {
+				textInputLayout.requestFocus()
 				registerEdEmail.error = getString(R.string.error_email)
 			} else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
 				registerEdEmail.error = getString(R.string.error_email2)
-			} else if (password.isEmpty()) {
+			}
+
+			if (password.isEmpty()) {
 				registerEdPassword.error = getString(R.string.error_password)
 			} else if (password.length < 6) {
 				registerEdPassword.error = getString(R.string.error_password2)

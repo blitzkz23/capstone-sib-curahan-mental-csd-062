@@ -1,16 +1,14 @@
 package com.app.curahanmental.ui.auth.login
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.app.curahanmental.MainActivity
-import com.app.curahanmental.R
+import com.app.curahanmental.ui.main.MainActivity
 import com.app.curahanmental.databinding.ActivityLoginBinding
 import com.app.curahanmental.ui.auth.register.RegisterActivity
-import java.util.regex.Pattern
 
 class LoginActivity : AppCompatActivity() {
 	private val binding: ActivityLoginBinding by lazy { ActivityLoginBinding.inflate(layoutInflater) }

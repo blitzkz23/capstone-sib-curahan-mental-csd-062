@@ -1,4 +1,4 @@
-package com.app.curahanmental
+package com.app.curahanmental.ui.main
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.app.curahanmental.R
 import com.app.curahanmental.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
