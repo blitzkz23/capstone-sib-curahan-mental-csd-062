@@ -61,6 +61,7 @@
                 android:layout_height="wrap_content"
                 android:maxLength="255"
                 android:maxLines="1" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -77,11 +78,12 @@
             app:layout_constraintTop_toBottomOf="@id/textInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/register_ed_last"
+                android:id="@+id/register_ed_lastname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLength="255"
                 android:maxLines="1" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -129,7 +131,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton"
+            android:id="@+id/register_button"
             android:layout_width="350dp"
             android:layout_height="60dp"
             android:layout_marginTop="@dimen/dimens_48dp"
@@ -152,7 +154,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/materialButton" />
+            app:layout_constraintTop_toBottomOf="@+id/register_button" />
 
         <TextView
             android:id="@+id/textView"
@@ -167,6 +169,17 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/haveaccount"
             app:layout_constraintTop_toTopOf="@+id/haveaccount" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:visibility="invisible"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
