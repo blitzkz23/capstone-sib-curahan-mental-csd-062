@@ -1,14 +1,17 @@
-package com.app.curahanmental.ui.auth
+package com.app.curahanmental.ui.auth.register
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.app.curahanmental.MainActivity
 import com.app.curahanmental.R
 import com.app.curahanmental.data.source.local.entity.UserEntity
 import com.app.curahanmental.databinding.ActivityRegisterBinding
+import com.app.curahanmental.ui.auth.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
@@ -31,10 +34,10 @@ class RegisterActivity : AppCompatActivity() {
 		database = Firebase.database.reference
 
 		// Check if the user are already authenticated
-		val currentUser = auth.currentUser
-		if (currentUser != null) {
-			Toast.makeText(this, "Kamu sudah login", Toast.LENGTH_SHORT).show()
-		}
+//		val currentUser = auth.currentUser
+//		if (currentUser != null) {
+//			Toast.makeText(this, "Kamu sudah login", Toast.LENGTH_SHORT).show()
+//		}
 
 		registerActivityBinding?.registerButton?.setOnClickListener {
 			registerUser()
@@ -77,7 +80,8 @@ class RegisterActivity : AppCompatActivity() {
 								password = password
 							)
 							auth.currentUser?.let { database.child("users").child(it.uid).setValue(user) }
-
+							startActivity(Intent(this@RegisterActivity, MainActivity::class.java))
+							finish()
 						} else {
 							// If sign in fails, display a message to the user.
 							Log.w(TAG, "signInWithEmail:failure", task.exception)
@@ -88,8 +92,10 @@ class RegisterActivity : AppCompatActivity() {
 						}
 					}
 			}
-
-
+			registerToLoginFlow.setOnClickListener {
+				startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
+				finish()
+			}
 		}
 	}
 

@@ -15,17 +15,17 @@ import com.app.curahanmental.R
 import com.app.curahanmental.databinding.ActivityOnboardBinding
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import androidx.core.content.ContextCompat
+import com.app.curahanmental.ui.auth.login.LoginActivity
 
 
 class OnboardActivity : AppCompatActivity() {
-    private lateinit var binding  : ActivityOnboardBinding
+    private val binding  : ActivityOnboardBinding by lazy { ActivityOnboardBinding.inflate(layoutInflater) }
     private lateinit var onboardAdapter: OnboardAdapter
     private lateinit var onboardDots: LinearLayout
     private var state = "true"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityOnboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
         showButton(false)
         setOnboard()
@@ -78,11 +78,11 @@ class OnboardActivity : AppCompatActivity() {
             }
         })
         binding.onboardTvSkip.setOnClickListener {
-            startActivity(Intent(this@OnboardActivity, MainActivity::class.java))
+            startActivity(Intent(this@OnboardActivity, LoginActivity::class.java))
             finish()
         }
         binding.onboardBtnStart.setOnClickListener{
-            startActivity(Intent(this@OnboardActivity, MainActivity::class.java))
+            startActivity(Intent(this@OnboardActivity, LoginActivity::class.java))
             finish()
         }
 

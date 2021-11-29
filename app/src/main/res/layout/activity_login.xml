@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.auth.LoginActivity">
+    tools:context=".ui.auth.login.LoginActivity">
 
     <ImageView
         android:id="@+id/cm_icon"
@@ -54,6 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLength="255"
+            android:inputType="textEmailAddress"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -75,6 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLength="255"
+            android:inputType="textPassword"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 

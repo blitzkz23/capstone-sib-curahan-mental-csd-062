@@ -92,6 +92,7 @@
     <!-- FullScreen Style -->
     <style name="FullScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowFullscreen">true</item>
+        <item name="colorPrimary">@color/curahan_light_green</item>
     </style>
 
 </resources>

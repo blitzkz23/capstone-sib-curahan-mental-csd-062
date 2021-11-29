@@ -17,11 +17,12 @@
             android:exported="true"
             android:theme="@style/FullScreen"/>
         <activity
-            android:name=".ui.auth.RegisterActivity"
+            android:name=".ui.auth.register.RegisterActivity"
             android:theme="@style/FullScreen"
             android:exported="false" />
         <activity
-            android:name=".ui.auth.LoginActivity"
+            android:name=".ui.auth.login.LoginActivity"
+            android:theme="@style/FullScreen"
             android:exported="false" />
         <activity
             android:name=".ui.welcome.SplashActivity"
