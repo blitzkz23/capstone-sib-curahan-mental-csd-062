@@ -17,7 +17,8 @@
 
     <!-- Register Section -->
     <string name="create_account">Membuat sebuah akun</string>
-    <string name="hint_name">Nama</string>
+    <string name="hint_firstname">Nama Depan</string>
+    <string name="hint_lastname">Nama Belakang</string>
     <string name="hint_email">E-mail</string>
     <string name="hint_password">Password</string>
     <string name="buat_akun2">Buat Akun</string>
