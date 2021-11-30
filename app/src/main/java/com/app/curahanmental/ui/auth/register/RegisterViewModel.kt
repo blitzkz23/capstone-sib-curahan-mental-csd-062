@@ -3,7 +3,7 @@ package com.app.curahanmental.ui.auth.register
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.app.curahanmental.data.source.local.entity.UserEntity
+import com.app.curahanmental.data.source.remote.entity.UserEntity
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
