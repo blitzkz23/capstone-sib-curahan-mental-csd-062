@@ -6,6 +6,7 @@ import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.app.curahanmental.R
 import com.app.curahanmental.ui.main.MainActivity
 import com.app.curahanmental.databinding.ActivityLoginBinding
 import com.app.curahanmental.ui.auth.register.RegisterActivity
@@ -36,18 +37,31 @@ class LoginActivity : AppCompatActivity() {
 			val pass = binding.signinEdPassword.text.toString().trim()
 
 			if (email.isEmpty()){
-				Toast.makeText(this, "Silahkan Isi E-mail Anda", Toast.LENGTH_SHORT).show()
-				binding.textInputLayout.requestFocus()
+				binding.apply {
+					signinEdEmail.error = getString(R.string.error_email)
+					textInputLayout.requestFocus()
+				}
 				return@setOnClickListener
 			}
 			if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-				Toast.makeText(this, "Alamat E-mail Tidak Sesuai", Toast.LENGTH_SHORT).show()
-				binding.textInputLayout.requestFocus()
+				binding.apply {
+					signinEdEmail.error = getString(R.string.error_email2)
+					textInputLayout.requestFocus()
+				}
 				return@setOnClickListener
 			}
-			if (pass.isEmpty() || pass.length < 6){
-				Toast.makeText(this, "Password Anda Tidak Sesuai", Toast.LENGTH_SHORT).show()
-				binding.textInputLayout1.requestFocus()
+			if (pass.isEmpty()){
+				binding.apply {
+					signinEdPassword.error = getString(R.string.error_password)
+					textInputLayout1.requestFocus()
+				}
+				return@setOnClickListener
+			}
+			if (pass.length < 6){
+				binding.apply {
+					signinEdPassword.error = getString(R.string.error_password2)
+					textInputLayout1.requestFocus()
+				}
 				return@setOnClickListener
 			}
 
