@@ -57,22 +57,27 @@ class RegisterActivity : AppCompatActivity() {
 
 			// Validate user form
 			if (firstName.isEmpty()) {
+				textInputLayout.requestFocus()
 				registerEdFirstname.error = getString(R.string.error_firstname)
 			}
 			if (lastName.isEmpty()) {
+				textInputLayout1.requestFocus()
 				registerEdLastname.error = getString(R.string.error_lastname)
 			}
 
 			if (email.isEmpty()) {
-				textInputLayout.requestFocus()
+				textInputLayout2.requestFocus()
 				registerEdEmail.error = getString(R.string.error_email)
 			} else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+				textInputLayout2.requestFocus()
 				registerEdEmail.error = getString(R.string.error_email2)
 			}
 
 			if (password.isEmpty()) {
+				textInputLayout3.requestFocus()
 				registerEdPassword.error = getString(R.string.error_password)
 			} else if (password.length < 6) {
+				textInputLayout3.requestFocus()
 				registerEdPassword.error = getString(R.string.error_password2)
 			} else {
 				registerViewModel.signUpUser(firstName, lastName, email, password)
