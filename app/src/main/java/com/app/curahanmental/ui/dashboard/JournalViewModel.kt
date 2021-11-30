@@ -1,13 +1,13 @@
-package com.app.curahanmental.ui.notifications
+package com.app.curahanmental.ui.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class NotificationsViewModel : ViewModel() {
+class JournalViewModel : ViewModel() {
 
 	private val _text = MutableLiveData<String>().apply {
-		value = "This is notifications Fragment"
+		value = "This is journal Fragment"
 	}
 	val text: LiveData<String> = _text
 }

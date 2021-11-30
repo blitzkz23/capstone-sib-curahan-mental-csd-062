@@ -1,4 +1,4 @@
-package com.app.curahanmental.ui.notifications
+package com.app.curahanmental.ui.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,13 +8,12 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.app.curahanmental.R
-import com.app.curahanmental.databinding.FragmentNotificationsBinding
+import com.app.curahanmental.databinding.FragmentJournalBinding
 
-class NotificationsFragment : Fragment() {
+class JournalFragment : Fragment() {
 
-	private lateinit var notificationsViewModel: NotificationsViewModel
-	private var _binding: FragmentNotificationsBinding? = null
+	private lateinit var journalViewModel: JournalViewModel
+	private var _binding: FragmentJournalBinding? = null
 
 	// This property is only valid between onCreateView and
 	// onDestroyView.
@@ -25,14 +24,14 @@ class NotificationsFragment : Fragment() {
 		container: ViewGroup?,
 		savedInstanceState: Bundle?
 	): View? {
-		notificationsViewModel =
-			ViewModelProvider(this).get(NotificationsViewModel::class.java)
+		journalViewModel =
+			ViewModelProvider(this).get(JournalViewModel::class.java)
 
-		_binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+		_binding = FragmentJournalBinding.inflate(inflater, container, false)
 		val root: View = binding.root
 
-		val textView: TextView = binding.textNotifications
-		notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
+		val textView: TextView = binding.textDashboard
+		journalViewModel.text.observe(viewLifecycleOwner, Observer {
 			textView.text = it
 		})
 		return root

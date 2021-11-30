@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Curahan Mental</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_journal">Journal</string>
+    <string name="title_support_message">Support Message</string>
     <string name="logo_name">Curahan Mental Logo</string>
 
     <!-- Onboarding Section -->
