@@ -1,5 +1,6 @@
 package com.app.curahanmental.ui.auth.login
 
+import android.content.Intent
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -11,6 +12,8 @@ import com.google.firebase.auth.FirebaseAuth
 class LoginViewModel: ViewModel() {
     private val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
     private val _authRes = MutableLiveData<Task<AuthResult>>()
+
+    val currentUser = auth.currentUser
 
     fun signInUser(email: String, password: String){
         auth.signInWithEmailAndPassword(email, password)

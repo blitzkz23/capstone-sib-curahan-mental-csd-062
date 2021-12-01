@@ -23,12 +23,6 @@ class RegisterActivity : AppCompatActivity() {
 		super.onCreate(savedInstanceState)
 		setContentView(registerActivityBinding.root)
 
-		// Check if the user are already authenticated
-//		val currentUser = auth.currentUser
-//		if (currentUser != null) {
-//			Toast.makeText(this, "Kamu sudah login", Toast.LENGTH_SHORT).show()
-//		}
-
 		registerViewModel = ViewModelProvider(
 			this,
 			ViewModelProvider.NewInstanceFactory()
