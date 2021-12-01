@@ -20,5 +20,5 @@
     <!-- Default screen constraint guide in percent. -->
     <dimen name="constraint_guide_left_percent">0.05</dimen>
     <dimen name="constraint_guide_right_percent">0.95</dimen>
-    <dimen name="constrain_guide_top_percent">0.10</dimen>
+    <dimen name="constraint_guide_top_percent">0.10</dimen>
 </resources>
