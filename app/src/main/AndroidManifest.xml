@@ -13,17 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CurahanMental">
         <activity
+            android:name=".ui.journal.add.AddJournalActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.welcome.onboarding.OnboardActivity"
             android:exported="true"
-            android:theme="@style/FullScreen"/>
+            android:theme="@style/FullScreen" />
         <activity
             android:name=".ui.auth.register.RegisterActivity"
-            android:theme="@style/FullScreen"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/FullScreen" />
         <activity
             android:name=".ui.auth.login.LoginActivity"
-            android:theme="@style/FullScreen"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/FullScreen" />
         <activity
             android:name=".ui.welcome.SplashActivity"
             android:exported="true"
