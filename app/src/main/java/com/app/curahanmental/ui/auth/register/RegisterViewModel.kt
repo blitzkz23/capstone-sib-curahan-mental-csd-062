@@ -16,7 +16,7 @@ class RegisterViewModel : ViewModel() {
 
 	fun signUpUser(firstName: String, lastName: String, email: String, password: String) {
 		auth.createUserWithEmailAndPassword(email, password)
-			.addOnCompleteListener { task ->
+			.addOnCompleteListener {
 				val user = UserEntity(
 					firstName = firstName,
 					lastName = lastName,

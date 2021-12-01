@@ -11,58 +11,59 @@
         android:layout_height="wrap_content"
         android:paddingBottom="36dp">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_left"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.0" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
+            <include
+                layout="@layout/custom_action_bar_home"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_right"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="1.0" />
+        </com.google.android.material.appbar.AppBarLayout>
 
         <TextView
             android:id="@+id/home_greetings1"
-            style="@style/Text.Header1"
+            style="@style/Text.Header2"
             android:layout_height="@dimen/dimens_48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:text="@string/title_home_greetings"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/app_bar_home" />
 
         <TextView
             android:id="@+id/home_greetings2"
             style="@style/Text.SubHeader1"
             android:text="@string/title_home_greetings2"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_greetings1"/>
+            app:layout_constraintEnd_toEndOf="@+id/home_greetings1"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/home_greetings1"
+            app:layout_constraintTop_toBottomOf="@id/home_greetings1" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/home_card_banner"
             android:layout_width="match_parent"
             android:layout_height="157dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="@dimen/dimens_24dp"
+            android:layout_marginEnd="16dp"
             android:elevation="@dimen/dimens_10dp"
             app:cardCornerRadius="@dimen/dimens_24dp"
-            app:layout_constraintLeft_toLeftOf="@id/guideline_left"
-            app:layout_constraintRight_toLeftOf="@id/guideline_right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/home_greetings2">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#C78478"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:background="#C78478">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -72,7 +73,7 @@
                     android:layout_marginEnd="@dimen/dimens_120dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/curahan_onboarding2" />
-                
+
                 <TextView
                     android:id="@+id/home_banner_text"
                     style="@style/Text.SubHeader1"
@@ -81,9 +82,9 @@
                     android:layout_marginStart="14dp"
                     android:layout_marginTop="100dp"
                     android:lineSpacingExtra="-11dp"
-                    android:textSize="24sp"
+                    android:text="@string/title_home_greetings"
                     android:textColor="@color/white"
-                    android:text="@string/title_home_greetings"/>
+                    android:textSize="24sp" />
 
             </RelativeLayout>
 
@@ -92,49 +93,57 @@
         <TextView
             android:id="@+id/home_tips_title"
             style="@style/Text.Header3"
-            android:layout_marginTop="@dimen/dimens_24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
             android:text="@string/title_home_tips"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_card_banner"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_card_banner" />
 
         <TextView
             android:id="@+id/home_tips_message"
             style="@style/Text.SubHeader2"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_tips_title"
-            android:text="@string/message_home_tips"/>
+            android:layout_marginStart="16dp"
+            android:text="@string/message_home_tips"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_tips_title" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_home_tips"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="@dimen/dimens_10dp"
-            app:layout_constraintLeft_toLeftOf="@id/guideline_left"
-            app:layout_constraintRight_toLeftOf="@id/guideline_right"
-            app:layout_constraintTop_toBottomOf="@id/home_tips_message"/>
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_tips_message" />
 
         <TextView
             android:id="@+id/home_article_title"
             style="@style/Text.Header3"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="@dimen/dimens_24dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rv_home_tips"
-            android:text="@string/title_home_article"/>
-        
+            android:text="@string/title_home_article"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_home_tips" />
+
         <TextView
             android:id="@+id/home_article_message"
             style="@style/Text.SubHeader2"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_article_title"
-            android:text="@string/message_home_article"/>
-        
+            android:layout_marginStart="16dp"
+            android:text="@string/message_home_article"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_article_title" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_home_article"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_article_message"/>
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_article_message" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

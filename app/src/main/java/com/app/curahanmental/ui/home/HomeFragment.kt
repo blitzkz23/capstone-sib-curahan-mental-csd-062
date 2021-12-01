@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.app.curahanmental.databinding.FragmentHomeBinding
 
@@ -28,12 +27,6 @@ class HomeFragment : Fragment() {
 
 		_binding = FragmentHomeBinding.inflate(inflater, container, false)
 		val root: View = binding.root
-
-		homeViewModel.text.observe(viewLifecycleOwner, Observer {
-			binding.textHome.text = it
-		})
-
-
 		return root
 	}
 
