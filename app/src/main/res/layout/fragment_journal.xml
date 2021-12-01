@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dimens_32dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="@dimen/dimens_32dp"
         android:backgroundTint="@color/curahan_light_green"
         android:src="@drawable/ic_add"
         app:layout_constraintBottom_toBottomOf="parent"
