@@ -41,6 +41,7 @@
     <string name="error_email2">Mohon masukkan format E-mail yang benar</string>
     <string name="error_password">Mohon masukkan password</string>
     <string name="error_password2">Password tidak boleh kurang dari 6 karakter.</string>
+    <string name="logout_button">Logout Button</string>
 
 
 </resources>
