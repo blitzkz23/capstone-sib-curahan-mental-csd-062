@@ -40,6 +40,10 @@ class RegisterActivity : AppCompatActivity() {
 		registerActivityBinding.registerButton.setOnClickListener {
 			registerUser()
 		}
+		registerActivityBinding.registerToLoginFlow.setOnClickListener {
+			startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
+			finish()
+		}
 	}
 
 	private fun registerUser() {
@@ -80,11 +84,6 @@ class RegisterActivity : AppCompatActivity() {
 					"Akun telah berhasil dibuat.",
 					Toast.LENGTH_SHORT
 				).show()
-				finish()
-			}
-
-			registerToLoginFlow.setOnClickListener {
-				startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
 				finish()
 			}
 		}
