@@ -3,7 +3,7 @@ package com.app.curahanmental.data.source.local.entity
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "journal")
 data class JournalEntity(
 	@PrimaryKey(autoGenerate = true)
 	val id: Int = 0,

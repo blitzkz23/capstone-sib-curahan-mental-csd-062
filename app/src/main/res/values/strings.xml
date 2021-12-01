@@ -1,4 +1,5 @@
 <resources>
+    <!-- General -->
     <string name="app_name">Curahan Mental</string>
     <string name="title_home">Home</string>
     <string name="title_journal">Journal</string>
