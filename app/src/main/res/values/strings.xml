@@ -50,6 +50,7 @@
     <string name="title_home_article">Article</string>
     <string name="message_home_article">Article</string>
     <string name="message_home_tips">Tips</string>
+    <string name="filter_button">Filter Button</string>
 
 
 </resources>
