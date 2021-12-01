@@ -60,6 +60,7 @@
                 android:id="@+id/register_ed_firstname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="text"
                 android:maxLength="255"
                 android:maxLines="1" />
 
@@ -82,6 +83,7 @@
                 android:id="@+id/register_ed_lastname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="text"
                 android:maxLength="255"
                 android:maxLines="1" />
 
