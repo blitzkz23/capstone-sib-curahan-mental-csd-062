@@ -43,5 +43,10 @@
     <string name="error_password2">Password tidak boleh kurang dari 6 karakter.</string>
     <string name="logout_button">Logout Button</string>
 
+    <!-- home -->
+    <string name="title_home_greetings">Selamat datang, username</string>
+    <string name="title_home_greetings2">semoga anda dalam keadaan yang baik</string>
+    <string name="title_home_tips">Tips</string>
+    <string name="title_home_article">Article</string>
 
 </resources>

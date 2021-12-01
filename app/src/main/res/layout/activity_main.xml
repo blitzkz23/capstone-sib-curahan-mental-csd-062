@@ -37,6 +37,18 @@
         app:layout_constraintLeft_toLeftOf="@id/guideline_left"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <ImageButton
+        android:id="@+id/logout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_top"
+        android:contentDescription="@string/logout_button"
+        app:srcCompat="@drawable/ic_logout"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"
