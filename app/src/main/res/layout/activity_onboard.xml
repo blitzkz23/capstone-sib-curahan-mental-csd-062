@@ -19,7 +19,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/onboard_btn_start"
             android:layout_width="315dp"
-            android:layout_height="55dp"
+            android:layout_height="60dp"
             android:text="@string/onboarding_start"
             android:textAllCaps="false"
             android:textColor="@color/white"
