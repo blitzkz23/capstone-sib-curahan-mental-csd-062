@@ -20,4 +20,15 @@ class JournalRepository(private val localDataSource: LocalDataSource): JournalDa
     override fun getJournalById(id: Int): LiveData<JournalEntity> {
         return localDataSource.getJournalById(id)
     }
+
+    companion object{
+        @Volatile
+        private var INSTANCE: JournalRepository? = null
+        fun getInstance(localDataSource: LocalDataSource): JournalRepository =
+            INSTANCE ?: synchronized(this){
+                JournalRepository(localDataSource).apply {
+                    INSTANCE = this
+                }
+            }
+    }
 }

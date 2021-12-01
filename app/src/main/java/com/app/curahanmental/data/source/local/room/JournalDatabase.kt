@@ -11,13 +11,16 @@ abstract class JournalDatabase : RoomDatabase() {
 
 	abstract fun journalDao(): JournalDao
 
-	@Volatile
-	private var instance: JournalDatabase? = null
+	companion object {
+		@Volatile
+		private var instance: JournalDatabase? = null
 
-	fun getInstance(context: Context): JournalDatabase {
-		return synchronized(this) {
-			instance ?: Room.databaseBuilder(context, JournalDatabase::class.java, "journal.db")
-				.build()
+		@JvmStatic
+		fun getInstance(context: Context): JournalDatabase {
+			return synchronized(this) {
+				instance ?: Room.databaseBuilder(context, JournalDatabase::class.java, "journal.db")
+					.build()
+			}
 		}
 	}
 }
