@@ -6,4 +6,5 @@
     android:layout_height="match_parent"
     tools:context=".ui.journal.add.AddJournalActivity">
 
+
 </androidx.constraintlayout.widget.ConstraintLayout>
