@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import com.app.curahanmental.R
 import com.app.curahanmental.databinding.FragmentJournalBinding
 
 class JournalFragment : Fragment() {
@@ -27,7 +29,12 @@ class JournalFragment : Fragment() {
 
 		_binding = FragmentJournalBinding.inflate(inflater, container, false)
 		val root: View = binding.root
+
+		binding.fabAdd.setOnClickListener { view ->
+			view.findNavController().navigate(R.id.action_navigation_journal_to_addJournalActivity)
+		}
 		return root
+
 	}
 
 	override fun onDestroyView() {

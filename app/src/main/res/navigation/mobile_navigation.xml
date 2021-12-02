@@ -15,11 +15,21 @@
         android:id="@+id/navigation_journal"
         android:name="com.app.curahanmental.ui.dashboard.JournalFragment"
         android:label="@string/title_journal"
-        tools:layout="@layout/fragment_journal" />
+        tools:layout="@layout/fragment_journal" >
+        <action
+            android:id="@+id/action_navigation_journal_to_addJournalActivity"
+            app:destination="@id/addJournalActivity"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_support_message"
         android:name="com.app.curahanmental.ui.notifications.SupportMessageFragment"
         android:label="@string/title_support_message"
         tools:layout="@layout/fragment_support_message" />
+    <activity
+        android:id="@+id/addJournalActivity"
+        android:name="com.app.curahanmental.ui.journal.add.AddJournalActivity"
+        android:label="activity_add_journal"
+        tools:layout="@layout/activity_add_journal" />
 </navigation>
