@@ -27,6 +27,7 @@ class RegisterActivity : AppCompatActivity() {
 			this,
 			ViewModelProvider.NewInstanceFactory()
 		)[RegisterViewModel::class.java]
+
 		registerViewModel.authRes.observe(this@RegisterActivity) {
 			if (it.isSuccessful) {
 				startActivity(Intent(this@RegisterActivity, LoginActivity::class.java).also {
