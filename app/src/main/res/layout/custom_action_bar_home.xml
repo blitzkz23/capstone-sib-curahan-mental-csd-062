@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/custom_appbar"
+    android:background="@color/white"
     android:layout_height="wrap_content">
 
     <ImageView
@@ -17,8 +17,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/logout_button"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/dimens_32dp"
+        android:layout_height="@dimen/dimens_32dp"
         android:layout_marginEnd="16dp"
         android:contentDescription="@string/logout_button"
         android:insetTop="@dimen/dimens_0dp"
