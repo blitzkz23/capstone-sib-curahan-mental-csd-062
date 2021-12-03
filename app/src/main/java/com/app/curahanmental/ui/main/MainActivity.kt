@@ -2,7 +2,6 @@ package com.app.curahanmental.ui.main
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -28,10 +27,6 @@ class MainActivity : AppCompatActivity() {
 		setContentView(binding.root)
 
 		viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[MainViewModel::class.java]
-
-		viewModel.getUser().observe(this, {
-			findViewById<TextView>(R.id.home_greetings1).text = getString(R.string.title_home_greetings, it.firstName)
-		})
 
 		val navView: BottomNavigationView = binding.navView
 
