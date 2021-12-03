@@ -40,12 +40,16 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dimens_32dp"
         android:layout_marginBottom="@dimen/dimens_32dp"
-        android:backgroundTint="@color/curahan_dark_green"
+        android:backgroundTint="@color/curahan_btn_orange"
         android:contentDescription="@string/add_journal"
         android:src="@drawable/ic_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/white"
+        app:borderWidth="0dp"
+        app:elevation="0dp"
+        app:rippleColor="@android:color/white"
+        app:pressedTranslationZ="0dp"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
