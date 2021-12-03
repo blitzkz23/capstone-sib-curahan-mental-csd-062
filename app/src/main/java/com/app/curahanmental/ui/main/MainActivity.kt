@@ -19,19 +19,12 @@ import com.google.firebase.ktx.Firebase
 class MainActivity : AppCompatActivity() {
 
 	private lateinit var binding: ActivityMainBinding
-	private lateinit var viewModel: MainViewModel
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 
 		binding = ActivityMainBinding.inflate(layoutInflater)
 		setContentView(binding.root)
-
-		viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[MainViewModel::class.java]
-
-		viewModel.getUser().observe(this, {
-			findViewById<TextView>(R.id.home_greetings1).text = getString(R.string.title_home_greetings, it.firstName)
-		})
 
 		val navView: BottomNavigationView = binding.navView
 
