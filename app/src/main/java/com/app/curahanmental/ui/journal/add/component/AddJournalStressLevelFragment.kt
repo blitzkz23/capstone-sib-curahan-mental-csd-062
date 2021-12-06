@@ -24,16 +24,18 @@ class AddJournalStressLevelFragment : Fragment() {
 		val root: View = binding.root
 		loadActionBar()
 
-		binding.let {
-			it.slider.addOnChangeListener { slider, value, fromUser ->
-				val percentageValue = it.slider.value.toInt()
-				it.percentage.setText(getString(R.string.stress_percentage, percentageValue))
+		binding.apply {
+			slider.addOnChangeListener { slider, value, fromUser ->
+				val percentageValue = slider.value.toInt()
+				percentage.setText(getString(R.string.stress_percentage, percentageValue))
+				if (percentage.text.toString().isNotEmpty()) {
+					nextButton.isEnabled = true
+					nextButton.isCheckable = true
+				}
 			}
-
 		}
 
 		return root
-
 	}
 
 	private fun loadActionBar() {
