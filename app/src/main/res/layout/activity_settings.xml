@@ -7,4 +7,97 @@
     android:layout_height="match_parent"
     tools:context=".ui.settings.SettingsActivity">
 
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline_top"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintGuide_begin="73dp" />
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline_left"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="@dimen/constraint_guide_left_percent"/>
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline_right"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent"/>
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline_bottom"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent" />
+  
+  <ImageView
+      android:id="@+id/btn_settings_back"
+      android:layout_width="30dp"
+      android:layout_height="30dp"
+      android:src="@drawable/ic_baseline_arrow_back"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toBottomOf="@id/guideline_top"
+      app:layout_constraintLeft_toLeftOf="@id/guideline_left"/>
+
+  <TextView
+      android:id="@+id/tv_title_settings"
+      style="@style/Text.Header1"
+      android:text="@string/title_settings"
+      android:layout_marginTop="4dp"
+      android:layout_marginStart="60dp"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintLeft_toLeftOf="@id/guideline_left"
+      app:layout_constraintBottom_toBottomOf="@id/guideline_top" />
+
+  <TextView
+      android:id="@+id/tv_account_settings"
+      style="@style/Text.Header2"
+      android:text="@string/title_settings_account"
+      android:layout_marginTop="@dimen/dimens_48dp"
+      android:layout_marginStart="16dp"
+      app:layout_constraintTop_toTopOf="@id/guideline_top"
+      app:layout_constraintLeft_toLeftOf="@id/guideline_left"/>
+
+  <TextView
+      android:id="@+id/settings_user_name"
+      style="@style/Text2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:textColor="@color/grey_700"
+      android:textSize="22sp"
+      app:layout_constraintStart_toEndOf="@id/guideline_left"
+      app:layout_constraintTop_toBottomOf="@id/tv_account_settings"/>
+
+  <TextView
+      android:id="@+id/settings_user_email"
+      style="@style/Text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:textColor="@color/grey_700"
+      app:layout_constraintStart_toEndOf="@id/guideline_left"
+      app:layout_constraintTop_toBottomOf="@id/settings_user_name" />
+
+  <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btnLogout"
+      style="@style/Text2"
+      android:layout_width="220dp"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:letterSpacing="0.05"
+      android:text="@string/settings_logout"
+      android:textColor="@color/white"
+      android:backgroundTint="@color/curahan_btn_orange"
+      app:cornerRadius="8dp"
+      android:textSize="16sp"
+      app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"/>
+
   </androidx.constraintlayout.widget.ConstraintLayout>

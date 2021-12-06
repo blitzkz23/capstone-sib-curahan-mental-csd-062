@@ -55,6 +55,7 @@ class HomeFragment : Fragment() {
 		})
 		getView()?.findViewById<ImageView>(R.id.home_btn_settings)?.setOnClickListener {
 			startActivity(Intent(activity, SettingsActivity::class.java))
+
 		}
 	}
 

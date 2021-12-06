@@ -1,8 +1,11 @@
 package com.app.curahanmental.ui.settings
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
 import com.app.curahanmental.databinding.ActivitySettingsBinding
+import com.app.curahanmental.ui.auth.login.LoginActivity
 
 class SettingsActivity : AppCompatActivity() {
     private lateinit var settingsViewModel: SettingsViewModel
@@ -11,5 +14,30 @@ class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        initViewModel()
+    }
+
+    private fun initViewModel(){
+        settingsViewModel = ViewModelProvider(this)[SettingsViewModel::class.java]
+        settingsViewModel.getCurrentUserDisplayName()
+        settingsViewModel.currentData.observe(this){
+            binding.apply {
+                settingsUserName.text = it?.firstName
+                settingsUserEmail.text = it?.email
+
+                btnLogout.setOnClickListener {
+                    settingsViewModel.auth.signOut()
+                    startActivity(Intent(this@SettingsActivity, LoginActivity::class.java).also {
+                       it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    })
+                    finish()
+                }
+
+                btnSettingsBack.setOnClickListener {
+                    finish()
+                }
+            }
+        }
     }
 }

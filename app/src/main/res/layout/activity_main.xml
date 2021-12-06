@@ -28,7 +28,6 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent"/>
 
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"

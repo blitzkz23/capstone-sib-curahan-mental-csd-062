@@ -53,6 +53,9 @@
     <string name="filter_button">Filter Button</string>
     <string name="add_journal">Add Journal</string>
     <string name="tips">mengatasi depresi yang berkelanjutan</string>
+    <string name="title_settings">Settings</string>
+    <string name="settings_logout">Logout</string>
+    <string name="title_settings_account">Akun Anda</string>
 
 
 </resources>
