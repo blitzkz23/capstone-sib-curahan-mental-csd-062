@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.app.curahanmental.R
 import com.app.curahanmental.databinding.FragmentAddJournalStressLevelBinding
 import com.google.android.material.button.MaterialButton
@@ -32,6 +33,9 @@ class AddJournalStressLevelFragment : Fragment() {
 					nextButton.isEnabled = true
 					nextButton.isCheckable = true
 				}
+			}
+			nextButton.setOnClickListener { view ->
+				view.findNavController().navigate(R.id.action_addJournalStressLevel_to_addJournalEventFragment)
 			}
 		}
 

@@ -9,5 +9,14 @@
         android:id="@+id/addJournalStressLevel"
         android:name="com.app.curahanmental.ui.journal.add.component.AddJournalStressLevelFragment"
         android:label="fragment_add_journal_stress_level"
-        tools:layout="@layout/fragment_add_journal_stress_level" />
+        tools:layout="@layout/fragment_add_journal_stress_level" >
+        <action
+            android:id="@+id/action_addJournalStressLevel_to_addJournalEventFragment"
+            app:destination="@id/addJournalEventFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addJournalEventFragment"
+        android:name="com.app.curahanmental.ui.journal.add.component.AddJournalEventFragment"
+        android:label="fragment_add_journal_event"
+        tools:layout="@layout/fragment_add_journal_event" />
 </navigation>
