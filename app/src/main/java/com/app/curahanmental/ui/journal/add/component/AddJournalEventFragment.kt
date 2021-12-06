@@ -5,18 +5,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.app.curahanmental.R
+import com.app.curahanmental.databinding.FragmentAddJournalEventBinding
 
 
 class AddJournalEventFragment : Fragment() {
 
+	private var _binding: FragmentAddJournalEventBinding? = null
+	private val binding get() = _binding!!
 
 	override fun onCreateView(
 		inflater: LayoutInflater, container: ViewGroup?,
 		savedInstanceState: Bundle?
-	): View? {
+	): View {
 		// Inflate the layout for this fragment
-		return inflater.inflate(R.layout.fragment_add_journal_event, container, false)
+		_binding = FragmentAddJournalEventBinding.inflate(inflater, container, false)
+		val root: View = binding.root
+
+		return root
 	}
 
 	companion object {

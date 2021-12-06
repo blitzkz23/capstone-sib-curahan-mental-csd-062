@@ -15,6 +15,7 @@ class AddJournalStressLevelFragment : Fragment() {
 
 	private var _binding: FragmentAddJournalStressLevelBinding? = null
 	private val binding get() = _binding!!
+	var percentageArg = 0
 
 	override fun onCreateView(
 		inflater: LayoutInflater, container: ViewGroup?,
@@ -33,9 +34,12 @@ class AddJournalStressLevelFragment : Fragment() {
 					nextButton.isEnabled = true
 					nextButton.isCheckable = true
 				}
+				percentageArg = percentageValue
 			}
 			nextButton.setOnClickListener { view ->
-				view.findNavController().navigate(R.id.action_addJournalStressLevel_to_addJournalEventFragment)
+				val toEventFragment = AddJournalStressLevelFragmentDirections.actionAddJournalStressLevelToAddJournalEventFragment()
+				toEventFragment.stressLevel = percentageArg
+				view.findNavController().navigate(toEventFragment)
 			}
 		}
 

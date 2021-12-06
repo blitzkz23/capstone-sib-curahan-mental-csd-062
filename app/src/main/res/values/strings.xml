@@ -55,7 +55,8 @@
 
     <!-- Journal -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="stress_level_header">Seberapa tingkat stress Anda saat ini?</string>
+    <string name="stress_level_header">Seberapa tingkat stres Anda saat ini?</string>
+    <string name="stress_level_header2">Kejadian apa yang mempengaruhi stres Anda saat ini?</string>
     <string name="stress_slider">Stress Slider</string>
     <string name="pokemin">Pokemin</string>
     <string name="godzimax">Godzimax</string>

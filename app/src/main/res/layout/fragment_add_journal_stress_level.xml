@@ -25,7 +25,7 @@
 
     <TextView
         android:id="@+id/stress_page_header"
-        style="@style/Text.Header2"
+        style="@style/Text.Header3"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
@@ -37,14 +37,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/stress_indicator"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/TextInputLayoutStyle1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimens_24dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="@dimen/dimens_16dp"
-        android:layout_marginEnd="@dimen/dimens_24dp"
+        android:layout_marginEnd="16dp"
         android:enabled="false"
-        app:boxStrokeColor="@color/curahan_dark_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/stress_page_header">
@@ -57,6 +56,7 @@
             android:maxLength="255"
             android:maxLines="1"
             android:textAlignment="center"
+            android:textColor="@color/curahan_dark_green"
             tools:ignore="SpeakableTextPresentCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -81,7 +81,7 @@
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="92dp"
         android:contentDescription="@string/pokemin"
         android:src="@drawable/pokemon"
         app:layout_constraintEnd_toStartOf="@+id/godzimax"
@@ -94,7 +94,7 @@
         android:id="@+id/godzimax"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="92dp"
         android:layout_marginEnd="16dp"
         android:contentDescription="@string/godzimax"
         android:src="@drawable/godzilla"
@@ -107,15 +107,14 @@
         android:id="@+id/next_button"
         android:layout_width="350dp"
         android:layout_height="60dp"
-        android:layout_marginTop="@dimen/dimens_48dp"
+        android:clickable="false"
+        android:enabled="false"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/selanjutnya"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        android:enabled="false"
-        android:clickable="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/slider" />
 
