@@ -1,16 +1,18 @@
 package com.app.curahanmental.ui.home
 
 import android.os.Bundle
-import android.util.Log
+import android.text.Spannable
+import android.text.SpannableStringBuilder
+import android.text.TextUtils
+import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.app.curahanmental.R
 import com.app.curahanmental.databinding.FragmentHomeBinding
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 
 class HomeFragment : Fragment() {
 
@@ -28,15 +30,26 @@ class HomeFragment : Fragment() {
 			ViewModelProvider(this)[HomeViewModel::class.java]
 
 		_binding = FragmentHomeBinding.inflate(inflater, container, false)
-		homeViewModel.getCurrentUserDisplayName()
 		return binding.root
 	}
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
-		homeViewModel.currentData.observe(viewLifecycleOwner){
-			binding.homeGreetings1.text = StringBuilder("Selamat datang, $it")
-		}
+		homeViewModel.getCurrentUserDisplayName()
+		val green = context?.let { getColor(it, R.color.curahan_light_green) }
+
+		homeViewModel.currentData.observe(viewLifecycleOwner, { firstName ->
+			val displayName = SpannableStringBuilder(firstName)
+			if (firstName != null) {
+				displayName.setSpan(
+					green?.let { it1 -> ForegroundColorSpan(it1) },
+					0,
+					firstName.length,
+					Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+				)
+			}
+			binding.homeGreetings1.text = TextUtils.concat("Selamat datang, ", displayName)
+		})
 	}
 
 	override fun onDestroyView() {
