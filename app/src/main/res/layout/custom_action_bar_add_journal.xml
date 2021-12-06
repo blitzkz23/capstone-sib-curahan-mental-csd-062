@@ -7,19 +7,19 @@
     android:background="@color/white">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/journal_title"
         style="@style/Text.Header3"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/logout_button"
+        app:layout_constraintStart_toEndOf="@+id/back_button_fragment"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        tools:text="Title" />
+        android:text="@string/title_placeholder" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/logout_button"
+        android:id="@+id/back_button_fragment"
         android:layout_width="@dimen/dimens_32dp"
         android:layout_height="@dimen/dimens_32dp"
         android:layout_marginStart="16dp"

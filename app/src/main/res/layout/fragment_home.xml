@@ -20,6 +20,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <include
+                android:id="@+id/toolbar"
                 layout="@layout/custom_action_bar_home"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

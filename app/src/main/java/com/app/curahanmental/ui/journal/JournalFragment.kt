@@ -1,4 +1,4 @@
-package com.app.curahanmental.ui.dashboard
+package com.app.curahanmental.ui.journal
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.app.curahanmental.R
 import com.app.curahanmental.databinding.FragmentJournalBinding
+import com.app.curahanmental.ui.dashboard.JournalViewModel
 
 class JournalFragment : Fragment() {
 
@@ -23,7 +24,7 @@ class JournalFragment : Fragment() {
 		inflater: LayoutInflater,
 		container: ViewGroup?,
 		savedInstanceState: Bundle?
-	): View? {
+	): View {
 		journalViewModel =
 			ViewModelProvider(this).get(JournalViewModel::class.java)
 

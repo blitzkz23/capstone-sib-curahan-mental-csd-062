@@ -43,7 +43,7 @@
     <string name="error_password2">Password tidak boleh kurang dari 6 karakter.</string>
     <string name="logout_button">Logout Button</string>
 
-    <!-- home -->
+    <!-- Home -->
     <string name="title_home_greetings">Selamat datang, %s</string>
     <string name="title_home_greetings2">semoga anda dalam keadaan yang baik</string>
     <string name="title_home_tips">Tips</string>
@@ -53,10 +53,16 @@
     <string name="filter_button">Filter Button</string>
     <string name="add_journal">Add Journal</string>
 
-    <!-- Jornal -->
+    <!-- Journal -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="stress_level">Seberapa tingkat stress Anda saat ini?</string>
+    <string name="stress_level_header">Seberapa tingkat stress Anda saat ini?</string>
     <string name="stress_slider">Stress Slider</string>
+    <string name="pokemin">Pokemin</string>
+    <string name="godzimax">Godzimax</string>
+    <string name="selanjutnya">Selanjutnya</string>
+    <string name="stress_level">Stress Level</string>
+    <string name="stress_percentage">%d %% </string>
+    <string name="title_placeholder">Title</string>
 
 
 </resources>

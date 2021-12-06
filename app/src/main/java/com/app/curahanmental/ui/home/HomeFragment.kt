@@ -32,7 +32,7 @@ class HomeFragment : Fragment() {
 		inflater: LayoutInflater,
 		container: ViewGroup?,
 		savedInstanceState: Bundle?
-	): View? {
+	): View {
 		homeViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[HomeViewModel::class.java]
 
 		_binding = FragmentHomeBinding.inflate(inflater, container, false)

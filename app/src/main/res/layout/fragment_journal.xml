@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.dashboard.JournalFragment">
+    tools:context=".ui.journal.JournalFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_home"
@@ -15,6 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <include
+            android:id="@+id/toolbar"
             layout="@layout/custom_action_bar_journal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -1,14 +1,13 @@
-package com.app.curahanmental.ui.notifications
+package com.app.curahanmental.ui.supportmessage
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.app.curahanmental.databinding.FragmentSupportMessageBinding
+import com.app.curahanmental.ui.notifications.SupportMessageViewModel
 
 class SupportMessageFragment : Fragment() {
 
@@ -23,18 +22,13 @@ class SupportMessageFragment : Fragment() {
 		inflater: LayoutInflater,
 		container: ViewGroup?,
 		savedInstanceState: Bundle?
-	): View? {
+	): View {
 		supportMessageViewModel =
-			ViewModelProvider(this).get(SupportMessageViewModel::class.java)
+			ViewModelProvider(this)[SupportMessageViewModel::class.java]
 
 		_binding = FragmentSupportMessageBinding.inflate(inflater, container, false)
-		val root: View = binding.root
 
-		val textView: TextView = binding.textNotifications
-		supportMessageViewModel.text.observe(viewLifecycleOwner, Observer {
-			textView.text = it
-		})
-		return root
+		return binding.root
 	}
 
 	override fun onDestroyView() {

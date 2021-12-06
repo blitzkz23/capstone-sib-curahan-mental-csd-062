@@ -13,9 +13,8 @@
 
     <fragment
         android:id="@+id/navigation_journal"
-        android:name="com.app.curahanmental.ui.dashboard.JournalFragment"
-        android:label="@string/title_journal"
-        tools:layout="@layout/fragment_journal" >
+        android:name="com.app.curahanmental.ui.journal.JournalFragment"
+        android:label="@string/title_journal">
         <action
             android:id="@+id/action_navigation_journal_to_addJournalActivity"
             app:destination="@id/addJournalActivity"
@@ -24,9 +23,8 @@
 
     <fragment
         android:id="@+id/navigation_support_message"
-        android:name="com.app.curahanmental.ui.notifications.SupportMessageFragment"
-        android:label="@string/title_support_message"
-        tools:layout="@layout/fragment_support_message" />
+        android:name="com.app.curahanmental.ui.supportmessage.SupportMessageFragment"
+        android:label="@string/title_support_message" />
     <activity
         android:id="@+id/addJournalActivity"
         android:name="com.app.curahanmental.ui.journal.add.AddJournalActivity"
