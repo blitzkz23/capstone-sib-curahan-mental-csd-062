@@ -31,11 +31,11 @@ class HomeViewModel : ViewModel() {
 					}
 					_currentData.postValue(user.firstName)
 
-					Log.i("firebase", "Got value $userProfile")
+					Log.i("Firebase", "Got users value: $userProfile")
 				}
 
 				override fun onCancelled(error: DatabaseError) {
-					Log.e("Firebase", "Failed to load user's data")
+					Log.e("Firebase", "Failed to load users data")
 				}
 			})
 		}
