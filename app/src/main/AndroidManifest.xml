@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.app.curahanmental">
+    package="com.app.curahanmental" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -11,7 +11,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CurahanMental">
+        android:theme="@style/Theme.CurahanMental" >
+        <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.journal.add.AddJournalActivity"
             android:exported="false" />
@@ -30,7 +33,7 @@
         <activity
             android:name=".ui.welcome.SplashActivity"
             android:exported="true"
-            android:theme="@style/FullScreen">
+            android:theme="@style/FullScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
