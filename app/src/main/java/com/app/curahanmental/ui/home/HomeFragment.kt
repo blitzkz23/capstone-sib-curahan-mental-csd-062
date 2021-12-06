@@ -1,5 +1,6 @@
 package com.app.curahanmental.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableStringBuilder
@@ -7,11 +8,16 @@ import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.app.curahanmental.R
 import com.app.curahanmental.databinding.FragmentHomeBinding
+import com.app.curahanmental.ui.auth.login.LoginActivity
+import com.google.android.material.button.MaterialButton
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class HomeFragment : Fragment() {
 
@@ -46,6 +52,14 @@ class HomeFragment : Fragment() {
 			}
 			binding.homeGreetings1.text = getString(R.string.title_home_greetings, spannableName)
 		})
+
+		view?.findViewById<MaterialButton>(R.id.logout_button)?.setOnClickListener {
+			Firebase.auth.signOut()
+			Toast.makeText(activity, "Kamu telah logout", Toast.LENGTH_SHORT).show()
+			startActivity(Intent(activity, LoginActivity::class.java).also {
+				Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+			})
+		}
 
 		return root
 	}
