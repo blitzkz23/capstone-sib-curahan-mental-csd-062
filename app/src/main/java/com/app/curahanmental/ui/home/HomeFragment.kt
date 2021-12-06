@@ -1,5 +1,6 @@
 package com.app.curahanmental.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableStringBuilder
@@ -8,11 +9,13 @@ import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.app.curahanmental.R
 import com.app.curahanmental.databinding.FragmentHomeBinding
+import com.app.curahanmental.ui.settings.SettingsActivity
 
 class HomeFragment : Fragment() {
 
@@ -50,6 +53,9 @@ class HomeFragment : Fragment() {
 			}
 			binding.homeGreetings1.text = TextUtils.concat("Selamat datang, ", displayName)
 		})
+		getView()?.findViewById<ImageView>(R.id.home_btn_settings)?.setOnClickListener {
+			startActivity(Intent(activity, SettingsActivity::class.java))
+		}
 	}
 
 	override fun onDestroyView() {
