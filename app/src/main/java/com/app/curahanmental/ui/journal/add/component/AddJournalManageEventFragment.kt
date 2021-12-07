@@ -90,23 +90,32 @@ class AddJournalManageEventFragment : Fragment(), View.OnClickListener {
 	}
 
 	override fun onClick(p0: View) {
-		val colorInt = resources.getColor(R.color.curahan_dark_green)
-		val colorStateList = ColorStateList.valueOf(colorInt)
+		val colorIntGreen = resources.getColor(R.color.curahan_dark_green)
+		val colorIntGrey = resources.getColor(R.color.curahan_subtext)
+		val colorStateList1 = ColorStateList.valueOf(colorIntGreen)
+		val colorStateList2 = ColorStateList.valueOf(colorIntGrey)
 
 		when (p0.id) {
 			R.id.thumb_up_button -> {
 				binding.manageEventText.setText(getString(R.string.good))
-				binding.thumbUpButton.backgroundTintList = colorStateList
+				binding.thumbUpButton.backgroundTintList = colorStateList1
+				binding.thumbDownButton.backgroundTintList = colorStateList2
+				binding.questionMarkButton.backgroundTintList = colorStateList2
+
 				manageEvent = getString(R.string.good)
 			}
 			R.id.thumb_down_button -> {
 				binding.manageEventText.setText(getString(R.string.bad))
-				binding.thumbDownButton.backgroundTintList = colorStateList
+				binding.thumbUpButton.backgroundTintList = colorStateList2
+				binding.thumbDownButton.backgroundTintList = colorStateList1
+				binding.questionMarkButton.backgroundTintList = colorStateList2
 				manageEvent = getString(R.string.bad)
 			}
 			R.id.question_mark_button -> {
 				binding.manageEventText.setText(getString(R.string.confused))
-				binding.questionMarkButton.backgroundTintList = colorStateList
+				binding.thumbUpButton.backgroundTintList = colorStateList2
+				binding.thumbDownButton.backgroundTintList = colorStateList2
+				binding.questionMarkButton.backgroundTintList = colorStateList1
 				manageEvent = getString(R.string.confused)
 			}
 			else -> {
