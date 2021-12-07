@@ -4,6 +4,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
+import com.app.curahanmental.data.source.JournalRepository
 import com.app.curahanmental.data.source.remote.entity.UserEntity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -12,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.getValue
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel(private val repository: JournalRepository) : ViewModel() {
 	val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
 	private val db: FirebaseDatabase by lazy { FirebaseDatabase.getInstance() }
 	private val _currentData = MutableLiveData<String?>()
@@ -43,4 +45,5 @@ class HomeViewModel : ViewModel() {
 
 	val currentData: LiveData<String?> = _currentData
 
+	suspend fun getArticles() = repository.getArticles().asLiveData()
 }
