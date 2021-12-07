@@ -17,7 +17,7 @@ android {
         versionName "1.0"
 
         buildConfigField "String", "NEWS_API_KEY", "\"943594377f2e447bb49f206ba484ba4f\""
-        buildConfigField "String", "NEWS_API_BASE", "\"https://newsapi.org/v2/everything?q=kesehatan%20mental&apiKey=\""
+        buildConfigField "String", "NEWS_API_BASE", "\"https://newsapi.org/v2/\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
