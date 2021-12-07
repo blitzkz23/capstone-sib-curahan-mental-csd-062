@@ -23,5 +23,26 @@
             android:name="stressLevel"
             app:argType="integer"
             android:defaultValue="0" />
+        <action
+            android:id="@+id/action_addJournalEventFragment_to_addJournalReasonFragment"
+            app:destination="@id/addJournalReasonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addJournalReasonFragment"
+        android:name="com.app.curahanmental.ui.journal.add.component.AddJournalReasonFragment"
+        android:label="fragment_add_journal_reason"
+        tools:layout="@layout/fragment_add_journal_reason" >
+        <argument
+            android:name="stressLevel"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="event"
+            app:argType="string"
+            android:defaultValue="Lainnya..." />
+        <argument
+            android:name="eventDetail"
+            app:argType="string"
+            android:defaultValue="Yes" />
     </fragment>
 </navigation>

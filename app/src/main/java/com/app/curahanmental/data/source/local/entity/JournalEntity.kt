@@ -10,10 +10,10 @@ data class JournalEntity(
 	val stressLevel: Int = 0,
 	val event: String,
 	val eventDetails: String? = "",
-	val manageEvent: String,
-	val idealEventScenario: String? = "",
 	val reason: String,
 	val reasonDetails: String? = "",
+	val manageEvent: String,
+	val idealEventScenario: String? = "",
 	val date: Long,
 
 )

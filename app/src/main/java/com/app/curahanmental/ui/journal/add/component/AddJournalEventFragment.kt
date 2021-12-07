@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.app.curahanmental.databinding.FragmentAddJournalEventBinding
 
 
@@ -15,6 +16,8 @@ class AddJournalEventFragment : Fragment() {
 
 	private var _binding: FragmentAddJournalEventBinding? = null
 	private val binding get() = _binding!!
+	private lateinit var event: String
+	private lateinit var eventDetail: String
 
 	override fun onCreateView(
 		inflater: LayoutInflater, container: ViewGroup?,
@@ -26,18 +29,18 @@ class AddJournalEventFragment : Fragment() {
 
 		val stressLevel = AddJournalEventFragmentArgs.fromBundle(arguments as Bundle).stressLevel
 		binding.apply {
-			val event = spinner.selectedItem.toString()
-			val eventDetail = eventDetailText.text.toString()
 			spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 				override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
 					detailquestion.visibility = View.VISIBLE
 					eventDetailColumn.visibility = View.VISIBLE
+					event = spinner.selectedItem.toString()
 				}
 
 				override fun onNothingSelected(p0: AdapterView<*>?) {
 
 				}
 			}
+
 			eventDetailText.addTextChangedListener(object : TextWatcher {
 				override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
@@ -54,15 +57,20 @@ class AddJournalEventFragment : Fragment() {
 				}
 
 				override fun afterTextChanged(p0: Editable?) {
+					eventDetail = eventDetailText.text.toString()
 				}
 			})
+
+			nextButton.setOnClickListener { view ->
+				val toReasonFragment = AddJournalEventFragmentDirections.actionAddJournalEventFragmentToAddJournalReasonFragment()
+				toReasonFragment.stressLevel = stressLevel
+				toReasonFragment.event = event
+				toReasonFragment.eventDetail = eventDetail
+				view.findNavController().navigate(toReasonFragment)
+			}
 
 		}
 
 		return root
-	}
-
-	companion object {
-
 	}
 }
