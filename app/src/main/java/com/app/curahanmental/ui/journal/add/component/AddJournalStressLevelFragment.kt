@@ -36,14 +36,19 @@ class AddJournalStressLevelFragment : Fragment() {
 				}
 				percentageArg = percentageValue
 			}
+
 			nextButton.setOnClickListener { view ->
-				val toEventFragment = AddJournalStressLevelFragmentDirections.actionAddJournalStressLevelToAddJournalEventFragment()
-				toEventFragment.stressLevel = percentageArg
-				view.findNavController().navigate(toEventFragment)
+				navigate(view)
 			}
 		}
 
 		return root
+	}
+
+	private fun navigate(view: View) {
+		val toEventFragment = AddJournalStressLevelFragmentDirections.actionAddJournalStressLevelToAddJournalEventFragment()
+		toEventFragment.stressLevel = percentageArg
+		view.findNavController().navigate(toEventFragment)
 	}
 
 	private fun loadActionBar() {

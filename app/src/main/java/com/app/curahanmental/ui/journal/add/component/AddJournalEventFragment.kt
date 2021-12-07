@@ -20,6 +20,7 @@ class AddJournalEventFragment : Fragment() {
 	private var _binding: FragmentAddJournalEventBinding? = null
 	private val binding get() = _binding!!
 	private lateinit var event: String
+	private var stressLevel = 0
 	private lateinit var eventDetail: String
 
 	override fun onCreateView(
@@ -29,7 +30,7 @@ class AddJournalEventFragment : Fragment() {
 		// Inflate the layout for this fragment
 		_binding = FragmentAddJournalEventBinding.inflate(inflater, container, false)
 		val root: View = binding.root
-		val stressLevel = AddJournalEventFragmentArgs.fromBundle(arguments as Bundle).stressLevel
+		stressLevel = AddJournalEventFragmentArgs.fromBundle(arguments as Bundle).stressLevel
 
 		loadActionBar()
 
@@ -47,9 +48,7 @@ class AddJournalEventFragment : Fragment() {
 			}
 
 			eventDetailText.addTextChangedListener(object : TextWatcher {
-				override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-				}
+				override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
 				override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 					if (eventDetailText.text.toString().isNotEmpty()) {
@@ -67,16 +66,19 @@ class AddJournalEventFragment : Fragment() {
 			})
 
 			nextButton.setOnClickListener { view ->
-				val toManageEvent = AddJournalEventFragmentDirections.actionAddJournalEventFragmentToAddJournalManageEventFragment()
-				toManageEvent.stressLevel = stressLevel
-				toManageEvent.event = event
-				toManageEvent.eventDetail = eventDetail
-				view.findNavController().navigate(toManageEvent)
+				navigate(view)
 			}
-
 		}
 
 		return root
+	}
+
+	private fun navigate(view: View) {
+		val toManageEvent = AddJournalEventFragmentDirections.actionAddJournalEventFragmentToAddJournalManageEventFragment()
+		toManageEvent.stressLevel = stressLevel
+		toManageEvent.event = event
+		toManageEvent.eventDetail = eventDetail
+		view.findNavController().navigate(toManageEvent)
 	}
 
 	private fun loadActionBar() {

@@ -19,6 +19,9 @@ class AddJournalManageEventFragment : Fragment(), View.OnClickListener {
 
 	private var _binding: FragmentAddJournalManageEventBinding? = null
 	private val binding get() = _binding!!
+	private var stressLevel = 0
+	private lateinit var event: String
+	private lateinit var eventDetail: String
 	private lateinit var manageEvent: String
 	private lateinit var manageEventDetail: String
 
@@ -30,21 +33,21 @@ class AddJournalManageEventFragment : Fragment(), View.OnClickListener {
 		// Inflate the layout for this fragment
 		_binding = FragmentAddJournalManageEventBinding.inflate(inflater, container, false)
 		val root: View = binding.root
-		val stressLevel =
+		stressLevel =
 			AddJournalManageEventFragmentArgs.fromBundle(arguments as Bundle).stressLevel
-		val event = AddJournalManageEventFragmentArgs.fromBundle(arguments as Bundle).event
-		val eventDetail =
+		event = AddJournalManageEventFragmentArgs.fromBundle(arguments as Bundle).event
+		eventDetail =
 			AddJournalManageEventFragmentArgs.fromBundle(arguments as Bundle).eventDetail
 
 		loadActionBar()
 
-		binding.thumbUpButton.setOnClickListener(this)
-		binding.thumbDownButton.setOnClickListener(this)
-		binding.questionMarkButton.setOnClickListener(this)
+		binding.let {
+			it.thumbUpButton.setOnClickListener(this)
+			it.thumbDownButton.setOnClickListener(this)
+			it.questionMarkButton.setOnClickListener(this)
+		}
 		binding.manageEventText.addTextChangedListener(object : TextWatcher {
-			override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-			}
+			override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
 			override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 				binding.apply {
@@ -65,16 +68,21 @@ class AddJournalManageEventFragment : Fragment(), View.OnClickListener {
 		})
 
 		binding.nextButton.setOnClickListener { view ->
-			val toReasonFragment = AddJournalManageEventFragmentDirections.actionAddJournalManageEventFragmentToAddJournalReasonFragment2()
-			toReasonFragment.stressLevel = stressLevel
-			toReasonFragment.event = event
-			toReasonFragment.eventDetail = eventDetail
-			toReasonFragment.manageEvent = manageEvent
-			toReasonFragment.manageEventDetail = manageEventDetail
-			view.findNavController().navigate(toReasonFragment)
+			navigate(view)
 		}
 
 		return root
+	}
+
+	private fun navigate(view: View) {
+		val toReasonFragment =
+			AddJournalManageEventFragmentDirections.actionAddJournalManageEventFragmentToAddJournalReasonFragment2()
+		toReasonFragment.stressLevel = stressLevel
+		toReasonFragment.event = event
+		toReasonFragment.eventDetail = eventDetail
+		toReasonFragment.manageEvent = manageEvent
+		toReasonFragment.manageEventDetail = manageEventDetail
+		view.findNavController().navigate(toReasonFragment)
 	}
 
 	private fun loadActionBar() {
