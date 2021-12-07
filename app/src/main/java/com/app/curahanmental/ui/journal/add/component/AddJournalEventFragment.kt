@@ -7,9 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.app.curahanmental.R
 import com.app.curahanmental.databinding.FragmentAddJournalEventBinding
+import com.google.android.material.button.MaterialButton
 
 
 class AddJournalEventFragment : Fragment() {
@@ -26,8 +29,10 @@ class AddJournalEventFragment : Fragment() {
 		// Inflate the layout for this fragment
 		_binding = FragmentAddJournalEventBinding.inflate(inflater, container, false)
 		val root: View = binding.root
-
 		val stressLevel = AddJournalEventFragmentArgs.fromBundle(arguments as Bundle).stressLevel
+
+		loadActionBar()
+
 		binding.apply {
 			spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 				override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
@@ -72,5 +77,17 @@ class AddJournalEventFragment : Fragment() {
 		}
 
 		return root
+	}
+
+	private fun loadActionBar() {
+		view?.findViewById<TextView>(R.id.journal_title)?.text = getString(R.string.stress_level)
+		view?.findViewById<MaterialButton>(R.id.back_button_fragment)?.setOnClickListener {
+			super.onDetach()
+		}
+	}
+
+	override fun onDestroyView() {
+		super.onDestroyView()
+		_binding = null
 	}
 }

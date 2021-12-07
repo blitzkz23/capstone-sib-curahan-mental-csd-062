@@ -34,7 +34,7 @@
         tools:layout="@layout/fragment_add_journal_manage_event" >
         <action
             android:id="@+id/action_addJournalManageEventFragment_to_addJournalReasonFragment2"
-            app:destination="@id/addJournalReasonFragment2" />
+            app:destination="@id/addJournalReasonFragment" />
         <argument
             android:name="stressLevel"
             app:argType="integer"
@@ -49,8 +49,29 @@
             android:defaultValue="yes" />
     </fragment>
     <fragment
-        android:id="@+id/addJournalReasonFragment2"
+        android:id="@+id/addJournalReasonFragment"
         android:name="com.app.curahanmental.ui.journal.add.component.AddJournalReasonFragment"
         android:label="fragment_add_journal_reason"
-        tools:layout="@layout/fragment_add_journal_reason" />
+        tools:layout="@layout/fragment_add_journal_reason">
+        <argument
+            android:name="stressLevel"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="event"
+            android:defaultValue="Lainnya..."
+            app:argType="string" />
+        <argument
+            android:name="eventDetail"
+            android:defaultValue="yes"
+            app:argType="string" />
+        <argument
+            android:name="manageEvent"
+            android:defaultValue="Kebingungan"
+            app:argType="string" />
+        <argument
+            android:name="manageEventDetail"
+            android:defaultValue="yes"
+            app:argType="string" />
+    </fragment>
 </navigation>

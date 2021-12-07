@@ -67,6 +67,9 @@
     <string name="event_detail">Deskripsikan situasi tersebut, apa yang terjadi dan mengapa</string>
     <string name="detail">Detail</string>
     <string name="idel_solution">Ideal Solution</string>
+    <string name="good">Baik</string>
+    <string name="bad">Buruk</string>
+    <string name="confused">Kebingungan</string>
 
     <!-- Spinner array -->
     <string-array name="event">
