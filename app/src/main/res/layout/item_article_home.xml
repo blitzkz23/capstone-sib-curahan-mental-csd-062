@@ -19,14 +19,13 @@
                 android:id="@+id/article_card_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 app:cardCornerRadius="25dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/viewnews_imageView"
+                    android:id="@+id/article_image_view_home"
                     android:layout_width="107dp"
                     android:layout_height="103dp"
                     android:src="@color/curahan_dark_green" />

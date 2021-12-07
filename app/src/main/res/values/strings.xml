@@ -64,6 +64,7 @@
 
     <!-- Jornal -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_article">Article</string>
 
 
 </resources>
