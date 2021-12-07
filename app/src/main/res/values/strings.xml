@@ -64,6 +64,13 @@
     <string name="stress_level">Stress Level</string>
     <string name="stress_percentage">%d %% </string>
     <string name="title_placeholder">Title</string>
+    <string name="event_detail">Deskripsikan situasi tersebut, apa yang terjadi dan mengapa</string>
+    <string name="detail">Detail</string>
 
+    <!-- Spinner arrat -->
+    <string-array name="event">
+        <item>Coba</item>
+        <item>Bisa</item>
+    </string-array>
 
 </resources>
