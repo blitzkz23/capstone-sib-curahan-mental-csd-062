@@ -3,20 +3,14 @@ package com.app.curahanmental.ui.main
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.app.curahanmental.R
 import com.app.curahanmental.databinding.ActivityMainBinding
-import com.app.curahanmental.ui.auth.login.LoginActivity
 import com.app.curahanmental.ui.settings.SettingsActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.button.MaterialButton
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 

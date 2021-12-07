@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/journal_navigation"
+    app:startDestination="@id/addJournalStressLevel">
+
+    <fragment
+        android:id="@+id/addJournalStressLevel"
+        android:name="com.app.curahanmental.ui.journal.add.component.AddJournalStressLevel"
+        android:label="fragment_add_journal_stress_level"
+        tools:layout="@layout/fragment_add_journal_stress_level" />
+</navigation>
