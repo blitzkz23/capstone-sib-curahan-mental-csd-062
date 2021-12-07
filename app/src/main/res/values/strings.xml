@@ -66,6 +66,7 @@
     <string name="title_placeholder">Title</string>
     <string name="event_detail">Deskripsikan situasi tersebut, apa yang terjadi dan mengapa</string>
     <string name="detail">Detail</string>
+    <string name="idel_solution">Ideal Solution</string>
 
     <!-- Spinner array -->
     <string-array name="event">

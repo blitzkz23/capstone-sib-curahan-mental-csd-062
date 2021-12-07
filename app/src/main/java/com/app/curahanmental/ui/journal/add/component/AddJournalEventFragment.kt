@@ -57,7 +57,7 @@ class AddJournalEventFragment : Fragment() {
 				}
 
 				override fun afterTextChanged(p0: Editable?) {
-					eventDetail = eventDetailText.text.toString()
+					eventDetail = eventDetailText.text.toString().trim()
 				}
 			})
 
