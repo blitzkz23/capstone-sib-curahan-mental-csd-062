@@ -41,7 +41,7 @@
         android:layout_width="@dimen/dimens_0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimens_16dp"
-        android:layout_marginTop="@dimen/dimens_16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="@dimen/dimens_16dp"
         android:entries="@array/event"
         android:minHeight="@dimen/dimens_48dp"
@@ -56,34 +56,36 @@
         style="@style/Text.Header4"
         android:layout_width="@dimen/dimens_0dp"
         android:layout_marginStart="@dimen/dimens_16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="@dimen/dimens_16dp"
         android:text="@string/event_detail"
+        android:textAlignment="center"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/spinner" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/event_detail"
+        android:id="@+id/event_detail_column"
         style="@style/TextInputLayoutStyle1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="@dimen/dimens_16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:hint="@string/detail"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detailquestion">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/percentage"
+            android:id="@+id/event_detail_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:lines="2"
             android:maxLength="255"
-            android:maxLines="1"
-            android:hint="@string/detail"
-            android:textAlignment="center"
+            android:maxLines="4"
             android:textColor="@color/curahan_dark_green"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -102,6 +104,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/event_detail" />
+        app:layout_constraintTop_toBottomOf="@+id/event_detail_column" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

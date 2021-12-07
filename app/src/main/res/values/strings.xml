@@ -67,10 +67,18 @@
     <string name="event_detail">Deskripsikan situasi tersebut, apa yang terjadi dan mengapa</string>
     <string name="detail">Detail</string>
 
-    <!-- Spinner arrat -->
+    <!-- Spinner array -->
     <string-array name="event">
-        <item>Coba</item>
-        <item>Bisa</item>
+        <item>Deadline pada kerja/studi</item>
+        <item>Masalah pada hubungan</item>
+        <item>Pertengkaran keluarga</item>
+        <item>Kekurangan uang</item>
+        <item>Tidak ada hal yang menarik lagi</item>
+        <item>Kesalahpahaman</item>
+        <item>Konflik dengan rekan kerja/studi</item>
+        <item>Ujian</item>
+        <item>Kemacetan</item>
+        <item>Lainnya…</item>
     </string-array>
 
 </resources>
