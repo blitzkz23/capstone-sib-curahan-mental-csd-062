@@ -24,14 +24,17 @@
             app:argType="integer"
             android:defaultValue="0" />
         <action
-            android:id="@+id/action_addJournalEventFragment_to_addJournalReasonFragment"
-            app:destination="@id/addJournalReasonFragment" />
+            android:id="@+id/action_addJournalEventFragment_to_addJournalManageEventFragment"
+            app:destination="@id/addJournalManageEventFragment" />
     </fragment>
     <fragment
-        android:id="@+id/addJournalReasonFragment"
-        android:name="com.app.curahanmental.ui.journal.add.component.AddJournalReasonFragment"
-        android:label="fragment_add_journal_reason"
-        tools:layout="@layout/fragment_add_journal_reason" >
+        android:id="@+id/addJournalManageEventFragment"
+        android:name="com.app.curahanmental.ui.journal.add.component.AddJournalManageEventFragment"
+        android:label="fragment_add_journal_manage_event"
+        tools:layout="@layout/fragment_add_journal_manage_event" >
+        <action
+            android:id="@+id/action_addJournalManageEventFragment_to_addJournalReasonFragment2"
+            app:destination="@id/addJournalReasonFragment2" />
         <argument
             android:name="stressLevel"
             app:argType="integer"
@@ -43,6 +46,11 @@
         <argument
             android:name="eventDetail"
             app:argType="string"
-            android:defaultValue="Yes" />
+            android:defaultValue="yes" />
     </fragment>
+    <fragment
+        android:id="@+id/addJournalReasonFragment2"
+        android:name="com.app.curahanmental.ui.journal.add.component.AddJournalReasonFragment"
+        android:label="fragment_add_journal_reason"
+        tools:layout="@layout/fragment_add_journal_reason" />
 </navigation>

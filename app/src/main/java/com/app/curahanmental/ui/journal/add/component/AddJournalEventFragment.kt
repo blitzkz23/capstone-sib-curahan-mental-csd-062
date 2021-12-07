@@ -62,11 +62,11 @@ class AddJournalEventFragment : Fragment() {
 			})
 
 			nextButton.setOnClickListener { view ->
-				val toReasonFragment = AddJournalEventFragmentDirections.actionAddJournalEventFragmentToAddJournalReasonFragment()
-				toReasonFragment.stressLevel = stressLevel
-				toReasonFragment.event = event
-				toReasonFragment.eventDetail = eventDetail
-				view.findNavController().navigate(toReasonFragment)
+				val toManageEvent = AddJournalEventFragmentDirections.actionAddJournalEventFragmentToAddJournalManageEventFragment()
+				toManageEvent.stressLevel = stressLevel
+				toManageEvent.event = event
+				toManageEvent.eventDetail = eventDetail
+				view.findNavController().navigate(toManageEvent)
 			}
 
 		}
