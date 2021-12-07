@@ -66,10 +66,12 @@
     <string name="title_placeholder">Title</string>
     <string name="event_detail">Deskripsikan situasi tersebut, apa yang terjadi dan mengapa</string>
     <string name="detail">Detail</string>
-    <string name="idel_solution">Ideal Solution</string>
+    <string name="ideal_solution">Solusi Ideal</string>
     <string name="good">Baik</string>
     <string name="bad">Buruk</string>
     <string name="confused">Kebingungan</string>
+    <string name="reaction">Analisa reaksimu, apa sekiranya penyebab asli dari reaksi tersebut?</string>
+    <string name="reaction_question">Silahkan analisa dan tulis penyebab asli reaksi Anda dalam keadaaan yang tenang dan nyaman</string>
 
     <!-- Spinner array -->
     <string-array name="event">
@@ -82,6 +84,19 @@
         <item>Konflik dengan rekan kerja/studi</item>
         <item>Ujian</item>
         <item>Kemacetan</item>
+        <item>Lainnya…</item>
+    </string-array>
+
+    <string-array name="reason">
+        <item>Tidak percaya diri</item>
+        <item>Ketidakpastian masa depan</item>
+        <item>Sulit untuk dijelaskan</item>
+        <item>Persimisme</item>
+        <item>Hilang kendali</item>
+        <item>Takut kesendirian</item>
+        <item>Terlalu berekspektasi</item>
+        <item>Suatu hal tidak terlalu penting</item>
+        <item>Suatu hal terlalu penting</item>
         <item>Lainnya…</item>
     </string-array>
 

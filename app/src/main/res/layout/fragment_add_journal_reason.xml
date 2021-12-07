@@ -1,14 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.journal.add.component.AddJournalReasonFragment">
+    tools:context=".ui.journal.add.component.AddJournalEventFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/custom_action_bar_add_journal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/stress_page_header"
+        style="@style/Text.Header3"
+        android:layout_width="@dimen/dimens_0dp"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_24dp"
+        android:layout_marginEnd="@dimen/dimens_16dp"
+        android:text="@string/reaction"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_home" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="@dimen/dimens_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/dimens_16dp"
+        android:entries="@array/reason"
+        android:minHeight="@dimen/dimens_48dp"
+        android:paddingTop="@dimen/dimens_12dp"
+        android:paddingBottom="@dimen/dimens_12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stress_page_header" />
+
+    <TextView
+        android:id="@+id/detailquestion"
+        style="@style/Text.Header5"
+        android:layout_width="@dimen/dimens_0dp"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="@dimen/dimens_16dp"
+        android:text="@string/reaction_question"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reason_detail_column"
+        style="@style/TextInputLayoutStyle1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailquestion">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reason_detail_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="3"
+            android:maxLength="255"
+            android:maxLines="4"
+            android:textColor="@color/curahan_dark_green"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/next_button"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:clickable="false"
+        android:enabled="false"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/selanjutnya"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reason_detail_column" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
