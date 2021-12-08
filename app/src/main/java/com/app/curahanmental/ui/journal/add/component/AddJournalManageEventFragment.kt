@@ -23,7 +23,7 @@ class AddJournalManageEventFragment : Fragment(), View.OnClickListener {
 	private lateinit var event: String
 	private lateinit var eventDetail: String
 	private lateinit var manageEvent: String
-	private lateinit var manageEventDetail: String
+	private lateinit var idealEventScenario: String
 
 
 	override fun onCreateView(
@@ -56,12 +56,12 @@ class AddJournalManageEventFragment : Fragment(), View.OnClickListener {
 		}
 
 		//Listener for text input edit
-		binding.manageEventText.addTextChangedListener(object : TextWatcher {
+		binding.idealSolutionText.addTextChangedListener(object : TextWatcher {
 			override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
 			override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 				binding.apply {
-					if (manageEventText.text.toString().isNotEmpty()) {
+					if (idealSolutionText.text.toString().isNotEmpty()) {
 						nextButton.isClickable = true
 						nextButton.isEnabled = true
 					} else {
@@ -72,7 +72,7 @@ class AddJournalManageEventFragment : Fragment(), View.OnClickListener {
 			}
 
 			override fun afterTextChanged(p0: Editable?) {
-				manageEventDetail = binding.manageEventText.text.toString().trim()
+				idealEventScenario = binding.idealSolutionText.text.toString().trim()
 			}
 
 		})
@@ -90,7 +90,7 @@ class AddJournalManageEventFragment : Fragment(), View.OnClickListener {
 		toReasonFragment.event = event
 		toReasonFragment.eventDetail = eventDetail
 		toReasonFragment.manageEvent = manageEvent
-		toReasonFragment.manageEventDetail = manageEventDetail
+		toReasonFragment.manageEventDetail = idealEventScenario
 		view.findNavController().navigate(toReasonFragment)
 	}
 

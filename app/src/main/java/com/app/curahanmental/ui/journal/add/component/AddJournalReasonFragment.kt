@@ -8,13 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.app.curahanmental.R
+import com.app.curahanmental.data.source.local.entity.JournalEntity
 import com.app.curahanmental.databinding.FragmentAddJournalReasonBinding
 import com.app.curahanmental.ui.journal.add.AddJournalViewModel
 import com.app.curahanmental.ui.viemodel.ViewModelFactory
 import com.google.android.material.button.MaterialButton
+import java.util.*
 
 class AddJournalReasonFragment : Fragment() {
 
@@ -24,10 +27,11 @@ class AddJournalReasonFragment : Fragment() {
 	private lateinit var event: String
 	private lateinit var eventDetail: String
 	private lateinit var manageEvent: String
-	private lateinit var manageEventDetail: String
+	private lateinit var idealEventScenario: String
 	private lateinit var reason: String
 	private lateinit var reasonDetail: String
 	private lateinit var addJournalViewModel: AddJournalViewModel
+	private var dateNow: Long = 0
 
 	override fun onCreateView(
 		inflater: LayoutInflater, container: ViewGroup?,
@@ -48,10 +52,11 @@ class AddJournalReasonFragment : Fragment() {
 		eventDetail =
 			AddJournalReasonFragmentArgs.fromBundle(arguments as Bundle).eventDetail
 		manageEvent = AddJournalReasonFragmentArgs.fromBundle(arguments as Bundle).manageEvent
-		manageEventDetail =
+		idealEventScenario =
 			AddJournalReasonFragmentArgs.fromBundle(arguments as Bundle).manageEventDetail
 
 		loadActionBar()
+		getTodayDate()
 
 		return root
 	}
@@ -86,10 +91,50 @@ class AddJournalReasonFragment : Fragment() {
 			})
 
 			finishButton.setOnClickListener {
-				// TODO : nanti implement db here
+				insertToDb(
+					stressLevel,
+					event,
+					eventDetail,
+					manageEvent,
+					idealEventScenario,
+					reason,
+					reasonDetail,
+					dateNow
+				)
+				Toast.makeText(activity, getString(R.string.journal_added), Toast.LENGTH_SHORT)
+					.show()
+				activity?.finish()
 			}
 
 		}
+	}
+
+	private fun insertToDb(
+		stressLevel: Int,
+		event: String,
+		eventDetail: String,
+		manageEvent: String,
+		idealEventScenario: String,
+		reason: String,
+		reasonDetail: String,
+		date: Long
+	) {
+		val journal = JournalEntity(
+			stressLevel = stressLevel,
+			event = event,
+			eventDetail = eventDetail,
+			manageEvent = manageEvent,
+			idealEventScenario = idealEventScenario,
+			reason = reason,
+			reasonDetail = reasonDetail,
+			date = date
+		)
+		addJournalViewModel.insertJournal(journal)
+	}
+
+	private fun getTodayDate() {
+		val calendar = Calendar.getInstance()
+		dateNow = calendar.timeInMillis
 	}
 
 	private fun loadActionBar() {

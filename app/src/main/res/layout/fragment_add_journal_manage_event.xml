@@ -76,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@id/manage_event_layout" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/event_detail_column"
+        android:id="@+id/ideal_solution_column"
         style="@style/TextInputLayoutStyle1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
         app:layout_constraintTop_toBottomOf="@id/detailquestion">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/event_detail_text"
+            android:id="@+id/ideal_solution_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:lines="3"
@@ -113,7 +113,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/event_detail_column" />
+        app:layout_constraintTop_toBottomOf="@+id/ideal_solution_column" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/question_mark_button"

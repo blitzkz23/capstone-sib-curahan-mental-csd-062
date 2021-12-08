@@ -85,6 +85,7 @@
     <string name="selesai">Selesai</string>
     <string name="manage_event_question">Bagaimana Anda mengelola kejadian yang membuat stres tersebut?</string>
     <string name="ideal_solution_question">Deskripsikan apa yang seharusnya Anda lakukan, skenario ideal Anda</string>
+    <string name="journal_added">Jurnal telah ditambahkan</string>
 
     <!-- Spinner array -->
     <string-array name="event">
