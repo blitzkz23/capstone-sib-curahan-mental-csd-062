@@ -13,4 +13,5 @@ class AddJournalActivity : AppCompatActivity() {
 		setContentView(binding.root)
 
 	}
+
 }

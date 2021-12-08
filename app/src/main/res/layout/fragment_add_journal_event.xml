@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.journal.add.component.AddJournalStressLevelFragment">
+    tools:context=".ui.journal.add.component.AddJournalEventFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_home"
@@ -27,82 +27,68 @@
         android:id="@+id/stress_page_header"
         style="@style/Text.Header3"
         android:layout_width="@dimen/dimens_0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/stress_level_header"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="@dimen/dimens_24dp"
+        android:layout_marginEnd="@dimen/dimens_16dp"
+        android:text="@string/stress_level_header2"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/app_bar_home" />
 
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="@dimen/dimens_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/dimens_16dp"
+        android:entries="@array/event"
+        android:minHeight="@dimen/dimens_48dp"
+        android:paddingTop="@dimen/dimens_12dp"
+        android:paddingBottom="@dimen/dimens_12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stress_page_header" />
+
+    <TextView
+        android:id="@+id/detailquestion"
+        style="@style/Text.Header4"
+        android:layout_width="@dimen/dimens_0dp"
+        android:layout_marginStart="@dimen/dimens_16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="@dimen/dimens_16dp"
+        android:text="@string/event_detail"
+        android:textAlignment="center"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner" />
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/stress_indicator"
+        android:id="@+id/event_detail_column"
         style="@style/TextInputLayoutStyle1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="@dimen/dimens_16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:enabled="false"
+        android:hint="@string/detail"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/stress_page_header">
+        app:layout_constraintTop_toBottomOf="@id/detailquestion">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/percentage"
+            android:id="@+id/event_detail_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:lines="3"
             android:maxLength="255"
-            android:maxLines="1"
-            android:textAlignment="center"
-            android:textColor="@color/curahan_dark_green"
+            android:maxLines="4"
             tools:ignore="SpeakableTextPresentCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.slider.Slider
-        android:id="@+id/slider"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="@string/stress_slider"
-        android:stepSize="10.0"
-        android:valueFrom="0.0"
-        android:valueTo="100.0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pokemin" />
-
-    <ImageView
-        android:id="@+id/pokemin"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="92dp"
-        android:contentDescription="@string/pokemin"
-        android:src="@drawable/pokemon"
-        app:layout_constraintEnd_toStartOf="@+id/godzimax"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stress_indicator" />
-
-    <ImageView
-        android:id="@+id/godzimax"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="@string/godzimax"
-        android:src="@drawable/godzilla"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/pokemin"
-        app:layout_constraintTop_toBottomOf="@+id/stress_indicator" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/next_button"
@@ -117,7 +103,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/slider" />
-
+        app:layout_constraintTop_toBottomOf="@+id/event_detail_column" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

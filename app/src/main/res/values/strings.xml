@@ -43,7 +43,8 @@
     <string name="error_password2">Password tidak boleh kurang dari 6 karakter.</string>
     <string name="logout_button">Logout Button</string>
 
-    <!-- home -->
+
+    <!-- Home -->
     <string name="title_home_greetings">Selamat datang, </string>
     <string name="title_home_greetings2">semoga anda dalam keadaan yang baik</string>
     <string name="title_home_tips">Tips</string>
@@ -61,10 +62,55 @@
     <!-- article -->
     <string name="article_title_home">Cara Mengatasi Depresi Berkelanjutan</string>
     <string name="article_description_home">Sebaiknya jangan begadang dan perbanyak olahraga sehingga menjaga imun tubuh hehe</string>
+  <string name="title_article">Article</string>
 
-    <!-- Jornal -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_article">Article</string>
+    <!-- Journal -->
+    <string name="stress_level_header">Seberapa tingkat stres Anda saat ini?</string>
+    <string name="stress_level_header2">Kejadian apa yang mempengaruhi stres Anda saat ini?</string>
+    <string name="stress_slider">Stress Slider</string>
+    <string name="pokemin">Pokemin</string>
+    <string name="godzimax">Godzimax</string>
+    <string name="selanjutnya">Selanjutnya</string>
+    <string name="stress_level">Stress Level</string>
+    <string name="stress_percentage">%d %% </string>
+    <string name="title_placeholder">Title</string>
+    <string name="event_detail">Deskripsikan situasi tersebut, apa yang terjadi dan mengapa</string>
+    <string name="detail">Detail</string>
+    <string name="ideal_solution">Solusi Ideal</string>
+    <string name="good">Baik</string>
+    <string name="bad">Buruk</string>
+    <string name="confused">Kebingungan</string>
+    <string name="reaction">Analisa reaksimu, apa sekiranya penyebab asli dari reaksi tersebut?</string>
+    <string name="reaction_question">Silahkan analisa dan tulis penyebab asli reaksi Anda dalam keadaaan yang tenang dan nyaman</string>
+    <string name="selesai">Selesai</string>
+    <string name="manage_event_question">Bagaimana Anda mengelola kejadian yang membuat stres tersebut?</string>
+    <string name="ideal_solution_question">Deskripsikan apa yang seharusnya Anda lakukan, skenario ideal Anda</string>
 
+    <!-- Spinner array -->
+    <string-array name="event">
+        <item>Deadline pada kerja/studi</item>
+        <item>Masalah pada hubungan</item>
+        <item>Pertengkaran keluarga</item>
+        <item>Kekurangan uang</item>
+        <item>Tidak ada hal yang menarik lagi</item>
+        <item>Kesalahpahaman</item>
+        <item>Konflik dengan rekan kerja/studi</item>
+        <item>Ujian</item>
+        <item>Kemacetan</item>
+        <item>Lainnya…</item>
+    </string-array>
+
+    <string-array name="reason">
+        <item>Tidak percaya diri</item>
+        <item>Ketidakpastian masa depan</item>
+        <item>Sulit untuk dijelaskan</item>
+        <item>Persimisme</item>
+        <item>Hilang kendali</item>
+        <item>Takut kesendirian</item>
+        <item>Terlalu berekspektasi</item>
+        <item>Suatu hal tidak terlalu penting</item>
+        <item>Suatu hal terlalu penting</item>
+        <item>Lainnya…</item>
+    </string-array>
 
 </resources>

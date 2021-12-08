@@ -7,7 +7,71 @@
 
     <fragment
         android:id="@+id/addJournalStressLevel"
-        android:name="com.app.curahanmental.ui.journal.add.component.AddJournalStressLevel"
+        android:name="com.app.curahanmental.ui.journal.add.component.AddJournalStressLevelFragment"
         android:label="fragment_add_journal_stress_level"
-        tools:layout="@layout/fragment_add_journal_stress_level" />
+        tools:layout="@layout/fragment_add_journal_stress_level">
+        <action
+            android:id="@+id/action_addJournalStressLevel_to_addJournalEventFragment"
+            app:destination="@id/addJournalEventFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addJournalEventFragment"
+        android:name="com.app.curahanmental.ui.journal.add.component.AddJournalEventFragment"
+        android:label="fragment_add_journal_event"
+        tools:layout="@layout/fragment_add_journal_event" >
+        <argument
+            android:name="stressLevel"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_addJournalEventFragment_to_addJournalManageEventFragment"
+            app:destination="@id/addJournalManageEventFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addJournalManageEventFragment"
+        android:name="com.app.curahanmental.ui.journal.add.component.AddJournalManageEventFragment"
+        android:label="fragment_add_journal_manage_event"
+        tools:layout="@layout/fragment_add_journal_manage_event" >
+        <action
+            android:id="@+id/action_addJournalManageEventFragment_to_addJournalReasonFragment2"
+            app:destination="@id/addJournalReasonFragment" />
+        <argument
+            android:name="stressLevel"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="event"
+            app:argType="string"
+            android:defaultValue="Lainnya..." />
+        <argument
+            android:name="eventDetail"
+            app:argType="string"
+            android:defaultValue="yes" />
+    </fragment>
+    <fragment
+        android:id="@+id/addJournalReasonFragment"
+        android:name="com.app.curahanmental.ui.journal.add.component.AddJournalReasonFragment"
+        android:label="fragment_add_journal_reason"
+        tools:layout="@layout/fragment_add_journal_reason">
+        <argument
+            android:name="stressLevel"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="event"
+            android:defaultValue="Lainnya..."
+            app:argType="string" />
+        <argument
+            android:name="eventDetail"
+            android:defaultValue="yes"
+            app:argType="string" />
+        <argument
+            android:name="manageEvent"
+            android:defaultValue="Kebingungan"
+            app:argType="string" />
+        <argument
+            android:name="manageEventDetail"
+            android:defaultValue="yes"
+            app:argType="string" />
+    </fragment>
 </navigation>

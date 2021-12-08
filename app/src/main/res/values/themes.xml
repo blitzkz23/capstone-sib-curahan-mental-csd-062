@@ -82,7 +82,11 @@
         <item name="fontFamily">@font/poppins_regular</item>
     </style>
 
-
+    <!-- TextInputLayoutStyle -->
+    <style name="TextInputLayoutStyle1" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/text_input_box_stroke</item>
+        <item name="boxStrokeWidth">2dp</item>
+    </style>
 
     <!-- Button Style -->
     <style name="Button.LightGreen" parent="ThemeOverlay.AppCompat">
