@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.app.curahanmental.databinding.ActivitySplashBinding
 import com.app.curahanmental.ui.auth.register.RegisterActivity
 import com.app.curahanmental.ui.welcome.onboarding.OnboardActivity
+import com.app.curahanmental.utils.Constants.SPLASH_TIMER
 import kotlinx.coroutines.*
 
 class SplashActivity : AppCompatActivity() {
@@ -18,7 +19,7 @@ class SplashActivity : AppCompatActivity() {
 		setContentView(activitySplashBinding?.root)
 
 		CoroutineScope(Dispatchers.Default).launch {
-			delay(1500)
+			delay(SPLASH_TIMER)
 			withContext(Dispatchers.Main) {
 				val intent = Intent(this@SplashActivity , OnboardActivity::class.java)
 				startActivity(intent)

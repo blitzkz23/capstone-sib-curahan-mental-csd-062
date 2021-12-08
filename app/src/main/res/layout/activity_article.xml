@@ -87,7 +87,7 @@
                 android:text="@string/article_title_home"/>
 
             <TextView
-                android:id="@+id/article_date_detail"
+                android:id="@+id/article_author_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimens_8dp"

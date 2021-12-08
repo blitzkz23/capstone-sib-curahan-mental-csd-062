@@ -7,5 +7,6 @@ object Constants {
     const val BASE_URL = BuildConfig.NEWS_API_BASE
     const val API_KEY = BuildConfig.NEWS_API_KEY
     const val PARAMS = BuildConfig.PARAMS
+    const val EXTRA_ARTICLE = "extra_article"
 
 }

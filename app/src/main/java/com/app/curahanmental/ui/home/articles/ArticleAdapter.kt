@@ -41,6 +41,12 @@ class ArticleAdapter: RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
                 articleTitleHome.text = content.title
                 articleDescriptionHome.text = content.description
 
+                itemView.setOnClickListener {
+                    val intent = Intent(itemView.context, ArticleActivity::class.java)
+                    intent.putExtra(ArticleActivity.ARTICLE, content)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    itemView.context.startActivity(intent)
+                }
             }
         }
     }
