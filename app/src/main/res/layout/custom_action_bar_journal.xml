@@ -9,6 +9,7 @@
     <ImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginStart="16dp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/curahan_alt_logo"
         app:layout_constraintBottom_toBottomOf="parent"
