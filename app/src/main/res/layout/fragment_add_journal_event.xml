@@ -94,6 +94,7 @@
         android:id="@+id/next_button"
         android:layout_width="350dp"
         android:layout_height="60dp"
+        android:backgroundTint="@color/button_state_color"
         android:clickable="false"
         android:enabled="false"
         android:fontFamily="@font/poppins_semibold"
