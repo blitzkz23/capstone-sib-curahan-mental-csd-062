@@ -26,6 +26,11 @@ class AddJournalStressLevelFragment : Fragment() {
 		val root: View = binding.root
 		loadActionBar()
 
+		return root
+	}
+
+	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+		super.onViewCreated(view, savedInstanceState)
 		binding.apply {
 			slider.addOnChangeListener { slider, value, fromUser ->
 				val percentageValue = slider.value.toInt()
@@ -41,12 +46,11 @@ class AddJournalStressLevelFragment : Fragment() {
 				navigate(view)
 			}
 		}
-
-		return root
 	}
 
 	private fun navigate(view: View) {
-		val toEventFragment = AddJournalStressLevelFragmentDirections.actionAddJournalStressLevelToAddJournalEventFragment()
+		val toEventFragment =
+			AddJournalStressLevelFragmentDirections.actionAddJournalStressLevelToAddJournalEventFragment()
 		toEventFragment.stressLevel = percentageArg
 		view.findNavController().navigate(toEventFragment)
 	}

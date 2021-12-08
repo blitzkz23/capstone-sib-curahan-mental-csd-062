@@ -36,6 +36,11 @@ class AddJournalEventFragment : Fragment() {
 
 		loadActionBar()
 
+		return root
+	}
+
+	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+		super.onViewCreated(view, savedInstanceState)
 		binding.apply {
 			spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 				override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
@@ -70,11 +75,11 @@ class AddJournalEventFragment : Fragment() {
 			}
 		}
 
-		return root
 	}
 
 	private fun navigate(view: View) {
-		val toManageEvent = AddJournalEventFragmentDirections.actionAddJournalEventFragmentToAddJournalManageEventFragment()
+		val toManageEvent =
+			AddJournalEventFragmentDirections.actionAddJournalEventFragmentToAddJournalManageEventFragment()
 		toManageEvent.stressLevel = stressLevel
 		toManageEvent.event = event
 		toManageEvent.eventDetail = eventDetail

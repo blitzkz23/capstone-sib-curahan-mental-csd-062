@@ -43,6 +43,11 @@ class AddJournalManageEventFragment : Fragment(), View.OnClickListener {
 
 		loadActionBar()
 
+		return root
+	}
+
+	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+		super.onViewCreated(view, savedInstanceState)
 		// Set click listener
 		binding.let {
 			it.thumbUpButton.setOnClickListener(this)
@@ -76,7 +81,6 @@ class AddJournalManageEventFragment : Fragment(), View.OnClickListener {
 			navigate(view)
 		}
 
-		return root
 	}
 
 	private fun navigate(view: View) {

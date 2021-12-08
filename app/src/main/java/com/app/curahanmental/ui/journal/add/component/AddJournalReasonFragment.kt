@@ -9,8 +9,11 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.app.curahanmental.R
 import com.app.curahanmental.databinding.FragmentAddJournalReasonBinding
+import com.app.curahanmental.ui.journal.add.AddJournalViewModel
+import com.app.curahanmental.ui.viemodel.ViewModelFactory
 import com.google.android.material.button.MaterialButton
 
 class AddJournalReasonFragment : Fragment() {
@@ -24,6 +27,7 @@ class AddJournalReasonFragment : Fragment() {
 	private lateinit var manageEventDetail: String
 	private lateinit var reason: String
 	private lateinit var reasonDetail: String
+	private lateinit var addJournalViewModel: AddJournalViewModel
 
 	override fun onCreateView(
 		inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +36,10 @@ class AddJournalReasonFragment : Fragment() {
 		// Inflate the layout for this fragment
 		_binding = FragmentAddJournalReasonBinding.inflate(inflater, container, false)
 		val root: View = binding.root
+
+		val viewModelFactory = requireContext().let { ViewModelFactory.getInstance(it) }
+		addJournalViewModel =
+			ViewModelProvider(this, viewModelFactory)[AddJournalViewModel::class.java]
 
 		// Get argument from previous fragment
 		stressLevel =
@@ -45,6 +53,11 @@ class AddJournalReasonFragment : Fragment() {
 
 		loadActionBar()
 
+		return root
+	}
+
+	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+		super.onViewCreated(view, savedInstanceState)
 		binding.apply {
 			spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 				override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
@@ -77,8 +90,6 @@ class AddJournalReasonFragment : Fragment() {
 			}
 
 		}
-
-		return root
 	}
 
 	private fun loadActionBar() {

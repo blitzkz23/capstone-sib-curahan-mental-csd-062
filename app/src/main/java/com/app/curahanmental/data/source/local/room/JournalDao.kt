@@ -3,7 +3,6 @@ package com.app.curahanmental.data.source.local.room
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.app.curahanmental.data.source.local.entity.JournalEntity
-import retrofit2.http.GET
 
 @Dao
 interface JournalDao {
