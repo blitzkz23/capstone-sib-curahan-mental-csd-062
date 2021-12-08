@@ -85,15 +85,15 @@
         android:id="@+id/signin_btn"
         android:layout_width="350dp"
         android:layout_height="60dp"
-        android:layout_marginTop="@dimen/dimens_120dp"
+        android:backgroundTint="@color/curahan_btn_orange"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/signin_account"
-        android:backgroundTint="@color/curahan_btn_orange"
         android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stress_indicator" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout1" />
 
     <TextView
         android:id="@+id/haveaccount"

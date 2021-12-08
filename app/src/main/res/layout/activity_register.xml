@@ -138,6 +138,7 @@
             android:layout_width="350dp"
             android:layout_height="60dp"
             android:layout_marginTop="@dimen/dimens_48dp"
+            android:backgroundTint="@color/curahan_btn_orange"
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/buat_akun2"
             android:textAllCaps="false"
