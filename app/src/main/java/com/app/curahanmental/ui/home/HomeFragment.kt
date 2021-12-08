@@ -10,7 +10,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import android.widget.ImageView
 import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
@@ -18,12 +17,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.curahanmental.R
-import com.app.curahanmental.data.source.remote.ApiResponses
 import com.app.curahanmental.databinding.FragmentHomeBinding
-import com.app.curahanmental.ui.auth.login.LoginActivity
-import com.google.android.material.button.MaterialButton
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import com.app.curahanmental.ui.home.articles.ArticleAdapter
 import com.app.curahanmental.ui.settings.SettingsActivity
 import com.app.curahanmental.ui.viemodel.ViewModelFactory

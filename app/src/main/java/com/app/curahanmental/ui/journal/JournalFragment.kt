@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import com.app.curahanmental.R
 import com.app.curahanmental.databinding.FragmentJournalBinding
 import com.app.curahanmental.ui.dashboard.JournalViewModel
+import com.app.curahanmental.ui.viemodel.ViewModelFactory
 
 class JournalFragment : Fragment() {
 
@@ -25,8 +26,8 @@ class JournalFragment : Fragment() {
 		container: ViewGroup?,
 		savedInstanceState: Bundle?
 	): View {
-		journalViewModel =
-			ViewModelProvider(this).get(JournalViewModel::class.java)
+		val viewModelFactory = requireContext().let { ViewModelFactory.getInstance(it) }
+		journalViewModel = ViewModelProvider(this, viewModelFactory)[JournalViewModel::class.java]
 
 		_binding = FragmentJournalBinding.inflate(inflater, container, false)
 		val root: View = binding.root
