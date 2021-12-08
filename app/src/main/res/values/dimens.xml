@@ -22,4 +22,5 @@
     <dimen name="constraint_guide_left_percent">0.05</dimen>
     <dimen name="constraint_guide_right_percent">0.95</dimen>
     <dimen name="constraint_guide_top_percent">0.10</dimen>
+    <dimen name="dimens_80dp">80dp</dimen>
 </resources>

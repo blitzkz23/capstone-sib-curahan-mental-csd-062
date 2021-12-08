@@ -31,7 +31,7 @@ class RegisterActivity : AppCompatActivity() {
 		registerViewModel.authRes.observe(this@RegisterActivity) {
 			if (it.isSuccessful) {
 				startActivity(Intent(this@RegisterActivity, LoginActivity::class.java).also {
-					Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+					it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 				})
 				finish()
 			} else {

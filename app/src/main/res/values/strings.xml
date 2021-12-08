@@ -43,18 +43,28 @@
     <string name="error_password2">Password tidak boleh kurang dari 6 karakter.</string>
     <string name="logout_button">Logout Button</string>
 
+
     <!-- Home -->
-    <string name="title_home_greetings">Selamat datang, %s</string>
+    <string name="title_home_greetings">Selamat datang, </string>
     <string name="title_home_greetings2">semoga anda dalam keadaan yang baik</string>
     <string name="title_home_tips">Tips</string>
     <string name="title_home_article">Article</string>
     <string name="message_home_article">Article</string>
-    <string name="message_home_tips">Tips</string>
+    <string name="message_home_tips">Jaga Kesehatan Mental</string>
     <string name="filter_button">Filter Button</string>
     <string name="add_journal">Add Journal</string>
+    <string name="tips">mengatasi depresi yang berkelanjutan</string>
+    <!-- settings -->
+    <string name="title_settings">Settings</string>
+    <string name="settings_logout">Logout</string>
+    <string name="title_settings_account">Akun Anda</string>
+    <string name="title_home_banner">Temukan pesan dukungan</string>
+    <!-- article -->
+    <string name="article_title_home">Cara Mengatasi Depresi Berkelanjutan</string>
+    <string name="article_description_home">Sebaiknya jangan begadang dan perbanyak olahraga sehingga menjaga imun tubuh hehe</string>
+  <string name="title_article">Article</string>
 
     <!-- Journal -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="stress_level_header">Seberapa tingkat stres Anda saat ini?</string>
     <string name="stress_level_header2">Kejadian apa yang mempengaruhi stres Anda saat ini?</string>
     <string name="stress_slider">Stress Slider</string>

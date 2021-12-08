@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginEnd="5dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="105dp"
+        android:layout_gravity="fill"
+        android:layout_marginHorizontal="1dp"
+        android:layout_marginVertical="2dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="10dp" >
+
+        <ImageView
+            android:id="@+id/img_tips"
+            tools:src="@drawable/curahan_logo1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="13dp"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/tv_tips_title"
+            tools:text="Lorem Ipsum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginStart="110dp"
+            style="@style/Text2"
+            android:textColor="@color/curahan_black_text"
+            android:textSize="17sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <TextView
+            android:id="@+id/tv_tips_desctiption"
+            android:text="@string/tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="46dp"
+            android:layout_marginStart="110dp"
+            android:layout_marginEnd="7dp"
+            android:lineSpacingExtra="-2.5sp"
+            android:textColor="@color/curahan_subtext"
+            android:textSize="13sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

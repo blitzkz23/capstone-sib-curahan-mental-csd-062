@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CurahanMental">
         <activity
+            android:name=".ui.home.articles.ArticleActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.journal.add.AddJournalActivity"
             android:exported="false" />
         <activity

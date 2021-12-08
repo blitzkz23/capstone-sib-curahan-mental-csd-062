@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
 		if (currentUser != null) {
 			Toast.makeText(this, "Kamu sudah login", Toast.LENGTH_SHORT).show()
 			startActivity(Intent(this@LoginActivity, MainActivity::class.java).also {
-				Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+				it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 			})
 			finish()
 		}
@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
 		loginViewModel.authRes.observe(this){
 			if (it.isSuccessful){
 				startActivity(Intent(this@LoginActivity, MainActivity::class.java).also {
-					Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+					it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 				})
 				finish()
 			}else{

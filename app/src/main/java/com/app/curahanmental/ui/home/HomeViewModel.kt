@@ -4,6 +4,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
+import com.app.curahanmental.data.source.JournalRepository
 import com.app.curahanmental.data.source.remote.entity.UserEntity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -12,40 +14,36 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.getValue
 
-class HomeViewModel : ViewModel() {
-	private val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
-	private val database: FirebaseDatabase by lazy { FirebaseDatabase.getInstance() }
+class HomeViewModel(private val repository: JournalRepository) : ViewModel() {
+	val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
+	private val db: FirebaseDatabase by lazy { FirebaseDatabase.getInstance() }
+	private val _currentData = MutableLiveData<String?>()
 
-	fun getUser(): LiveData<UserEntity> {
-		val userResult = MutableLiveData<UserEntity>()
-
-		val reference = database.reference
-		val userId = auth.currentUser?.uid
-
+	fun getCurrentUserDisplayName(){
+		val reference = db.reference
+		val userId = auth.currentUser.let { it?.uid }
 		if (userId != null) {
-			reference.child("users").child(userId).addValueEventListener(object :
+			reference.child("users").child(userId).addListenerForSingleValueEvent(object :
 				ValueEventListener {
 				override fun onDataChange(snapshot: DataSnapshot) {
 					val userProfile = snapshot.getValue<UserEntity>()
-
 					lateinit var user: UserEntity
 					if (userProfile != null) {
-						user = UserEntity(
-							userProfile.firstName,
-							userProfile.lastName,
-							userProfile.email,
-							userProfile.password,
-						)
-						userResult.postValue(user)
+						user = UserEntity(userProfile.firstName)
 					}
-					Log.i("firebase", "Got value $userProfile")
+					_currentData.postValue(user.firstName)
+
+					Log.i("Firebase", "Got users value: $userProfile")
 				}
 
 				override fun onCancelled(error: DatabaseError) {
-					Log.e("Firebase", "Failed to load user's data")
+					Log.e("Firebase", "Failed to load users data")
 				}
 			})
 		}
-		return userResult
 	}
+
+	val currentData: LiveData<String?> = _currentData
+
+	suspend fun getArticles() = repository.getArticles().asLiveData()
 }
