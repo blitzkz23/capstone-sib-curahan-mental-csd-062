@@ -86,7 +86,6 @@
             android:lines="3"
             android:maxLength="255"
             android:maxLines="4"
-            android:textColor="@color/curahan_dark_green"
             tools:ignore="SpeakableTextPresentCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>

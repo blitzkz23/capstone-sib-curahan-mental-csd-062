@@ -30,7 +30,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:text="Bagaimana Anda mengelola kejadian yang membuat stres tersebut? "
+        android:text="@string/manage_event_question"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +69,7 @@
         android:layout_marginStart="@dimen/dimens_16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="@dimen/dimens_16dp"
-        android:text="Deskripsikan apa yang seharusnya Anda lakukan, skenario ideal Anda"
+        android:text="@string/ideal_solution_question"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +95,6 @@
             android:lines="3"
             android:maxLength="255"
             android:maxLines="4"
-            android:textColor="@color/curahan_dark_green"
             tools:ignore="SpeakableTextPresentCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
