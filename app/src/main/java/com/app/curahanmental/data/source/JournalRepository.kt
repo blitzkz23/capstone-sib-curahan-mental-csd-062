@@ -9,8 +9,8 @@ import com.app.curahanmental.data.source.remote.entity.ArticleResponses
 import kotlinx.coroutines.flow.Flow
 
 class JournalRepository(
-    private val localDataSource: LocalDataSource,
-    private val remoteDataSource: RemoteDataSource
+    private val remoteDataSource: RemoteDataSource,
+    private val localDataSource: LocalDataSource
 ): JournalDataSource {
     override fun insertJournal(journalEntity: JournalEntity) {
         localDataSource.insertJournal(journalEntity)
@@ -35,9 +35,9 @@ class JournalRepository(
     companion object{
         @Volatile
         private var INSTANCE: JournalRepository? = null
-        fun getInstance(localDataSource: LocalDataSource, remoteDataSource: RemoteDataSource): JournalRepository =
+        fun getInstance(remoteDataSource: RemoteDataSource, localDataSource: LocalDataSource): JournalRepository =
             INSTANCE ?: synchronized(this){
-                JournalRepository(localDataSource, remoteDataSource).apply {
+                JournalRepository(remoteDataSource, localDataSource).apply {
                     INSTANCE = this
                 }
             }

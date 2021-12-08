@@ -17,7 +17,7 @@ class LocalDataSource private constructor(private val journalDao: JournalDao){
         @Volatile
         private var INSTANCE: LocalDataSource? = null
         fun getInstance(journalDao: JournalDao): LocalDataSource{
-            return INSTANCE ?: getInstance(journalDao).apply {
+            return INSTANCE ?: LocalDataSource(journalDao).apply {
                 INSTANCE = this
             }
         }

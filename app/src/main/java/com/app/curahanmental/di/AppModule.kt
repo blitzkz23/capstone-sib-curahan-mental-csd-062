@@ -10,9 +10,9 @@ import com.app.curahanmental.data.source.remote.RemoteDataSource
 object AppModule {
     fun provideJournalRepository(context: Context): JournalRepository{
         val db = JournalDatabase.getInstance(context)
-        val localDataSource = LocalDataSource.getInstance(db.journalDao())
         val remoteDataSource = RemoteDataSource.getInstance(ApiConfig())
+        val localDataSource = LocalDataSource.getInstance(db.journalDao())
 
-        return JournalRepository.getInstance(localDataSource, remoteDataSource)
+        return JournalRepository.getInstance(remoteDataSource, localDataSource)
     }
 }
