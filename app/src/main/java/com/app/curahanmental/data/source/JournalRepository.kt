@@ -3,8 +3,15 @@ package com.app.curahanmental.data.source
 import androidx.lifecycle.LiveData
 import com.app.curahanmental.data.source.local.LocalDataSource
 import com.app.curahanmental.data.source.local.entity.JournalEntity
+import com.app.curahanmental.data.source.remote.ApiResponses
+import com.app.curahanmental.data.source.remote.RemoteDataSource
+import com.app.curahanmental.data.source.remote.entity.ArticleResponses
+import kotlinx.coroutines.flow.Flow
 
-class JournalRepository(private val localDataSource: LocalDataSource): JournalDataSource {
+class JournalRepository(
+    private val remoteDataSource: RemoteDataSource,
+    private val localDataSource: LocalDataSource
+): JournalDataSource {
     override fun insertJournal(journalEntity: JournalEntity) {
         localDataSource.insertJournal(journalEntity)
     }
@@ -21,12 +28,16 @@ class JournalRepository(private val localDataSource: LocalDataSource): JournalDa
         return localDataSource.getJournalById(id)
     }
 
+    override suspend fun getArticles(): Flow<ApiResponses<ArticleResponses>> {
+        return remoteDataSource.getArticles()
+    }
+
     companion object{
         @Volatile
         private var INSTANCE: JournalRepository? = null
-        fun getInstance(localDataSource: LocalDataSource): JournalRepository =
+        fun getInstance(remoteDataSource: RemoteDataSource, localDataSource: LocalDataSource): JournalRepository =
             INSTANCE ?: synchronized(this){
-                JournalRepository(localDataSource).apply {
+                JournalRepository(remoteDataSource, localDataSource).apply {
                     INSTANCE = this
                 }
             }

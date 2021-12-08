@@ -33,7 +33,7 @@ ext {
     coroutines_version = "1.5.2"
     lottieVersion = '4.2.0'
     retrofitVersion = '2.9.0'
-    loggingInterceptorVersion = '4.9.1'
+    loggingInterceptorVersion = '5.0.0-alpha.2'
     idleResourceVersion = '3.4.0'
     mockitoKotlinVersion = '2.2.0'
     mockitoInlineVersion = '3.9.0'

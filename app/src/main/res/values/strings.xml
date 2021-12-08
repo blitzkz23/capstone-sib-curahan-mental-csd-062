@@ -58,9 +58,13 @@
     <string name="settings_logout">Logout</string>
     <string name="title_settings_account">Akun Anda</string>
     <string name="title_home_banner">Temukan pesan dukungan</string>
+    <!-- article -->
+    <string name="article_title_home">Cara Mengatasi Depresi Berkelanjutan</string>
+    <string name="article_description_home">Sebaiknya jangan begadang dan perbanyak olahraga sehingga menjaga imun tubuh hehe</string>
 
     <!-- Jornal -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_article">Article</string>
 
 
 </resources>

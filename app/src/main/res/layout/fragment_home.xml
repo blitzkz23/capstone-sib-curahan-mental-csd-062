@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="none"
     tools:context=".ui.home.HomeFragment">
 
 
@@ -146,7 +147,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginTop="@dimen/dimens_10dp"
-            app:layout_constraintTop_toBottomOf="@id/home_article_title" />
+            app:layout_constraintTop_toBottomOf="@id/home_article_title"
+            tools:listitem="@layout/item_article_home"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
