@@ -91,13 +91,13 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/next_button"
+        android:id="@+id/finish_button"
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:clickable="false"
         android:enabled="false"
         android:fontFamily="@font/poppins_semibold"
-        android:text="@string/selanjutnya"
+        android:text="@string/selesai"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

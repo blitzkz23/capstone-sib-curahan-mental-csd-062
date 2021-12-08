@@ -30,6 +30,8 @@ class AddJournalEventFragment : Fragment() {
 		// Inflate the layout for this fragment
 		_binding = FragmentAddJournalEventBinding.inflate(inflater, container, false)
 		val root: View = binding.root
+
+		// Get argument from previous fragment
 		stressLevel = AddJournalEventFragmentArgs.fromBundle(arguments as Bundle).stressLevel
 
 		loadActionBar()
@@ -42,9 +44,7 @@ class AddJournalEventFragment : Fragment() {
 					event = spinner.selectedItem.toString()
 				}
 
-				override fun onNothingSelected(p0: AdapterView<*>?) {
-
-				}
+				override fun onNothingSelected(p0: AdapterView<*>?) {}
 			}
 
 			eventDetailText.addTextChangedListener(object : TextWatcher {

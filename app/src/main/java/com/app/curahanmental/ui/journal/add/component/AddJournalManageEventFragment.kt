@@ -33,6 +33,8 @@ class AddJournalManageEventFragment : Fragment(), View.OnClickListener {
 		// Inflate the layout for this fragment
 		_binding = FragmentAddJournalManageEventBinding.inflate(inflater, container, false)
 		val root: View = binding.root
+
+		// Get argument from previous fragment
 		stressLevel =
 			AddJournalManageEventFragmentArgs.fromBundle(arguments as Bundle).stressLevel
 		event = AddJournalManageEventFragmentArgs.fromBundle(arguments as Bundle).event
@@ -41,11 +43,14 @@ class AddJournalManageEventFragment : Fragment(), View.OnClickListener {
 
 		loadActionBar()
 
+		// Set click listener
 		binding.let {
 			it.thumbUpButton.setOnClickListener(this)
 			it.thumbDownButton.setOnClickListener(this)
 			it.questionMarkButton.setOnClickListener(this)
 		}
+
+		//Listener for text input edit
 		binding.manageEventText.addTextChangedListener(object : TextWatcher {
 			override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
@@ -117,6 +122,7 @@ class AddJournalManageEventFragment : Fragment(), View.OnClickListener {
 				binding.thumbUpButton.backgroundTintList = colorStateList2
 				binding.thumbDownButton.backgroundTintList = colorStateList1
 				binding.questionMarkButton.backgroundTintList = colorStateList2
+
 				manageEvent = getString(R.string.bad)
 			}
 			R.id.question_mark_button -> {
@@ -124,6 +130,7 @@ class AddJournalManageEventFragment : Fragment(), View.OnClickListener {
 				binding.thumbUpButton.backgroundTintList = colorStateList2
 				binding.thumbDownButton.backgroundTintList = colorStateList2
 				binding.questionMarkButton.backgroundTintList = colorStateList1
+
 				manageEvent = getString(R.string.confused)
 			}
 			else -> {

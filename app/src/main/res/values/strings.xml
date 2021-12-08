@@ -72,6 +72,7 @@
     <string name="confused">Kebingungan</string>
     <string name="reaction">Analisa reaksimu, apa sekiranya penyebab asli dari reaksi tersebut?</string>
     <string name="reaction_question">Silahkan analisa dan tulis penyebab asli reaksi Anda dalam keadaaan yang tenang dan nyaman</string>
+    <string name="selesai">Selesai</string>
 
     <!-- Spinner array -->
     <string-array name="event">
