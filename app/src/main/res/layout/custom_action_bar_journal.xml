@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/logout_button"
+        android:id="@+id/sort_button"
         android:layout_width="@dimen/dimens_32dp"
         android:layout_height="@dimen/dimens_32dp"
         android:layout_marginEnd="16dp"

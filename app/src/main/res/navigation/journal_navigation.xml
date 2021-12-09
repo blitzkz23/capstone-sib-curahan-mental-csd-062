@@ -26,6 +26,9 @@
         <action
             android:id="@+id/action_addJournalEventFragment_to_addJournalManageEventFragment"
             app:destination="@id/addJournalManageEventFragment" />
+        <action
+            android:id="@+id/action_addJournalEventFragment_to_addJournalStressLevel"
+            app:destination="@id/addJournalStressLevel" />
     </fragment>
     <fragment
         android:id="@+id/addJournalManageEventFragment"
@@ -47,6 +50,9 @@
             android:name="eventDetail"
             app:argType="string"
             android:defaultValue="yes" />
+        <action
+            android:id="@+id/action_addJournalManageEventFragment_to_addJournalEventFragment"
+            app:destination="@id/addJournalEventFragment" />
     </fragment>
     <fragment
         android:id="@+id/addJournalReasonFragment"
@@ -73,5 +79,8 @@
             android:name="manageEventDetail"
             android:defaultValue="yes"
             app:argType="string" />
+        <action
+            android:id="@+id/action_addJournalReasonFragment_to_addJournalManageEventFragment"
+            app:destination="@id/addJournalManageEventFragment" />
     </fragment>
 </navigation>

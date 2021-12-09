@@ -1,7 +1,9 @@
 package com.app.curahanmental.data.source.local.room
 
 import androidx.lifecycle.LiveData
+import androidx.paging.DataSource
 import androidx.room.*
+import androidx.sqlite.db.SupportSQLiteQuery
 import com.app.curahanmental.data.source.local.entity.JournalEntity
 
 @Dao
@@ -14,6 +16,9 @@ interface JournalDao {
 
 	@Query("SELECT * FROM journal")
 	fun getAllJournal(): LiveData<List<JournalEntity>>
+
+	@RawQuery(observedEntities = [JournalEntity::class])
+	fun getJournalWithFilter(query: SupportSQLiteQuery): DataSource.Factory<Int, JournalEntity>
 
 	@Query("SELECT * FROM journal WHERE journal.id = :id")
 	fun getJournalById(id: Int): LiveData<JournalEntity>

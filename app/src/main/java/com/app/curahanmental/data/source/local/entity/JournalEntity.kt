@@ -9,11 +9,11 @@ data class JournalEntity(
 	val id: Int = 0,
 	val stressLevel: Int = 0,
 	val event: String,
-	val eventDetails: String? = "",
-	val reason: String,
-	val reasonDetails: String? = "",
+	val eventDetail: String? = "",
 	val manageEvent: String,
 	val idealEventScenario: String? = "",
+	val reason: String,
+	val reasonDetail: String? = "",
 	val date: Long,
 
-)
+	)
