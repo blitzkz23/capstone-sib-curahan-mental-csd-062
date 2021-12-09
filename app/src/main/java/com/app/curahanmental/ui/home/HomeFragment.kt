@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.curahanmental.R
 import com.app.curahanmental.databinding.FragmentHomeBinding
 import com.app.curahanmental.ui.home.articles.ArticleAdapter
+import com.app.curahanmental.ui.home.tips.TipsActivity
 import com.app.curahanmental.ui.settings.SettingsActivity
 import com.app.curahanmental.ui.viemodel.ViewModelFactory
 import com.app.curahanmental.utils.StatusResponse
@@ -62,9 +63,11 @@ class HomeFragment : Fragment() {
 			}
 			binding.homeGreetings1.text = TextUtils.concat("Selamat datang, ", displayName)
 		})
-
 		getView()?.findViewById<ImageView>(R.id.home_btn_settings)?.setOnClickListener {
 			startActivity(Intent(activity, SettingsActivity::class.java))
+		}
+		binding.homeTipsButton.setOnClickListener {
+			startActivity(Intent(activity, TipsActivity::class.java))
 		}
 		showRecycleViewArticle()
 

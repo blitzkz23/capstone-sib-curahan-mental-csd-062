@@ -64,7 +64,7 @@
     <!-- article -->
     <string name="article_title_home">Cara Mengatasi Depresi Berkelanjutan</string>
     <string name="article_description_home">Sebaiknya jangan begadang dan perbanyak olahraga sehingga menjaga imun tubuh hehe</string>
-  <string name="title_article">Article</string>
+    <string name="title_article">Article</string>
 
     <!-- Journal -->
     <string name="stress_level_header">Seberapa tingkat stres Anda saat ini?</string>
@@ -87,6 +87,7 @@
     <string name="selesai">Selesai</string>
     <string name="manage_event_question">Bagaimana Anda mengelola kejadian yang membuat stres tersebut?</string>
     <string name="ideal_solution_question">Deskripsikan apa yang seharusnya Anda lakukan, skenario ideal Anda</string>
+    <string name="title_tips">Tips</string>
 
     <!-- Spinner array -->
     <string-array name="event">
