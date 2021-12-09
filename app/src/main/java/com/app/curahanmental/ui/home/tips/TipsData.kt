@@ -7,22 +7,22 @@ object TipsData {
         TipsModel(
             R.drawable.tips_image1,
             "Jaga pola makan teratur",
-            "ohe"
+            "-"
         ),
         TipsModel(
             R.drawable.tips_image4,
             "Olahraga secara konsisten",
-            "ohe"
+            "-"
         ),
         TipsModel(
             R.drawable.tips_image2,
             "Coba aktivitas kesukaan anda",
-            "ohe"
+            "-"
         ),
         TipsModel(
             R.drawable.tips_image3,
             "Tetap terhubung dengan orang lain",
-            "ohe"
+            "-"
         )
     )
 
