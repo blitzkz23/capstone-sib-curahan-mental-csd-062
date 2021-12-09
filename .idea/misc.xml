@@ -15,20 +15,11 @@
         <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/activity_main.xml" value="0.3067484662576687" />
         <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/activity_onboard.xml" value="0.23958333333333334" />
         <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/activity_register.xml" value="0.2546875" />
-        <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/activity_settings.xml" value="0.2462962962962963" />
         <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/activity_splash.xml" value="0.2" />
-        <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/activity_tips.xml" value="0.25833333333333336" />
-        <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/custom_action_bar_add_journal.xml" value="0.25833333333333336" />
-        <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/custom_action_bar_journal.xml" value="0.25435897435897437" />
-        <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/fragment_add_journal_event.xml" value="0.25833333333333336" />
-        <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/fragment_add_journal_reason.xml" value="0.25833333333333336" />
-        <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/fragment_add_journal_stress_level.xml" value="0.25833333333333336" />
-        <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/fragment_home.xml" value="0.33695652173913043" />
+        <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/fragment_home.xml" value="0.13020833333333334" />
         <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/fragment_journal.xml" value="0.2546875" />
         <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/fragment_notifications.xml" value="0.25416666666666665" />
         <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/fragment_support_message.xml" value="0.2546875" />
-        <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/item_article_home.xml" value="0.2462962962962963" />
-        <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/item_tips_home.xml" value="0.264" />
         <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/layout/slides_onboard.xml" value="0.25833333333333336" />
         <entry key="..\:/Dicoding/android/kotlin/CAPSTONE/capstone-sib-curahan-mental-csd-062/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2546875" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/drawable/bottom_navbar_custom.xml" value="0.33645833333333336" />
@@ -54,7 +45,7 @@
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/custom_action_bar_add_journal.xml" value="0.33" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/custom_action_bar_add_journal_help.xml" value="0.25" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/custom_action_bar_home.xml" value="0.33" />
-        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/custom_action_bar_journal.xml" value="0.22" />
+        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/custom_action_bar_journal.xml" value="0.33" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/fragment_add_journal_event.xml" value="0.33" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/fragment_add_journal_manage_event.xml" value="0.33" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/fragment_add_journal_reason.xml" value="0.25" />
@@ -72,7 +63,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

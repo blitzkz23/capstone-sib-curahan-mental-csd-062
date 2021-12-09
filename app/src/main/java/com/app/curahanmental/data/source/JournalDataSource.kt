@@ -13,7 +13,7 @@ interface JournalDataSource {
     fun insertJournal(journalEntity: JournalEntity)
     fun deleteJournal(journalEntity: JournalEntity)
     fun getALlJournal(): LiveData<List<JournalEntity>>
-    fun getJournalWithFilter(filter: JournalsSortType): LiveData<PagedList<JournalEntity>>
+    fun getJournalWithSorting(sortType: JournalsSortType): LiveData<PagedList<JournalEntity>>
     fun getJournalById(id: Int): LiveData<JournalEntity>
     suspend fun getArticles(): Flow<ApiResponses<ArticleResponses>>
 }

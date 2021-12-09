@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.app.curahanmental.data.source.JournalRepository
 import com.app.curahanmental.di.AppModule
-import com.app.curahanmental.ui.dashboard.JournalViewModel
+import com.app.curahanmental.ui.journal.JournalViewModel
 import com.app.curahanmental.ui.home.HomeViewModel
 import com.app.curahanmental.ui.journal.add.AddJournalViewModel
 

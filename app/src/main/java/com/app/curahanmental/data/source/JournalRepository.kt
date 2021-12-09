@@ -27,8 +27,8 @@ class JournalRepository(
         return localDataSource.getAllJournal()
     }
 
-    override fun getJournalWithFilter(filter: JournalsSortType): LiveData<PagedList<JournalEntity>> {
-        return localDataSource.getJournalWithFilter(filter)
+    override fun getJournalWithSorting(sortType: JournalsSortType): LiveData<PagedList<JournalEntity>> {
+        return localDataSource.getJournalWithSorting(sortType)
     }
 
     override fun getJournalById(id: Int): LiveData<JournalEntity> {

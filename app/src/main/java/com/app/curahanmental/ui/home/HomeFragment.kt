@@ -101,7 +101,6 @@ class HomeFragment : Fragment() {
 			rvHomeArticle.layoutManager = LinearLayoutManager(context)
 			rvHomeArticle.setHasFixedSize(true)
 			rvHomeArticle.adapter = articleAdapter
-
 		}
 	}
 }

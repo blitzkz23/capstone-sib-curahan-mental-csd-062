@@ -17,8 +17,8 @@ class LocalDataSource private constructor(private val journalDao: JournalDao){
 
     fun getAllJournal() = journalDao.getAllJournal()
 
-    fun getJournalWithFilter(filter: JournalsSortType): LiveData<PagedList<JournalEntity>> {
-        val query = SortUtils.getSortedQuery(filter)
+    fun getJournalWithSorting(sortType: JournalsSortType): LiveData<PagedList<JournalEntity>> {
+        val query = SortUtils.getSortedQuery(sortType)
         return journalDao.getJournalWithFilter(query).toLiveData(Config(PAGE_SIZE))
     }
 

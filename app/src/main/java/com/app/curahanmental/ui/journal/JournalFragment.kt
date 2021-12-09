@@ -6,11 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.paging.PagedList
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.curahanmental.R
+import com.app.curahanmental.data.source.local.entity.JournalEntity
 import com.app.curahanmental.databinding.FragmentJournalBinding
-import com.app.curahanmental.ui.dashboard.JournalViewModel
 import com.app.curahanmental.ui.viemodel.ViewModelFactory
 import com.google.android.material.button.MaterialButton
 
@@ -28,11 +31,10 @@ class JournalFragment : Fragment() {
 		container: ViewGroup?,
 		savedInstanceState: Bundle?
 	): View {
-		val viewModelFactory = requireContext().let { ViewModelFactory.getInstance(it) }
-		journalViewModel = ViewModelProvider(this, viewModelFactory)[JournalViewModel::class.java]
-
 		_binding = FragmentJournalBinding.inflate(inflater, container, false)
 		val root: View = binding.root
+		val viewModelFactory = requireContext().let { ViewModelFactory.getInstance(it) }
+		journalViewModel = ViewModelProvider(this, viewModelFactory)[JournalViewModel::class.java]
 
 
 		return root
@@ -45,6 +47,17 @@ class JournalFragment : Fragment() {
 		}
 		getView()?.findViewById<MaterialButton>(R.id.sort_button)?.setOnClickListener {
 			Toast.makeText(activity, "Coba tombol", Toast.LENGTH_SHORT).show()
+		}
+		journalViewModel.journals.observe(viewLifecycleOwner, Observer(this::showJournalRecyclerView))
+	}
+
+	private fun showJournalRecyclerView(journal: PagedList<JournalEntity>) {
+		val recyclerAdapter = JournalAdapter()
+		with(binding) {
+			rvJournal.layoutManager = LinearLayoutManager(activity)
+			rvJournal.setHasFixedSize(true)
+			rvJournal.adapter = recyclerAdapter
+			recyclerAdapter.submitList(journal)
 		}
 	}
 
