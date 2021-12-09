@@ -30,6 +30,7 @@
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/drawable/ic_curahan_support_message.xml" value="0.33645833333333336" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1" />
+        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/drawable/ic_home_settings.xml" value="0.33645833333333336" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/drawable/ic_logout.xml" value="0.33645833333333336" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/drawable/nav_shadow.xml" value="0.33645833333333336" />
@@ -43,9 +44,10 @@
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/activity_settings.xml" value="0.22780797101449277" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/activity_splash.xml" value="0.25" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/custom_action_bar_add_journal.xml" value="0.33" />
-        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/custom_action_bar_add_journal_help.xml" value="0.25" />
-        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/custom_action_bar_home.xml" value="0.33" />
-        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/custom_action_bar_journal.xml" value="0.33" />
+        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/custom_action_bar_add_journal_help.xml" value="0.22" />
+        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/custom_action_bar_general.xml" value="0.18568840579710144" />
+        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/custom_action_bar_home.xml" value="0.22" />
+        <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/custom_action_bar_journal.xml" value="0.22" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/fragment_add_journal_event.xml" value="0.33" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/fragment_add_journal_manage_event.xml" value="0.33" />
         <entry key="..\:/Users/Noparuu/Desktop/Dicoding/Android Path/CAPSTONE/CurahanMental/app/src/main/res/layout/fragment_add_journal_reason.xml" value="0.25" />

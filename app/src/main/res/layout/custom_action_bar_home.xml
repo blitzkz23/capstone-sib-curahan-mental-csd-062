@@ -30,14 +30,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <ImageView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/home_btn_settings"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:maxWidth="98dp"
-        android:src="@drawable/ic_home_settings"
+        android:layout_width="@dimen/dimens_32dp"
+        android:layout_height="@dimen/dimens_32dp"
+        android:contentDescription="@string/logout_button"
+        android:insetTop="@dimen/dimens_0dp"
+        android:insetBottom="@dimen/dimens_0dp"
+        app:cornerRadius="@dimen/dimens_8dp"
+        app:icon="@drawable/ic_settings"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/guideline_right"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

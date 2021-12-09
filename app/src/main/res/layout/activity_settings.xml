@@ -34,6 +34,7 @@
       android:layout_height="wrap_content"
       android:orientation="horizontal"
       app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent" />
+
   
   <ImageView
       android:id="@+id/btn_settings_back"

@@ -10,7 +10,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -23,6 +22,7 @@ import com.app.curahanmental.ui.home.tips.TipsActivity
 import com.app.curahanmental.ui.settings.SettingsActivity
 import com.app.curahanmental.ui.viemodel.ViewModelFactory
 import com.app.curahanmental.utils.StatusResponse
+import com.google.android.material.button.MaterialButton
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
@@ -63,7 +63,7 @@ class HomeFragment : Fragment() {
 			}
 			binding.homeGreetings1.text = TextUtils.concat("Selamat datang, ", displayName)
 		})
-		getView()?.findViewById<ImageView>(R.id.home_btn_settings)?.setOnClickListener {
+		getView()?.findViewById<MaterialButton>(R.id.home_btn_settings)?.setOnClickListener {
 			startActivity(Intent(activity, SettingsActivity::class.java))
 		}
 		binding.homeTipsButton.setOnClickListener {

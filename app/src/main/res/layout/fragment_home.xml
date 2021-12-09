@@ -47,7 +47,7 @@
         <TextView
             android:id="@+id/home_greetings1"
             style="@style/Text.Header2"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:text="@string/title_home_greetings"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
@@ -108,7 +108,7 @@
         <TextView
             android:id="@+id/home_tips_title"
             style="@style/Text.Header3"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:text="@string/title_home_tips"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
@@ -186,7 +186,7 @@
         <TextView
             android:id="@+id/home_article_title"
             style="@style/Text.Header3"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="20dp"
             android:text="@string/title_home_article"
             app:layout_constraintStart_toStartOf="@id/guideline_left"

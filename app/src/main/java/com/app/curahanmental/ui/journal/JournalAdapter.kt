@@ -39,7 +39,7 @@ class JournalAdapter : PagedListAdapter<JournalEntity, JournalAdapter.JournalVie
 				if (journal.stressLevel <= 50) {
 					stressBar.progressTintList = ColorStateList.valueOf(Color.rgb(42, 96, 73))
 				} else if (journal.stressLevel == 51 || journal.stressLevel <= 74) {
-					stressBar.progressTintList = ColorStateList.valueOf(Color.rgb(255, 94, 67))
+					stressBar.progressTintList = ColorStateList.valueOf(Color.rgb(255, 236, 62))
 				} else {
 					stressBar.progressTintList = ColorStateList.valueOf(Color.rgb(255, 20, 35))
 				}
