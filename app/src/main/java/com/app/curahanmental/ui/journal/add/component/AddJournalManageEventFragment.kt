@@ -41,13 +41,12 @@ class AddJournalManageEventFragment : Fragment(), View.OnClickListener {
 		eventDetail =
 			AddJournalManageEventFragmentArgs.fromBundle(arguments as Bundle).eventDetail
 
-		loadActionBar()
-
 		return root
 	}
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
+		loadActionBar()
 		// Set click listener
 		binding.let {
 			it.thumbUpButton.setOnClickListener(this)
@@ -95,9 +94,10 @@ class AddJournalManageEventFragment : Fragment(), View.OnClickListener {
 	}
 
 	private fun loadActionBar() {
-		view?.findViewById<TextView>(R.id.journal_title)?.text = getString(R.string.stress_level)
+		view?.findViewById<TextView>(R.id.journal_title)?.text = getString(R.string.manage_event)
 		view?.findViewById<MaterialButton>(R.id.back_button_fragment)?.setOnClickListener {
-			super.onDetach()
+			val toPreviousFragment = AddJournalManageEventFragmentDirections.actionAddJournalManageEventFragmentToAddJournalEventFragment()
+			view?.findNavController()?.navigate(toPreviousFragment)
 		}
 	}
 

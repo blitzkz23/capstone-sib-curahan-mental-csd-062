@@ -24,13 +24,14 @@ class AddJournalStressLevelFragment : Fragment() {
 		// Inflate the layout for this fragment
 		_binding = FragmentAddJournalStressLevelBinding.inflate(inflater, container, false)
 		val root: View = binding.root
-		loadActionBar()
+
 
 		return root
 	}
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
+		loadActionBar()
 		binding.apply {
 			slider.addOnChangeListener { slider, value, fromUser ->
 				val percentageValue = slider.value.toInt()
@@ -58,7 +59,7 @@ class AddJournalStressLevelFragment : Fragment() {
 	private fun loadActionBar() {
 		view?.findViewById<TextView>(R.id.journal_title)?.text = getString(R.string.stress_level)
 		view?.findViewById<MaterialButton>(R.id.back_button_fragment)?.setOnClickListener {
-			super.onDetach()
+			activity?.finish()
 		}
 	}
 

@@ -71,7 +71,10 @@
     <string name="pokemin">Pokemin</string>
     <string name="godzimax">Godzimax</string>
     <string name="selanjutnya">Selanjutnya</string>
-    <string name="stress_level">Stress Level</string>
+    <string name="stress_level">Tingkat Stress</string>
+    <string name="event">Kejadian</string>
+    <string name="manage_event">Sikap Anda</string>
+    <string name="reason">Penyebab Asli</string>
     <string name="stress_percentage">%d %% </string>
     <string name="title_placeholder">Title</string>
     <string name="event_detail">Deskripsikan situasi tersebut, apa yang terjadi dan mengapa</string>
