@@ -22,16 +22,18 @@
             tools:src="@drawable/tips_image1"
             android:layout_width="113dp"
             android:layout_height="75dp"
-            android:layout_marginStart="13dp"
+            android:layout_marginStart="14dp"
             android:layout_gravity="center_vertical"/>
 
         <TextView
             android:id="@+id/tv_tips_title"
             tools:text="Jaga pola makan teratur"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginStart="140dp"
+            android:layout_marginEnd="20dp"
+
             style="@style/Text2"
             android:textColor="@color/curahan_black_text"
             android:textSize="14sp"
