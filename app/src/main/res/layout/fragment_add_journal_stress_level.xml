@@ -14,7 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <include layout="@layout/custom_action_bar_add_journal" />
+        <include layout="@layout/custom_action_bar_add_journal_help" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
