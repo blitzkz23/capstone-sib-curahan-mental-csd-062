@@ -57,6 +57,7 @@
     <string name="home_tips_button">lihat</string>
     <string name="message_home_tips2">Yuk, lihat apa saja tips-nya</string>
     <string name="title_tips">Tips</string>
+
     <!-- settings -->
     <string name="title_settings">Settings</string>
     <string name="settings_logout">Logout</string>
