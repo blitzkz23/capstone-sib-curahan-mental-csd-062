@@ -3,50 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginEnd="5dp"
+    android:paddingBottom="@dimen/dimens_10dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" >
 
     <androidx.cardview.widget.CardView
-        android:layout_width="300dp"
-        android:layout_height="105dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="fill"
         android:layout_marginHorizontal="1dp"
-        android:layout_marginVertical="2dp"
+        android:layout_marginVertical="4dp"
         android:elevation="10dp"
-        app:cardCornerRadius="10dp" >
+        android:backgroundTint="#C7C9D9"
+        app:cardCornerRadius="25dp" >
 
         <ImageView
             android:id="@+id/img_tips"
-            tools:src="@drawable/curahan_logo1"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="13dp"
+            tools:src="@drawable/tips_image1"
+            android:layout_width="113dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="14dp"
             android:layout_gravity="center_vertical"/>
 
         <TextView
             android:id="@+id/tv_tips_title"
-            tools:text="Lorem Ipsum"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:layout_marginStart="110dp"
-            style="@style/Text2"
-            android:textColor="@color/curahan_black_text"
-            android:textSize="17sp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-        <TextView
-            android:id="@+id/tv_tips_desctiption"
-            android:text="@string/tips"
+            tools:text="Jaga pola makan teratur"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="46dp"
-            android:layout_marginStart="110dp"
-            android:layout_marginEnd="7dp"
-            android:lineSpacingExtra="-2.5sp"
-            android:textColor="@color/curahan_subtext"
-            android:textSize="13sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginEnd="20dp"
+
+            style="@style/Text2"
+            android:textColor="@color/curahan_black_text"
+            android:textSize="14sp"
+            android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
 
     </androidx.cardview.widget.CardView>
 
