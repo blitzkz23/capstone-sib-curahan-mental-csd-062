@@ -37,7 +37,7 @@ class HomeFragment : Fragment() {
 		container: ViewGroup?,
 		savedInstanceState: Bundle?
 	): View {
-    
+
 		_binding = FragmentHomeBinding.inflate(inflater, container, false)
 		val viewModelFactory = requireContext().let { ViewModelFactory.getInstance(it) }
 		homeViewModel = ViewModelProvider(this, viewModelFactory)[HomeViewModel::class.java]
@@ -75,11 +75,11 @@ class HomeFragment : Fragment() {
 		_binding = null
 	}
 
-	private fun initArticleContent(){
+	private fun initArticleContent() {
 		lifecycleScope.launch {
 			homeViewModel.getArticles().observe(viewLifecycleOwner, { res ->
-				if (res != null){
-					when(res.status){
+				if (res != null) {
+					when (res.status) {
 						StatusResponse.SUCCESS -> {
 							Log.d("GET_DATA", "Success get data")
 							articleAdapter.setArticleData(res.body.listOfArticles)
@@ -89,12 +89,12 @@ class HomeFragment : Fragment() {
 					}
 
 				}
- 			})
+			})
 		}
 	}
 
-	private fun showRecycleViewArticle(){
-		with(binding){
+	private fun showRecycleViewArticle() {
+		with(binding) {
 			rvHomeArticle.layoutManager = LinearLayoutManager(context)
 			rvHomeArticle.setHasFixedSize(true)
 			rvHomeArticle.adapter = articleAdapter
