@@ -4,6 +4,6 @@ import android.graphics.drawable.Drawable
 
 data class TipsModel(
     var image: Int ?= null,
-    var title: String ?= "",
-    var description: String ?= ""
+    var title: String ?= null,
+    var description: String ?= null
 )
