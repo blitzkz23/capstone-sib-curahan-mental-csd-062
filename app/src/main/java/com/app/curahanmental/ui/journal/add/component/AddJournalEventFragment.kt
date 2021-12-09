@@ -34,13 +34,12 @@ class AddJournalEventFragment : Fragment() {
 		// Get argument from previous fragment
 		stressLevel = AddJournalEventFragmentArgs.fromBundle(arguments as Bundle).stressLevel
 
-		loadActionBar()
-
 		return root
 	}
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
+		loadActionBar()
 		binding.apply {
 			spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 				override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
@@ -87,9 +86,10 @@ class AddJournalEventFragment : Fragment() {
 	}
 
 	private fun loadActionBar() {
-		view?.findViewById<TextView>(R.id.journal_title)?.text = getString(R.string.stress_level)
+		view?.findViewById<TextView>(R.id.journal_title)?.text = getString(R.string.event)
 		view?.findViewById<MaterialButton>(R.id.back_button_fragment)?.setOnClickListener {
-			super.onDetach()
+			val toPreviousFragment = AddJournalEventFragmentDirections.actionAddJournalEventFragmentToAddJournalStressLevel()
+			view?.findNavController()?.navigate(toPreviousFragment)
 		}
 	}
 
