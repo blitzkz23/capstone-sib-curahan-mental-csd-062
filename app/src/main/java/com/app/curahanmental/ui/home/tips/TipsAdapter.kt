@@ -1,24 +1,35 @@
 package com.app.curahanmental.ui.home.tips
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.app.curahanmental.databinding.ItemTipsHomeBinding
+import com.bumptech.glide.Glide
 
-class TipsAdapter(private val tipsItem: ArrayList<TipsModel>): RecyclerView.Adapter<TipsAdapter.TipsViewHolder>() {
+class TipsAdapter(private val listTips: ArrayList<TipsModel>): RecyclerView.Adapter<TipsAdapter.TipsViewHolder>() {
 
-    inner class TipsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TipsAdapter.TipsViewHolder {
-        TODO("Not yet implemented")
+        val binding = ItemTipsHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return TipsViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: TipsAdapter.TipsViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val tips = listTips[position]
+        holder.bind(tips)
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+    override fun getItemCount(): Int = listTips.size
+
+    inner class TipsViewHolder(private var binding: ItemTipsHomeBinding): RecyclerView.ViewHolder(binding.root){
+        fun bind(content: TipsModel){
+            binding.apply {
+                tvTipsTitle.text = content.title
+                Glide.with(itemView.context)
+                    .load(content.image)
+                    .into(imgTips)
+            }
+        }
     }
 }
