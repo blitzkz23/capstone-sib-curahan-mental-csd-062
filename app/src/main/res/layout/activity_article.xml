@@ -27,6 +27,13 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent"/>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent" />
+
     <ImageView
         android:id="@+id/btn_settings_back"
         android:layout_width="30dp"
@@ -104,8 +111,26 @@
                 style="@style/Text.Paragraph"
                 android:textSize="18sp"
                 android:text="@string/article_description_home"/>
+
         </LinearLayout>
 
     </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_continue_read"
+        style="@style/Text2"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:letterSpacing="0.05"
+        android:text="@string/article_continue_read"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/curahan_btn_orange"
+        app:cornerRadius="12dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

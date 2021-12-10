@@ -85,8 +85,8 @@
       app:layout_constraintStart_toEndOf="@id/guideline_left"
       app:layout_constraintTop_toBottomOf="@id/settings_user_name" />
 
-  <androidx.appcompat.widget.AppCompatButton
-      android:id="@+id/btnLogout"
+  <com.google.android.material.button.MaterialButton
+      android:id="@+id/btn_logout"
       style="@style/Text2"
       android:layout_width="220dp"
       android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
       android:text="@string/settings_logout"
       android:textColor="@color/white"
       android:backgroundTint="@color/curahan_btn_orange"
-      app:cornerRadius="8dp"
+      app:cornerRadius="12dp"
       android:textSize="16sp"
       app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
       app:layout_constraintEnd_toEndOf="parent"
