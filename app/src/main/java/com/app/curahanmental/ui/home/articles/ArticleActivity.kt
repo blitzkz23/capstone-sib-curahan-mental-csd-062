@@ -1,5 +1,7 @@
 package com.app.curahanmental.ui.home.articles
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.curahanmental.data.source.remote.entity.ArticleEntity
@@ -28,6 +30,9 @@ class ArticleActivity : AppCompatActivity() {
             articleContentDetail.text = articleContent.content?.substring(0, 200)
             articleAuthorDetail.text = articleContent.author
 
+            btnContinueRead.setOnClickListener {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(articleContent.url)))
+            }
             btnSettingsBack.setOnClickListener{
                 finish()
             }
