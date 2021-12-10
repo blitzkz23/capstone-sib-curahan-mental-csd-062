@@ -25,7 +25,7 @@ class ArticleActivity : AppCompatActivity() {
                 .into(articleImageViewDetail)
 
             articleTitleDetail.text = articleContent.title
-            articleContentDetail.text = articleContent.content
+            articleContentDetail.text = articleContent.content?.substring(0, 200)
             articleAuthorDetail.text = articleContent.author
 
             btnSettingsBack.setOnClickListener{
