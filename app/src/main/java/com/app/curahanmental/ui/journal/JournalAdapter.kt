@@ -1,6 +1,7 @@
 package com.app.curahanmental.ui.journal
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.curahanmental.R
 import com.app.curahanmental.data.source.local.entity.JournalEntity
 import com.app.curahanmental.databinding.ItemJournalListBinding
+import com.app.curahanmental.ui.journal.detail.DetailJournalActivity
 import com.app.curahanmental.utils.DateUtils
 
 
@@ -42,6 +44,13 @@ class JournalAdapter : PagedListAdapter<JournalEntity, JournalAdapter.JournalVie
 					stressBar.progressTintList = ColorStateList.valueOf(Color.rgb(255, 236, 62))
 				} else {
 					stressBar.progressTintList = ColorStateList.valueOf(Color.rgb(255, 20, 35))
+				}
+
+				itemView.setOnClickListener {
+					val intent = Intent(itemView.context, DetailJournalActivity::class.java)
+					intent.putExtra(DetailJournalActivity.JOURNAL, journal.id)
+					intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+					itemView.context.startActivity(intent)
 				}
 			}
 		}

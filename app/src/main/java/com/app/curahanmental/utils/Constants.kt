@@ -9,6 +9,7 @@ object Constants {
     const val API_KEY = BuildConfig.NEWS_API_KEY
     const val PARAMS = BuildConfig.PARAMS
     const val EXTRA_ARTICLE = "extra_article"
+    const val EXTRA_JOURNAL = "extra_journal"
 
     private val SINGLE_EXECUTOR = Executors.newSingleThreadExecutor()
 
