@@ -26,6 +26,8 @@
     <string name="sudah_punya_akun">Sudah punya akun?</string>
     <string name="create_account_tagline">Buat akun untuk memulai perjalanan Anda</string>
     <string name="login">Masuk</string>
+    <string name="account_created">Akun telah berhasil dibuat.</string>
+    <string name="account_existed">Akun sudah pernah didaftarkan sebelumnya.</string>
 
     <!-- Sign In Section -->
     <string name="signin_account">Masuk</string>
@@ -95,7 +97,6 @@
     <string name="journal_added">Jurnal telah ditambahkan</string>
     <string name="stress_percent">Stress: %d %%</string>
     <string name="article_continue_read">lanjut baca artikel</string>
-
 
     <!-- Spinner array -->
     <string-array name="event">

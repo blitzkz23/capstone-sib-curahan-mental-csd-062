@@ -37,7 +37,7 @@ class RegisterActivity : AppCompatActivity() {
 				if (it.isSuccessful) {
 					Toast.makeText(
 						this@RegisterActivity,
-						"Akun telah berhasil dibuat.",
+						getString(R.string.account_created),
 						Toast.LENGTH_SHORT
 					).show()
 					startActivity(Intent(this@RegisterActivity, LoginActivity::class.java).also {
@@ -46,7 +46,7 @@ class RegisterActivity : AppCompatActivity() {
 					finish()
 				} else {
 					Log.e(ContentValues.TAG, "createUserWithEmail:failure", it.exception)
-					Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
+					Toast.makeText(this, getString(R.string.account_existed), Toast.LENGTH_SHORT).show()
 				}
 			}
 		}
@@ -81,14 +81,18 @@ class RegisterActivity : AppCompatActivity() {
 				registerEdEmail.error = getString(R.string.error_email2)
 			}
 
-			if (password.isEmpty()) {
-				textInputLayout3.requestFocus()
-				registerEdPassword.error = getString(R.string.error_password)
-			} else if (password.length < 6) {
-				textInputLayout3.requestFocus()
-				registerEdPassword.error = getString(R.string.error_password2)
-			} else {
-				registerViewModel.signUpUser(firstName, lastName, email, password)
+			when {
+				password.isEmpty() -> {
+					textInputLayout3.requestFocus()
+					registerEdPassword.error = getString(R.string.error_password)
+				}
+				password.length < 6 -> {
+					textInputLayout3.requestFocus()
+					registerEdPassword.error = getString(R.string.error_password2)
+				}
+				else -> {
+					registerViewModel.signUpUser(firstName, lastName, email, password)
+				}
 			}
 		}
 	}
