@@ -1,8 +1,8 @@
 package com.app.curahanmental.ui.settings
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.app.curahanmental.databinding.ActivitySettingsBinding
 import com.app.curahanmental.ui.auth.login.LoginActivity
@@ -23,7 +23,7 @@ class SettingsActivity : AppCompatActivity() {
         settingsViewModel.getCurrentUserDisplayName()
         settingsViewModel.currentData.observe(this){
             binding.apply {
-                settingsUserName.text = it?.firstName
+                settingsUserName.text = "${it?.firstName} ${it?.lastName}"
                 settingsUserEmail.text = it?.email
 
                 btnLogout.setOnClickListener {

@@ -1,5 +1,7 @@
 package com.app.curahanmental.ui.auth.register
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -15,17 +17,31 @@ class RegisterViewModel : ViewModel() {
 	private val _authRes = MutableLiveData<Task<AuthResult>>()
 
 	fun signUpUser(firstName: String, lastName: String, email: String, password: String) {
+		auth.fetchSignInMethodsForEmail(email)
+			.addOnCompleteListener { task ->
+				Log.d(TAG, "" + task.result?.signInMethods?.size)
+				if (task.result?.signInMethods?.size == 0) {
+					Log.d(TAG, "E-mail have not exist yet")
+				} else {
+					Log.d(TAG, "Email already existed")
+				}
+			}.addOnFailureListener { e ->
+				e.printStackTrace()
+			}
+
 		auth.createUserWithEmailAndPassword(email, password)
-			.addOnCompleteListener {
+			.addOnCompleteListener { task ->
 				val user = UserEntity(
 					firstName = firstName,
 					lastName = lastName,
 					email = email,
-					password = password
 				)
 				auth.currentUser?.let {
 					database.reference.child("users").child(it.uid).setValue(user)
 				}
+				_authRes.postValue(task)
+			}.addOnFailureListener { e ->
+				e.printStackTrace()
 			}
 	}
 

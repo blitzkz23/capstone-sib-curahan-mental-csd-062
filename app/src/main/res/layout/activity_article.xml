@@ -54,6 +54,7 @@
         app:layout_constraintBottom_toBottomOf="@id/guideline_top" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="@dimen/dimens_0dp"
         android:layout_height="@dimen/dimens_0dp"
         android:scrollbars="none"
@@ -86,31 +87,30 @@
 
             <TextView
                 android:id="@+id/article_title_detail"
+                style="@style/Text.Header2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimens_24dp"
                 android:layout_marginStart="@dimen/dimens_8dp"
-                style="@style/Text.Header2"
-                android:text="@string/article_title_home"/>
+                android:layout_marginTop="@dimen/dimens_24dp"
+                android:text="@string/article_title_home" />
 
             <TextView
                 android:id="@+id/article_author_detail"
+                style="@style/Text.SubHeader2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimens_8dp"
                 android:layout_marginStart="@dimen/dimens_8dp"
-                style="@style/Text.SubHeader2"
-                android:text="@string/article_title_home"/>
+                android:text="@string/article_title_home" />
 
             <TextView
                 android:id="@+id/article_content_detail"
+                style="@style/Text.Paragraph"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimens_10dp"
                 android:layout_marginStart="@dimen/dimens_8dp"
-                style="@style/Text.Paragraph"
-                android:textSize="18sp"
-                android:text="@string/article_description_home"/>
+                android:layout_marginTop="@dimen/dimens_10dp"
+                android:text="@string/article_description_home"
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -122,15 +122,15 @@
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/curahan_btn_orange"
         android:letterSpacing="0.05"
         android:text="@string/article_continue_read"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:backgroundTint="@color/curahan_btn_orange"
-        app:cornerRadius="12dp"
         android:textSize="16sp"
+        app:cornerRadius="12dp"
         app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
         app:layout_constraintEnd_toEndOf="@id/guideline_right"
-        app:layout_constraintStart_toStartOf="@id/guideline_left"/>
+        app:layout_constraintStart_toStartOf="@id/guideline_left" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

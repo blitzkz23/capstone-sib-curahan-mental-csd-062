@@ -7,9 +7,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.app.curahanmental.R
-import com.app.curahanmental.ui.main.MainActivity
 import com.app.curahanmental.databinding.ActivityLoginBinding
 import com.app.curahanmental.ui.auth.register.RegisterActivity
+import com.app.curahanmental.ui.main.MainActivity
 
 class LoginActivity : AppCompatActivity() {
 	private val binding: ActivityLoginBinding by lazy { ActivityLoginBinding.inflate(layoutInflater) }

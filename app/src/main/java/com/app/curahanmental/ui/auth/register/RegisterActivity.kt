@@ -1,7 +1,9 @@
 package com.app.curahanmental.ui.auth.register
 
+import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -28,18 +30,25 @@ class RegisterActivity : AppCompatActivity() {
 			ViewModelProvider.NewInstanceFactory()
 		)[RegisterViewModel::class.java]
 
-		registerViewModel.authRes.observe(this@RegisterActivity) {
-			if (it.isSuccessful) {
-				startActivity(Intent(this@RegisterActivity, LoginActivity::class.java).also {
-					it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-				})
-				finish()
-			} else {
-				Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
-			}
-		}
+
 		registerActivityBinding.registerButton.setOnClickListener {
 			registerUser()
+			registerViewModel.authRes.observe(this@RegisterActivity) {
+				if (it.isSuccessful) {
+					Toast.makeText(
+						this@RegisterActivity,
+						"Akun telah berhasil dibuat.",
+						Toast.LENGTH_SHORT
+					).show()
+					startActivity(Intent(this@RegisterActivity, LoginActivity::class.java).also {
+						it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+					})
+					finish()
+				} else {
+					Log.e(ContentValues.TAG, "createUserWithEmail:failure", it.exception)
+					Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
+				}
+			}
 		}
 		registerActivityBinding.registerToLoginFlow.setOnClickListener {
 			startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
@@ -80,12 +89,6 @@ class RegisterActivity : AppCompatActivity() {
 				registerEdPassword.error = getString(R.string.error_password2)
 			} else {
 				registerViewModel.signUpUser(firstName, lastName, email, password)
-				Toast.makeText(
-					this@RegisterActivity,
-					"Akun telah berhasil dibuat.",
-					Toast.LENGTH_SHORT
-				).show()
-				finish()
 			}
 		}
 	}
