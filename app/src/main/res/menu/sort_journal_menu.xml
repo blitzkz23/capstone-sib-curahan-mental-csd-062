@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/all_journal" />
+    <item
+        android:id="@+id/bystress_level"
+        android:title="@string/by_stress_levels" />
+    <item
+        android:id="@+id/bydate"
+        android:title="@string/by_date" />
+</menu>

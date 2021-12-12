@@ -97,6 +97,9 @@
     <string name="journal_added">Jurnal telah ditambahkan</string>
     <string name="stress_percent">Stress: %d %%</string>
     <string name="article_continue_read">lanjut baca artikel</string>
+    <string name="all_journal">All Journal</string>
+    <string name="by_stress_levels">By Stress Levels</string>
+    <string name="by_date">By Date</string>
 
     <!-- Spinner array -->
     <string-array name="event">
