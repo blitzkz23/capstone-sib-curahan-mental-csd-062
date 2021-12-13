@@ -6,4 +6,80 @@
     android:layout_height="match_parent"
     tools:context=".ui.journal.detail.DetailJournalActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_detail_journal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/custom_action_bar_journal_detail" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/constraint_guide_left_percent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent" />
+
+    <TextView
+        android:id="@+id/detail_journal_date"
+        style="@style/Text.SubHeader2"
+        android:layout_marginTop="@dimen/dimens_24dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_detail_journal"
+        tools:text="@string/date_placeholder" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@id/detail_journal_date">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="@dimen/dimens_8dp"
+            android:backgroundTint="@color/curahan_dark_green"
+            app:cardCornerRadius="@dimen/dimens_24dp">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="@dimen/dimens_24dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/pokemon"
+                />
+
+            <TextView
+                style="@style/Text.Header3"
+                android:layout_gravity="center"
+                android:textColor="@color/curahan_bg_white"
+                android:layout_marginStart="@dimen/dimens_8dp"
+                android:layout_marginTop="@dimen/dimens_8dp"
+                tools:text="@string/stress_level" />
+
+            <TextView
+                style="@style/Text.Header2"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="@dimen/dimens_32dp"
+                android:textColor="@color/curahan_bg_white"
+                android:layout_marginStart="@dimen/dimens_8dp"
+                android:layout_marginTop="@dimen/dimens_8dp"
+                tools:text="@string/percent_20" />
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

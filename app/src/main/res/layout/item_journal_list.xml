@@ -28,7 +28,7 @@
             android:lines="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Kamis, 09 Desember 2021" />
+            tools:text="@string/date_placeholder" />
 
         <TextView
             android:id="@+id/stress_event_placeholder"

@@ -12,11 +12,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
+        android:text="@string/title_placeholder"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/back_button_fragment"
+        app:layout_constraintStart_toEndOf="@+id/back_button"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:text="@string/title_placeholder" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_left"
@@ -33,7 +33,7 @@
         app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/back_button_fragment"
+        android:id="@+id/back_button"
         android:layout_width="@dimen/dimens_32dp"
         android:layout_height="@dimen/dimens_32dp"
         android:contentDescription="@string/logout_button"
@@ -47,6 +47,25 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.516"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/delete_button"
+        android:layout_width="@dimen/dimens_32dp"
+        android:layout_height="@dimen/dimens_32dp"
+        android:contentDescription="@string/delete_button"
+        android:insetTop="@dimen/dimens_0dp"
+        android:insetBottom="@dimen/dimens_0dp"
+        app:cornerRadius="@dimen/dimens_8dp"
+        app:icon="@drawable/ic_delete"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.483"
         tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
