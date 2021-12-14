@@ -5,6 +5,9 @@ import androidx.paging.DataSource
 import androidx.room.*
 import androidx.sqlite.db.SupportSQLiteQuery
 import com.app.curahanmental.data.source.local.entity.JournalEntity
+import com.app.curahanmental.data.source.remote.entity.ArticleEntity
+import kotlinx.coroutines.flow.Flow
+
 
 @Dao
 interface JournalDao {
@@ -22,4 +25,10 @@ interface JournalDao {
 
 	@Query("SELECT * FROM journal WHERE journal.id = :id")
 	fun getJournalById(id: Int): LiveData<JournalEntity>
+
+	@Insert(onConflict = OnConflictStrategy.IGNORE)
+	suspend fun insertArticles(articles: List<ArticleEntity>)
+
+	@Query("SELECT * FROM articles")
+	fun getAllArticles(): Flow<List<ArticleEntity>>
 }

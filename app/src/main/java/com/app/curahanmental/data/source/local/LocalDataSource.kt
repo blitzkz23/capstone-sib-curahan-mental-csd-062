@@ -4,8 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.paging.*
 import com.app.curahanmental.data.source.local.entity.JournalEntity
 import com.app.curahanmental.data.source.local.room.JournalDao
+import com.app.curahanmental.data.source.remote.entity.ArticleEntity
 import com.app.curahanmental.utils.JournalsSortType
 import com.app.curahanmental.utils.SortUtils
+import kotlinx.coroutines.flow.Flow
 
 class LocalDataSource private constructor(private val journalDao: JournalDao){
 
@@ -34,6 +36,10 @@ class LocalDataSource private constructor(private val journalDao: JournalDao){
     }
 
     fun getJournalById(id: Int) = journalDao.getJournalById(id)
+
+    fun getAllArticles(): Flow<List<ArticleEntity>> = journalDao.getAllArticles()
+
+    suspend fun insertArticles(articles: List<ArticleEntity>) = journalDao.insertArticles(articles)
 
     companion object{
         @Volatile
