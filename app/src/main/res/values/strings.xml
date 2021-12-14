@@ -79,6 +79,7 @@
     <string name="selanjutnya">Selanjutnya</string>
     <string name="stress_level">Tingkat Stress</string>
     <string name="event">Kejadian</string>
+    <string name="journal">Journal\n %s</string>
     <string name="manage_event">Sikap Anda</string>
     <string name="reason">Penyebab Asli</string>
     <string name="stress_percentage">%d %% </string>
@@ -106,6 +107,7 @@
     <string name="event_option">Pilihan Opsi Kejadian</string>
     <string name="manage_event_option">Pilihan Opsi Sikap</string>
     <string name="reason_event_option">Pilihan Opsi Penyebab</string>
+    <string name="joker">Joker</string>
 
     <!-- Spinner array -->
     <string-array name="event">
