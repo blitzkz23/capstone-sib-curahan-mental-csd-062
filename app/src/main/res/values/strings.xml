@@ -103,6 +103,9 @@
     <string name="date_placeholder">Kamis, 09 Desember 2021</string>
     <string name="delete_button">Delete Button</string>
     <string name="percent_20">20%</string>
+    <string name="event_option">Pilihan Opsi Kejadian</string>
+    <string name="manage_event_option">Pilihan Opsi Sikap</string>
+    <string name="reason_event_option">Pilihan Opsi Penyebab</string>
 
     <!-- Spinner array -->
     <string-array name="event">

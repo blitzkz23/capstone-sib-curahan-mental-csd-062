@@ -1,85 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.journal.detail.DetailJournalActivity">
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar_detail_journal"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:context=".ui.journal.detail.DetailJournalActivity">
 
-        <include layout="@layout/custom_action_bar_journal_detail" />
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_detail_journal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    </com.google.android.material.appbar.AppBarLayout>
+            <include layout="@layout/custom_action_bar_journal_detail" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_left"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="@dimen/constraint_guide_left_percent" />
+        </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_right"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/constraint_guide_left_percent" />
 
-    <TextView
-        android:id="@+id/detail_journal_date"
-        style="@style/Text.SubHeader2"
-        android:layout_marginTop="@dimen/dimens_24dp"
-        app:layout_constraintStart_toStartOf="@+id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@id/app_bar_detail_journal"
-        tools:text="@string/date_placeholder" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent" />
 
-    <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@id/guideline_right"
-        app:layout_constraintStart_toStartOf="@id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@id/detail_journal_date">
+        <TextView
+            android:id="@+id/detail_journal_date"
+            style="@style/Text.SubHeader2"
+            android:layout_marginTop="@dimen/dimens_24dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/app_bar_detail_journal"
+            tools:text="@string/date_placeholder" />
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:id="@+id/stress_card"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
             android:layout_marginTop="@dimen/dimens_8dp"
-            android:backgroundTint="@color/curahan_dark_green"
-            app:cardCornerRadius="@dimen/dimens_24dp">
+            app:cardCornerRadius="@dimen/dimens_24dp"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/detail_journal_date">
 
-            <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:layout_marginTop="@dimen/dimens_24dp"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/pokemon"
-                />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/greenish_gradient">
 
-            <TextView
-                style="@style/Text.Header3"
-                android:layout_gravity="center"
-                android:textColor="@color/curahan_bg_white"
-                android:layout_marginStart="@dimen/dimens_8dp"
-                android:layout_marginTop="@dimen/dimens_8dp"
-                tools:text="@string/stress_level" />
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/pokemon"
+                    android:contentDescription="@string/pokemin"
+                    app:layout_constraintBottom_toTopOf="@+id/textView2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                style="@style/Text.Header2"
-                android:layout_gravity="center|bottom"
-                android:layout_marginBottom="@dimen/dimens_32dp"
-                android:textColor="@color/curahan_bg_white"
-                android:layout_marginStart="@dimen/dimens_8dp"
-                android:layout_marginTop="@dimen/dimens_8dp"
-                tools:text="@string/percent_20" />
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/Text.Header3"
+                    android:layout_gravity="center"
+                    android:textColor="@color/curahan_bg_white"
+                    app:layout_constraintBottom_toTopOf="@+id/detail_stress_percentage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView4"
+                    tools:text="@string/stress_level" />
+
+                <TextView
+                    android:id="@+id/detail_stress_percentage"
+                    style="@style/Text.Header2"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="@color/curahan_bg_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2"
+                    tools:text="@string/percent_20" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
-    </FrameLayout>
+        <TextView
+            android:id="@+id/event_title"
+            style="@style/Text.SubHeader2"
+            android:layout_marginTop="@dimen/dimens_16dp"
+            android:text="@string/event"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/stress_card" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/event_option_text"
+            style="@style/Text.Header3"
+            tools:text="@string/event_option"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/event_title" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/event_detail_column"
+            style="@style/TextInputLayoutStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/detail"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/event_option_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/event_detail_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="3"
+                android:maxLength="255"
+                android:maxLines="4"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/manage_event_title"
+            style="@style/Text.SubHeader2"
+            android:layout_marginTop="@dimen/dimens_16dp"
+            android:text="@string/manage_event"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/event_detail_column" />
+
+        <TextView
+            android:id="@+id/manage_event_option_text"
+            style="@style/Text.Header3"
+            tools:text="@string/manage_event_option"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/manage_event_title" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/manage_event_detail_column"
+            style="@style/TextInputLayoutStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/manage_event"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/manage_event_option_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/manage_event_detail_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="3"
+                android:maxLength="255"
+                android:maxLines="4"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/reason_title"
+            style="@style/Text.SubHeader2"
+            android:layout_marginTop="@dimen/dimens_16dp"
+            android:text="@string/reason"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/manage_event_detail_column" />
+
+        <TextView
+            android:id="@+id/reason_option_text"
+            style="@style/Text.Header3"
+            tools:text="@string/reason_event_option"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/reason_title" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reason_detail_column"
+            style="@style/TextInputLayoutStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
+            android:hint="@string/reason"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/reason_option_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/reason_detail_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="3"
+                android:maxLength="255"
+                android:maxLines="4"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
