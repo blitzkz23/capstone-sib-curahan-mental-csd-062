@@ -1,9 +1,7 @@
 package com.app.curahanmental.data.source.local
 
 import androidx.lifecycle.LiveData
-import androidx.paging.Config
-import androidx.paging.PagedList
-import androidx.paging.toLiveData
+import androidx.paging.*
 import com.app.curahanmental.data.source.local.entity.JournalEntity
 import com.app.curahanmental.data.source.local.room.JournalDao
 import com.app.curahanmental.utils.JournalsSortType
@@ -17,9 +15,22 @@ class LocalDataSource private constructor(private val journalDao: JournalDao){
 
     fun getAllJournal() = journalDao.getAllJournal()
 
-    fun getJournalWithSorting(sortType: JournalsSortType): LiveData<PagedList<JournalEntity>> {
+    fun getJournalWithSorting(sortType: JournalsSortType): LiveData<PagingData<JournalEntity>> {
         val query = SortUtils.getSortedQuery(sortType)
-        return journalDao.getJournalWithFilter(query).toLiveData(Config(PAGE_SIZE))
+        val config = Config(PAGE_SIZE)
+        return Pager(
+            PagingConfig(
+                config.pageSize,
+                config.prefetchDistance,
+                config.enablePlaceholders,
+                config.initialLoadSizeHint,
+                config.maxSize
+            ),
+            null,
+            journalDao.getJournalWithFilter(query).asPagingSourceFactory(
+//                ArchTaskExecutor.getIOThreadExecutor().asCoroutineDispatcher()
+            )
+        ).liveData
     }
 
     fun getJournalById(id: Int) = journalDao.getJournalById(id)

@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
-import androidx.paging.PagedList
+import androidx.paging.PagingData
 import com.app.curahanmental.data.source.JournalRepository
 import com.app.curahanmental.data.source.local.entity.JournalEntity
 import com.app.curahanmental.utils.JournalsSortType
@@ -13,7 +13,7 @@ class JournalViewModel(private val repository: JournalRepository) : ViewModel() 
 
 	private val _sort = MutableLiveData<JournalsSortType>()
 
-	val journals: LiveData<PagedList<JournalEntity>> = _sort.switchMap {
+	val journals: LiveData<PagingData<JournalEntity>> = _sort.switchMap {
 		repository.getJournalWithSorting(it)
 	}
 

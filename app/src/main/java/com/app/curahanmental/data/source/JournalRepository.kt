@@ -2,6 +2,7 @@ package com.app.curahanmental.data.source
 
 import androidx.lifecycle.LiveData
 import androidx.paging.PagedList
+import androidx.paging.PagingData
 import com.app.curahanmental.data.source.local.LocalDataSource
 import com.app.curahanmental.data.source.local.entity.JournalEntity
 import com.app.curahanmental.data.source.remote.ApiResponses
@@ -27,7 +28,7 @@ class JournalRepository(
         return localDataSource.getAllJournal()
     }
 
-    override fun getJournalWithSorting(sortType: JournalsSortType): LiveData<PagedList<JournalEntity>> {
+    override fun getJournalWithSorting(sortType: JournalsSortType): LiveData<PagingData<JournalEntity>> {
         return localDataSource.getJournalWithSorting(sortType)
     }
 

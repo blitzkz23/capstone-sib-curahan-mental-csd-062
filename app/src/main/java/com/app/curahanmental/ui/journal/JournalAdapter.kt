@@ -6,7 +6,7 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.paging.PagedListAdapter
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.app.curahanmental.R
@@ -16,7 +16,8 @@ import com.app.curahanmental.ui.journal.detail.DetailJournalActivity
 import com.app.curahanmental.utils.DateUtils
 
 
-class JournalAdapter : PagedListAdapter<JournalEntity, JournalAdapter.JournalViewHolder>(DIFF_CALLBACK) {
+class JournalAdapter :
+	PagingDataAdapter<JournalEntity, JournalAdapter.JournalViewHolder>(DIFF_CALLBACK) {
 	private lateinit var context: Context
 
 	override fun onBindViewHolder(holder: JournalViewHolder, position: Int) {

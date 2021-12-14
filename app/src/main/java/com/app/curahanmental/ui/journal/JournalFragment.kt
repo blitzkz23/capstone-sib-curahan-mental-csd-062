@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.paging.PagedList
+import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.curahanmental.R
 import com.app.curahanmental.data.source.local.entity.JournalEntity
@@ -70,13 +71,13 @@ class JournalFragment : Fragment() {
 		}
 	}
 
-	private fun showJournalRecyclerView(journal: PagedList<JournalEntity>) {
+	private fun showJournalRecyclerView(journal: PagingData<JournalEntity>) {
 		val recyclerAdapter = JournalAdapter()
 		with(binding) {
 			rvJournal.layoutManager = LinearLayoutManager(activity)
 			rvJournal.setHasFixedSize(true)
 			rvJournal.adapter = recyclerAdapter
-			recyclerAdapter.submitList(journal)
+			recyclerAdapter.submitData(lifecycle, journal)
 		}
 	}
 
