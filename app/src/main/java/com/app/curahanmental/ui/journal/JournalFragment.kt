@@ -1,3 +1,4 @@
+@file:Suppress("NAME_SHADOWING")
 package com.app.curahanmental.ui.journal
 
 import android.os.Bundle
@@ -8,8 +9,8 @@ import android.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
-import androidx.paging.PagedList
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.curahanmental.R
@@ -18,6 +19,7 @@ import com.app.curahanmental.databinding.FragmentJournalBinding
 import com.app.curahanmental.ui.viemodel.ViewModelFactory
 import com.app.curahanmental.utils.JournalsSortType
 import com.google.android.material.button.MaterialButton
+import kotlinx.coroutines.launch
 
 class JournalFragment : Fragment() {
 
@@ -77,7 +79,10 @@ class JournalFragment : Fragment() {
 			rvJournal.layoutManager = LinearLayoutManager(activity)
 			rvJournal.setHasFixedSize(true)
 			rvJournal.adapter = recyclerAdapter
-			recyclerAdapter.submitData(lifecycle, journal)
+
+			lifecycleScope.launch {
+				recyclerAdapter.submitData(lifecycle, journal)
+			}
 		}
 	}
 

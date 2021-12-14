@@ -77,7 +77,7 @@
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="93dp"
         android:contentDescription="@string/pokemin"
         android:src="@drawable/pokemon"
         app:layout_constraintEnd_toStartOf="@+id/godzimax"
@@ -90,13 +90,25 @@
         android:id="@+id/godzimax"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="93dp"
         android:contentDescription="@string/godzimax"
         android:src="@drawable/godzilla"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/joker"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/pokemin"
+        app:layout_constraintTop_toBottomOf="@+id/stress_indicator" />
+
+    <ImageView
+        android:id="@+id/joker"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="93dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/joker"
+        android:src="@drawable/joker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/godzimax"
         app:layout_constraintTop_toBottomOf="@+id/stress_indicator" />
 
     <com.google.android.material.button.MaterialButton

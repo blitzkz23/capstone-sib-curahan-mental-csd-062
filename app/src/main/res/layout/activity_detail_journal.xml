@@ -62,13 +62,13 @@
                 android:background="@drawable/greenish_gradient">
 
                 <ImageView
-                    android:id="@+id/imageView4"
+                    android:id="@+id/stress_illustration"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="8dp"
-                    android:src="@drawable/pokemon"
                     android:contentDescription="@string/pokemin"
+                    android:src="@drawable/pokemon"
                     app:layout_constraintBottom_toTopOf="@+id/textView2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -79,13 +79,13 @@
                     android:id="@+id/textView2"
                     style="@style/Text.Header3"
                     android:layout_gravity="center"
+                    android:text="@string/stress_level"
                     android:textColor="@color/curahan_bg_white"
                     app:layout_constraintBottom_toTopOf="@+id/detail_stress_percentage"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView4"
-                    tools:text="@string/stress_level" />
+                    app:layout_constraintTop_toBottomOf="@+id/stress_illustration" />
 
                 <TextView
                     android:id="@+id/detail_stress_percentage"
@@ -113,9 +113,9 @@
         <TextView
             android:id="@+id/event_option_text"
             style="@style/Text.Header3"
-            tools:text="@string/event_option"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/event_title" />
+            app:layout_constraintTop_toBottomOf="@id/event_title"
+            tools:text="@string/event_option" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/event_detail_column"
@@ -150,9 +150,9 @@
         <TextView
             android:id="@+id/manage_event_option_text"
             style="@style/Text.Header3"
-            tools:text="@string/manage_event_option"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/manage_event_title" />
+            app:layout_constraintTop_toBottomOf="@id/manage_event_title"
+            tools:text="@string/manage_event_option" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/manage_event_detail_column"
@@ -187,9 +187,9 @@
         <TextView
             android:id="@+id/reason_option_text"
             style="@style/Text.Header3"
-            tools:text="@string/reason_event_option"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/reason_title" />
+            app:layout_constraintTop_toBottomOf="@id/reason_title"
+            tools:text="@string/reason_event_option" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/reason_detail_column"
