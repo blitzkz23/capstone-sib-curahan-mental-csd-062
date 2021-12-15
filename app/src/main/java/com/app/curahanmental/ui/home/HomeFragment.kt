@@ -13,7 +13,6 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.curahanmental.R
 import com.app.curahanmental.data.source.Resource
@@ -23,9 +22,7 @@ import com.app.curahanmental.ui.home.articles.ArticleAdapter
 import com.app.curahanmental.ui.home.tips.TipsActivity
 import com.app.curahanmental.ui.settings.SettingsActivity
 import com.app.curahanmental.ui.viemodel.ViewModelFactory
-import com.app.curahanmental.utils.StatusResponse
 import com.google.android.material.button.MaterialButton
-import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
 
@@ -83,7 +80,6 @@ class HomeFragment : Fragment() {
 	private fun initArticleContent() {
 			homeViewModel.articles.observe(viewLifecycleOwner, { res ->
 				if (res != null) {
-					Log.d("HELP", "============================================ ${res.data}")
 					when (res) {
 						is Resource.Success -> {
 							Log.d("GET_DATA", "Success get data")
