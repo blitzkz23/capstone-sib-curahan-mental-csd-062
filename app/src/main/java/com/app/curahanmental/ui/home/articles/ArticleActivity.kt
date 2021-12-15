@@ -5,7 +5,6 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.curahanmental.data.source.local.entity.ArticlesModel
-import com.app.curahanmental.data.source.remote.entity.ArticleEntity
 import com.app.curahanmental.databinding.ActivityArticleBinding
 import com.app.curahanmental.utils.Constants.EXTRA_ARTICLE
 import com.bumptech.glide.Glide
@@ -33,7 +32,7 @@ class ArticleActivity : AppCompatActivity() {
             btnContinueRead.setOnClickListener {
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(articleContent?.url)))
             }
-            btnSettingsBack.setOnClickListener{
+            btnArticleBack.setOnClickListener{
                 finish()
             }
         }

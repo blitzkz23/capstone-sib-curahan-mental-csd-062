@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.articles.ArticleActivity">
+    tools:context=".ui.home.tips.DetailTipsActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"
@@ -27,15 +27,8 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent" />
-
     <ImageView
-        android:id="@+id/btn_article_back"
+        android:id="@+id/btn_tips_detail_back"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:src="@drawable/ic_baseline_arrow_back"
@@ -44,11 +37,12 @@
         app:layout_constraintLeft_toLeftOf="@id/guideline_left"/>
 
     <TextView
-        android:id="@+id/tv_title_article"
+        android:id="@+id/tv_title_tips_detail"
         style="@style/Text.Header1"
-        android:text="@string/title_article"
+        android:text="@string/title_tips_detail"
         android:layout_marginTop="4dp"
         android:layout_marginStart="60dp"
+        android:textColor="@color/grey_700"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/guideline_left"
         app:layout_constraintBottom_toBottomOf="@id/guideline_top" />
@@ -58,7 +52,7 @@
         android:layout_width="@dimen/dimens_0dp"
         android:layout_height="@dimen/dimens_0dp"
         android:scrollbars="none"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/guideline_right"
         app:layout_constraintStart_toEndOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@id/guideline_top">
@@ -70,68 +64,50 @@
             android:paddingBottom="@dimen/dimens_24dp">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/article_card_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_marginTop="@dimen/dimens_24dp"
+                android:layout_gravity="fill"
+                android:elevation="10dp"
+                android:backgroundTint="#C7C9D9"
                 app:cardCornerRadius="25dp">
 
-                <ImageView
-                    android:id="@+id/article_image_view_detail"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:src="@color/curahan_dark_green" />
+                <TextView
+                    android:id="@+id/tips_title_detail"
+                    style="@style/Text.Header2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginEnd="55dp"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/dimens_8dp"
+                    android:layout_marginBottom="@dimen/dimens_8dp"
+                    android:text="@string/tips" />
 
             </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/article_title_detail"
-                style="@style/Text.Header2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimens_8dp"
+
+            <ImageView
+                android:id="@+id/tips_image_view_detail"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
                 android:layout_marginTop="@dimen/dimens_24dp"
-                android:text="@string/article_title_home" />
+                android:src="@color/curahan_dark_green"
+                tools:src="@drawable/tips_image1"/>
 
             <TextView
-                android:id="@+id/article_author_detail"
-                style="@style/Text.SubHeader2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimens_8dp"
-                android:text="@string/article_title_home" />
-
-            <TextView
-                android:id="@+id/article_content_detail"
+                android:id="@+id/tips_content_detail"
                 style="@style/Text.Paragraph"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimens_8dp"
-                android:layout_marginTop="@dimen/dimens_10dp"
+                android:layout_marginTop="@dimen/dimens_24dp"
                 android:text="@string/article_description_home"
                 android:textSize="18sp" />
 
         </LinearLayout>
 
     </ScrollView>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_continue_read"
-        style="@style/Text2"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:backgroundTint="@color/curahan_btn_orange"
-        android:letterSpacing="0.05"
-        android:text="@string/article_continue_read"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:cornerRadius="12dp"
-        app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
-        app:layout_constraintEnd_toEndOf="@id/guideline_right"
-        app:layout_constraintStart_toStartOf="@id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@id/sv_article"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,4 +24,9 @@ class JournalViewModel(private val repository: JournalRepository) : ViewModel() 
 	fun sort(sortType: JournalsSortType) {
 		_sort.value = sortType
 	}
+
+	fun deleteSwiped(journal: JournalEntity) {
+		repository.deleteJournal(journal)
+	}
+
 }

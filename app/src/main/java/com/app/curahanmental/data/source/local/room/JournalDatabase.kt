@@ -6,7 +6,6 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.app.curahanmental.data.source.local.entity.Articles
 import com.app.curahanmental.data.source.local.entity.JournalEntity
-import com.app.curahanmental.data.source.remote.entity.ArticleEntity
 
 @Database(entities = [JournalEntity::class, Articles::class], version = 1, exportSchema = false)
 abstract class JournalDatabase : RoomDatabase() {
@@ -21,8 +20,8 @@ abstract class JournalDatabase : RoomDatabase() {
 		fun getInstance(context: Context): JournalDatabase {
 			return synchronized(this) {
 				instance ?: Room.databaseBuilder(context, JournalDatabase::class.java, "journal.db")
-					.fallbackToDestructiveMigration()
-					.allowMainThreadQueries()
+					.fallbackToDestructiveMigration() // only for testing
+					.allowMainThreadQueries() // this is also for testing, Never allow main thread queries on production applications.
 					.build()
 			}
 		}

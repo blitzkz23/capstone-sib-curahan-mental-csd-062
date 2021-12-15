@@ -13,9 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CurahanMental">
         <activity
-            android:name=".ui.kindnessmessage.add.AddKindnessMessageActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.journal.detail.DetailJournalActivity"
             android:exported="false" />
         <activity

@@ -4,9 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.paging.PagingData
 import com.app.curahanmental.data.source.local.entity.ArticlesModel
 import com.app.curahanmental.data.source.local.entity.JournalEntity
-import com.app.curahanmental.data.source.remote.ApiResponses
-import com.app.curahanmental.data.source.remote.entity.ArticleEntity
-import com.app.curahanmental.data.source.remote.entity.ArticleResponses
 import com.app.curahanmental.utils.JournalsSortType
 import kotlinx.coroutines.flow.Flow
 

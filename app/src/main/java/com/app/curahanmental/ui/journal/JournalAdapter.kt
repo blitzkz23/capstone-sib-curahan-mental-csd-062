@@ -19,6 +19,7 @@ import com.app.curahanmental.utils.DateUtils
 class JournalAdapter :
 	PagingDataAdapter<JournalEntity, JournalAdapter.JournalViewHolder>(DIFF_CALLBACK) {
 	private lateinit var context: Context
+	private lateinit var journalE: JournalEntity
 
 	override fun onBindViewHolder(holder: JournalViewHolder, position: Int) {
 		context = holder.itemView.context
@@ -33,6 +34,8 @@ class JournalAdapter :
 
 	inner class JournalViewHolder(private val binding: ItemJournalListBinding) : RecyclerView.ViewHolder(binding.root) {
 		fun bind(journal: JournalEntity) {
+			journalE = journal
+
 			with(binding){
 				journalDate.text = DateUtils.convertMillisToString(journal.date)
 				stressEventPlaceholder.text = journal.event
@@ -55,6 +58,8 @@ class JournalAdapter :
 				}
 			}
 		}
+
+		fun getJournal(): JournalEntity = journalE
 	}
 
 	companion object {

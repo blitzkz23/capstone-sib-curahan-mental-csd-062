@@ -1,5 +1,6 @@
 package com.app.curahanmental.ui.home.tips
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,8 +23,13 @@ class TipsActivity : AppCompatActivity() {
             rvTips.layoutManager = LinearLayoutManager(applicationContext)
             val tipsAdapter = TipsAdapter(listTips)
             rvTips.adapter = tipsAdapter
+            tipsAdapter.onItemClick = { selectedItem ->
+                val intent = Intent(this@TipsActivity, DetailTipsActivity::class.java)
+                intent.putExtra(DetailTipsActivity.TIPS, selectedItem)
+                startActivity(intent)
+            }
         }
-        binding.btnSettingsBack.setOnClickListener {
+        binding.btnTipsBack.setOnClickListener {
             finish()
         }
     }

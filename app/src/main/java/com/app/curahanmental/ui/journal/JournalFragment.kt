@@ -12,7 +12,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.paging.PagingData
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.app.curahanmental.R
 import com.app.curahanmental.data.source.local.entity.JournalEntity
 import com.app.curahanmental.databinding.FragmentJournalBinding
@@ -53,6 +55,7 @@ class JournalFragment : Fragment() {
 			showSortingPopUpMenu(view)
 		}
 		journalViewModel.journals.observe(viewLifecycleOwner, Observer(this::showJournalRecyclerView))
+
 	}
 
 	private fun showSortingPopUpMenu(view: View) {
@@ -75,10 +78,14 @@ class JournalFragment : Fragment() {
 
 	private fun showJournalRecyclerView(journal: PagingData<JournalEntity>) {
 		val recyclerAdapter = JournalAdapter()
+		val callback = Callback()
+		val itemTouchHelper = ItemTouchHelper(callback)
+
 		with(binding) {
 			rvJournal.layoutManager = LinearLayoutManager(activity)
 			rvJournal.setHasFixedSize(true)
 			rvJournal.adapter = recyclerAdapter
+			itemTouchHelper.attachToRecyclerView(rvJournal)
 
 			lifecycleScope.launch {
 				recyclerAdapter.submitData(lifecycle, journal)
@@ -89,5 +96,28 @@ class JournalFragment : Fragment() {
 	override fun onDestroyView() {
 		super.onDestroyView()
 		_binding = null
+	}
+
+	inner class Callback : ItemTouchHelper.Callback() {
+		override fun getMovementFlags(
+			recyclerView: RecyclerView,
+			viewHolder: RecyclerView.ViewHolder
+		): Int {
+			return makeMovementFlags(0, ItemTouchHelper.RIGHT)
+		}
+
+		override fun onMove(
+			recyclerView: RecyclerView,
+			viewHolder: RecyclerView.ViewHolder,
+			target: RecyclerView.ViewHolder
+		): Boolean {
+			return false
+		}
+
+		override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+			val journal = (viewHolder as JournalAdapter.JournalViewHolder).getJournal()
+			journalViewModel.deleteSwiped(journal)
+		}
+
 	}
 }

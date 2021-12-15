@@ -10,6 +10,7 @@ object Constants {
     const val PARAMS = BuildConfig.PARAMS
     const val EXTRA_ARTICLE = "extra_article"
     const val EXTRA_JOURNAL = "extra_journal"
+    const val EXTRA_TIPS = "extra_tips"
 
     private val SINGLE_EXECUTOR = Executors.newSingleThreadExecutor()
 
