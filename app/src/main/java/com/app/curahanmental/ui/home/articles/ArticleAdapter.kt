@@ -1,19 +1,12 @@
 package com.app.curahanmental.ui.home.articles
 
 import android.annotation.SuppressLint
-import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.app.curahanmental.data.source.local.entity.Articles
 import com.app.curahanmental.data.source.local.entity.ArticlesModel
-import com.app.curahanmental.data.source.remote.entity.ArticleEntity
 import com.app.curahanmental.databinding.ItemArticleHomeBinding
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 
 class ArticleAdapter: RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
 

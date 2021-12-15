@@ -168,6 +168,7 @@
                     android:id="@+id/home_tips_button"
                     android:layout_width="70dp"
                     android:layout_height="40dp"
+                    android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/curahan_btn_orange"
                     android:text="@string/home_tips_button"
                     android:textAllCaps="false"
@@ -175,7 +176,6 @@
                     app:cornerRadius="@dimen/dimens_24dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/home_tips_message"
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

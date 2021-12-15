@@ -108,6 +108,9 @@
     <string name="manage_event_option">Pilihan Opsi Sikap</string>
     <string name="reason_event_option">Pilihan Opsi Penyebab</string>
     <string name="joker">Joker</string>
+    <string name="del_journal">Hapus jurnal ini?</string>
+    <string name="no">Tidak</string>
+    <string name="yes">Ya</string>
 
     <!-- Spinner array -->
     <string-array name="event">
