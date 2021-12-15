@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CurahanMental">
         <activity
+            android:name=".ui.home.tips.DetailTipsActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.journal.detail.DetailJournalActivity"
             android:exported="false" />
         <activity

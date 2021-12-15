@@ -32,7 +32,7 @@ class ArticleActivity : AppCompatActivity() {
             btnContinueRead.setOnClickListener {
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(articleContent?.url)))
             }
-            btnSettingsBack.setOnClickListener{
+            btnArticleBack.setOnClickListener{
                 finish()
             }
         }

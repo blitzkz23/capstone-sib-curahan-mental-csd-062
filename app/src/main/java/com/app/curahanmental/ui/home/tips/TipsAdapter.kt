@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 
 class TipsAdapter(private val listTips: ArrayList<TipsModel>): RecyclerView.Adapter<TipsAdapter.TipsViewHolder>() {
 
+    var onItemClick: ((TipsModel) -> Unit) ? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TipsAdapter.TipsViewHolder {
         val binding = ItemTipsHomeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -29,6 +30,11 @@ class TipsAdapter(private val listTips: ArrayList<TipsModel>): RecyclerView.Adap
                 Glide.with(itemView.context)
                     .load(content.image)
                     .into(imgTips)
+            }
+        }
+        init {
+            binding.root.setOnClickListener {
+                onItemClick?.invoke(listTips[absoluteAdapterPosition])
             }
         }
     }
