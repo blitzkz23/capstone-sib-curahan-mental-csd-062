@@ -4,9 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.app.curahanmental.data.source.local.entity.Articles
 import com.app.curahanmental.data.source.local.entity.JournalEntity
+import com.app.curahanmental.data.source.remote.entity.ArticleEntity
 
-@Database(entities = [JournalEntity::class], version = 1, exportSchema = false)
+@Database(entities = [JournalEntity::class, Articles::class], version = 1, exportSchema = false)
 abstract class JournalDatabase : RoomDatabase() {
 
 	abstract fun journalDao(): JournalDao
@@ -19,6 +21,8 @@ abstract class JournalDatabase : RoomDatabase() {
 		fun getInstance(context: Context): JournalDatabase {
 			return synchronized(this) {
 				instance ?: Room.databaseBuilder(context, JournalDatabase::class.java, "journal.db")
+					.fallbackToDestructiveMigration()
+					.allowMainThreadQueries()
 					.build()
 			}
 		}

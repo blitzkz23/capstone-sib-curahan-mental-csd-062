@@ -1,5 +1,6 @@
 package com.app.curahanmental.data.source.remote
 
+import com.app.curahanmental.data.source.remote.entity.ArticleEntity
 import com.app.curahanmental.data.source.remote.entity.ArticleResponses
 import retrofit2.http.GET
 

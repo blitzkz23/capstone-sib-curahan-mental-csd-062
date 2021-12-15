@@ -2,8 +2,10 @@ package com.app.curahanmental.data.source
 
 import androidx.lifecycle.LiveData
 import androidx.paging.PagingData
+import com.app.curahanmental.data.source.local.entity.ArticlesModel
 import com.app.curahanmental.data.source.local.entity.JournalEntity
 import com.app.curahanmental.data.source.remote.ApiResponses
+import com.app.curahanmental.data.source.remote.entity.ArticleEntity
 import com.app.curahanmental.data.source.remote.entity.ArticleResponses
 import com.app.curahanmental.utils.JournalsSortType
 import kotlinx.coroutines.flow.Flow
@@ -15,5 +17,5 @@ interface JournalDataSource {
     fun getALlJournal(): LiveData<List<JournalEntity>>
     fun getJournalWithSorting(sortType: JournalsSortType): LiveData<PagingData<JournalEntity>>
     fun getJournalById(id: Int): LiveData<JournalEntity>
-    suspend fun getArticles(): Flow<ApiResponses<ArticleResponses>>
+    fun getArticles(): Flow<Resource<List<ArticlesModel>>>
 }

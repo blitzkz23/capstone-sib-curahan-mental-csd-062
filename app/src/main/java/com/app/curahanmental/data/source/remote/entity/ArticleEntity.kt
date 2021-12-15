@@ -1,28 +1,24 @@
 package com.app.curahanmental.data.source.remote.entity
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-@Entity(tableName = "articles")
 data class ArticleEntity(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int? = null,
-    @SerializedName("sources")
-    val source: ArticleSources? = null,
     @SerializedName("author")
-    val author: String? = null,
+    val author: String,
     @SerializedName("title")
-    val title: String? = null,
+    val title: String,
     @SerializedName("description")
-    val description: String? = null,
+    val description: String,
     @SerializedName("url")
-    val url: String? = null,
+    val url: String,
     @SerializedName("urlToImage")
-    val urlToImage: String? = null,
+    val urlToImage: String,
     @SerializedName("publishedAt")
-    val publishedAt: String? = null,
+    val publishedAt: String,
     @SerializedName("content")
-    val content: String? = null
+    val content: String
 ):Serializable

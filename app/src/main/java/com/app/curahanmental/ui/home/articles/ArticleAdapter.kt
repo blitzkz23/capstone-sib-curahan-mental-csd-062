@@ -8,6 +8,8 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.app.curahanmental.data.source.local.entity.Articles
+import com.app.curahanmental.data.source.local.entity.ArticlesModel
 import com.app.curahanmental.data.source.remote.entity.ArticleEntity
 import com.app.curahanmental.databinding.ItemArticleHomeBinding
 import com.bumptech.glide.Glide
@@ -15,7 +17,8 @@ import com.bumptech.glide.request.RequestOptions
 
 class ArticleAdapter: RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
 
-    private var listArticle = ArrayList<ArticleEntity>()
+    private var listArticle = ArrayList<ArticlesModel>()
+    var onItemClick: ((ArticlesModel) -> Unit)? = null
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -33,26 +36,25 @@ class ArticleAdapter: RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
     override fun getItemCount(): Int = listArticle.size
 
     inner class ArticleViewHolder(private var binding: ItemArticleHomeBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(content: ArticleEntity){
+        fun bind(content: ArticlesModel){
             binding.apply {
                 Glide.with(itemView.context)
                     .load(content.urlToImage)
                     .into(articleImageViewHome)
                 articleTitleHome.text = content.title
                 articleDescriptionHome.text = content.description
-
-                itemView.setOnClickListener {
-                    val intent = Intent(itemView.context, ArticleActivity::class.java)
-                    intent.putExtra(ArticleActivity.ARTICLE, content)
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    itemView.context.startActivity(intent)
-                }
+            }
+        }
+        init {
+            binding.root.setOnClickListener {
+                onItemClick?.invoke(listArticle[absoluteAdapterPosition])
             }
         }
     }
 
+
     @SuppressLint("NotifyDataSetChanged")
-    fun setArticleData(newArticle: List<ArticleEntity>?){
+    fun setArticleData(newArticle: List<ArticlesModel>?){
         if (newArticle == null) return
         listArticle.clear()
         listArticle.addAll(newArticle)

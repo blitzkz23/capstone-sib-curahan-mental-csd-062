@@ -45,5 +45,5 @@ class HomeViewModel(private val repository: JournalRepository) : ViewModel() {
 
 	val currentData: LiveData<String?> = _currentData
 
-	suspend fun getArticles() = repository.getArticles().asLiveData()
+	val articles = repository.getArticles().asLiveData()
 }

@@ -2,6 +2,7 @@ package com.app.curahanmental.data.source.local
 
 import androidx.lifecycle.LiveData
 import androidx.paging.*
+import com.app.curahanmental.data.source.local.entity.Articles
 import com.app.curahanmental.data.source.local.entity.JournalEntity
 import com.app.curahanmental.data.source.local.room.JournalDao
 import com.app.curahanmental.data.source.remote.entity.ArticleEntity
@@ -37,9 +38,9 @@ class LocalDataSource private constructor(private val journalDao: JournalDao){
 
     fun getJournalById(id: Int) = journalDao.getJournalById(id)
 
-    fun getAllArticles(): Flow<List<ArticleEntity>> = journalDao.getAllArticles()
+    fun getAllArticles(): Flow<List<Articles>> = journalDao.getAllArticles()
 
-    suspend fun insertArticles(articles: List<ArticleEntity>) = journalDao.insertArticles(articles)
+    suspend fun insertArticles(articles: List<Articles>) = journalDao.insertArticles(articles)
 
     companion object{
         @Volatile

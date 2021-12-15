@@ -1,5 +1,8 @@
 package com.app.curahanmental.data.source.remote
 
+import android.util.Log
+import com.app.curahanmental.data.source.local.entity.Articles
+import com.app.curahanmental.data.source.remote.entity.ArticleEntity
 import com.app.curahanmental.data.source.remote.entity.ArticleResponses
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -7,13 +10,17 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
 class RemoteDataSource private constructor(private val api: ApiConfig){
-    suspend fun getArticles(): Flow<ApiResponses<ArticleResponses>>{
+    suspend fun getArticles(): Flow<ApiResponses<List<ArticleEntity>>> {
         return flow {
+            lateinit var data: List<ArticleEntity>
             try {
                 val responses = api.getServices().getArticles()
-                emit(ApiResponses.success(responses))
+                data = responses.listOfArticles!!
+                Log.d("TEST", "========================================= $data")
+                emit(ApiResponses.Success(data))
             } catch (e: Exception){
-                e.printStackTrace()
+                emit(ApiResponses.Error(e.toString()))
+                Log.e("RemoteDataSource", e.toString())
             }
         }.flowOn(Dispatchers.IO)
     }

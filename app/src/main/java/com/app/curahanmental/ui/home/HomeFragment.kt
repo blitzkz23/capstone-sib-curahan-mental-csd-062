@@ -16,7 +16,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.curahanmental.R
+import com.app.curahanmental.data.source.Resource
 import com.app.curahanmental.databinding.FragmentHomeBinding
+import com.app.curahanmental.ui.home.articles.ArticleActivity
 import com.app.curahanmental.ui.home.articles.ArticleAdapter
 import com.app.curahanmental.ui.home.tips.TipsActivity
 import com.app.curahanmental.ui.settings.SettingsActivity
@@ -79,21 +81,20 @@ class HomeFragment : Fragment() {
 	}
 
 	private fun initArticleContent() {
-		lifecycleScope.launch {
-			homeViewModel.getArticles().observe(viewLifecycleOwner, { res ->
+			homeViewModel.articles.observe(viewLifecycleOwner, { res ->
 				if (res != null) {
-					when (res.status) {
-						StatusResponse.SUCCESS -> {
+					Log.d("HELP", "============================================ ${res.data}")
+					when (res) {
+						is Resource.Success -> {
 							Log.d("GET_DATA", "Success get data")
-							articleAdapter.setArticleData(res.body.listOfArticles)
+							articleAdapter.setArticleData(res.data)
 						}
-						StatusResponse.ERROR -> Log.d("GET_DATA", "Unable to get data")
+						is Resource.Error -> Log.d("GET_DATA", "Unable to get data")
 						else -> Log.d("GET_DATA", "Something wrong!")
 					}
 
 				}
 			})
-		}
 	}
 
 	private fun showRecycleViewArticle() {
@@ -101,6 +102,11 @@ class HomeFragment : Fragment() {
 			rvHomeArticle.layoutManager = LinearLayoutManager(context)
 			rvHomeArticle.setHasFixedSize(true)
 			rvHomeArticle.adapter = articleAdapter
+			articleAdapter.onItemClick = { selectedData ->
+				val intent = Intent(activity, ArticleActivity::class.java)
+				intent.putExtra(ArticleActivity.ARTICLE, selectedData)
+				startActivity(intent)
+			}
 		}
 	}
 }
