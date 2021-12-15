@@ -5,7 +5,6 @@ import androidx.paging.*
 import com.app.curahanmental.data.source.local.entity.Articles
 import com.app.curahanmental.data.source.local.entity.JournalEntity
 import com.app.curahanmental.data.source.local.room.JournalDao
-import com.app.curahanmental.data.source.remote.entity.ArticleEntity
 import com.app.curahanmental.utils.JournalsSortType
 import com.app.curahanmental.utils.SortUtils
 import kotlinx.coroutines.flow.Flow

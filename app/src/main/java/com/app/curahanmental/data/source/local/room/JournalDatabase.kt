@@ -6,7 +6,6 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.app.curahanmental.data.source.local.entity.Articles
 import com.app.curahanmental.data.source.local.entity.JournalEntity
-import com.app.curahanmental.data.source.remote.entity.ArticleEntity
 
 @Database(entities = [JournalEntity::class, Articles::class], version = 1, exportSchema = false)
 abstract class JournalDatabase : RoomDatabase() {
