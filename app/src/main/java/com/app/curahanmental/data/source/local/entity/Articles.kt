@@ -3,9 +3,6 @@ package com.app.curahanmental.data.source.local.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.app.curahanmental.data.source.remote.entity.ArticleSources
-import com.google.gson.annotations.SerializedName
-import java.util.*
 
 @Entity(tableName = "articles")
 data class Articles(

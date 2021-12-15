@@ -1,4 +1,4 @@
-package com.app.curahanmental.ui.supportmessage
+package com.app.curahanmental.ui.kindnessmessage
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,13 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.app.curahanmental.databinding.FragmentSupportMessageBinding
-import com.app.curahanmental.ui.notifications.SupportMessageViewModel
+import com.app.curahanmental.databinding.FragmentKindnessMessageBinding
+import com.app.curahanmental.ui.notifications.KindnessMessageViewModel
 
-class SupportMessageFragment : Fragment() {
+class KindnessMessageFragment : Fragment() {
 
-	private lateinit var supportMessageViewModel: SupportMessageViewModel
-	private var _binding: FragmentSupportMessageBinding? = null
+	private lateinit var supportMessageViewModel: KindnessMessageViewModel
+	private var _binding: FragmentKindnessMessageBinding? = null
 
 	// This property is only valid between onCreateView and
 	// onDestroyView.
@@ -24,9 +24,9 @@ class SupportMessageFragment : Fragment() {
 		savedInstanceState: Bundle?
 	): View {
 		supportMessageViewModel =
-			ViewModelProvider(this)[SupportMessageViewModel::class.java]
+			ViewModelProvider(this)[KindnessMessageViewModel::class.java]
 
-		_binding = FragmentSupportMessageBinding.inflate(inflater, container, false)
+		_binding = FragmentKindnessMessageBinding.inflate(inflater, container, false)
 
 		return binding.root
 	}
