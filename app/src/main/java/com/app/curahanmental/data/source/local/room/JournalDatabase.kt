@@ -21,8 +21,8 @@ abstract class JournalDatabase : RoomDatabase() {
 		fun getInstance(context: Context): JournalDatabase {
 			return synchronized(this) {
 				instance ?: Room.databaseBuilder(context, JournalDatabase::class.java, "journal.db")
-					.fallbackToDestructiveMigration()
-					.allowMainThreadQueries()
+					.fallbackToDestructiveMigration() // only for testing
+					.allowMainThreadQueries() // this is also for testing, Never allow main thread queries on production applications.
 					.build()
 			}
 		}
