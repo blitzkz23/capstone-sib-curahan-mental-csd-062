@@ -12,9 +12,10 @@ class DetailJournalViewModel(private val repository: JournalRepository) : ViewMo
 		this.journalId.value = journalId
 	}
 
-	var journalDetail: LiveData<JournalEntity> = Transformations.switchMap(journalId) { mJournalId ->
-		repository.getJournalById(mJournalId)
-	}
+	var journalDetail: LiveData<JournalEntity> =
+		Transformations.switchMap(journalId) { mJournalId ->
+			repository.getJournalById(mJournalId)
+		}
 
 	fun deleteJournal() {
 		viewModelScope.launch {

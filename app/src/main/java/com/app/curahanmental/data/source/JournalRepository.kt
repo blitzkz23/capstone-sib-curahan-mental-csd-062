@@ -18,16 +18,16 @@ class JournalRepository(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource
 ): JournalDataSource {
-    override fun insertJournal(journalEntity: JournalEntity) = executeThread {
-        localDataSource.insertJournal(journalEntity)
+    override fun insertJournal(journal: JournalEntity) = executeThread {
+        localDataSource.insertJournal(journal)
     }
 
-    override fun updateJournal(journalEntity: JournalEntity) = executeThread {
-        localDataSource.updateJournal(journalEntity)
+    override fun updateJournal(journal: JournalEntity) = executeThread {
+        localDataSource.updateJournal(journal)
     }
 
-    override fun deleteJournal(journalEntity: JournalEntity) {
-        localDataSource.deleteJournal(journalEntity)
+    override fun deleteJournal(journal: JournalEntity) {
+        localDataSource.deleteJournal(journal)
     }
 
     override fun getALlJournal(): LiveData<List<JournalEntity>> {

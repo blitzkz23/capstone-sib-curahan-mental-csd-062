@@ -1,10 +1,7 @@
 package com.app.curahanmental.ui.journal.detail
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.app.curahanmental.R
@@ -17,14 +14,18 @@ import com.google.android.material.button.MaterialButton
 
 class EditJournalActivity : AppCompatActivity() {
 
-	private val binding : ActivityEditJournalBinding by lazy { ActivityEditJournalBinding.inflate(layoutInflater) }
+	private val binding: ActivityEditJournalBinding by lazy {
+		ActivityEditJournalBinding.inflate(
+			layoutInflater
+		)
+	}
 	private lateinit var detailJournalViewModel: DetailJournalViewModel
 	private var journalId: Int = 0
 	private var date: Long = 0
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		setContentView(R.layout.activity_edit_journal)
+		setContentView(binding.root)
 
 		val factory = ViewModelFactory.getInstance(this)
 		detailJournalViewModel =
@@ -35,14 +36,14 @@ class EditJournalActivity : AppCompatActivity() {
 		detailJournalViewModel.setSelectedJournal(journalId)
 		detailJournalViewModel.journalDetail.observe(this, { journalEntity ->
 			populateJournal(journalEntity)
-			Log.i(TAG, "EDIT ${journalEntity.reasonDetail}")
 		})
+
 
 		binding.updateButton.setOnClickListener {
 			updateJournal()
-			Toast.makeText(this, "ASU", Toast.LENGTH_SHORT).show()
 			finish()
 		}
+
 
 	}
 
@@ -50,11 +51,9 @@ class EditJournalActivity : AppCompatActivity() {
 		binding.apply {
 			loadActionBar(journalEntity)
 
-			journalEntity?.apply {
-				Log.i(TAG, "EDIT 2 ${journalEntity.reasonDetail}")
+			journalEntity?.let {
 				sliderEdit.value = journalEntity.stressLevel.toFloat()
 				eventDetailTextEdit.setText(journalEntity.eventDetail)
-				eventTitle.text = journalEntity.event
 				manageEventDetailTextEdit.setText(journalEntity.idealEventScenario)
 				reasonDetailTextEdit.setText(journalEntity.reasonDetail)
 				date = journalEntity.date
@@ -63,29 +62,28 @@ class EditJournalActivity : AppCompatActivity() {
 	}
 
 	private fun updateJournal() {
-		binding.apply {
-			val stressLevel = sliderEdit.value.toInt()
-			val event = spinnerEdit.selectedItem.toString()
-			val eventDetail = eventDetailTextEdit.text.toString().trim()
-			val manageEvent = spinner2Edit.selectedItem.toString()
-			val idealEventScenario = manageEventDetailTextEdit.text.toString().trim()
-			val reason = spinner3Edit.selectedItem.toString()
-			val reasonDetail = reasonDetailTextEdit.text.toString().trim()
+		val stressLevel = binding.sliderEdit.value.toInt()
+		val event = binding.spinnerEdit.selectedItem.toString()
+		val eventDetail = binding.eventDetailTextEdit.text.toString().trim()
+		val manageEvent = binding.spinner2Edit.selectedItem.toString()
+		val idealEventScenario = binding.manageEventDetailTextEdit.text.toString().trim()
+		val reason = binding.spinner3Edit.selectedItem.toString()
+		val reasonDetail = binding.reasonDetailTextEdit.text.toString().trim()
 
-			Log.i(TAG, "ASU EDIT 3 $reasonDetail")
-
-			val journal = JournalEntity(
-				stressLevel = stressLevel,
-				event = event,
-				eventDetail = eventDetail,
-				manageEvent = manageEvent,
-				idealEventScenario = idealEventScenario,
-				reason = reason,
-				reasonDetail = reasonDetail,
-				date = date
-			)
+		val journal = JournalEntity(
+			stressLevel = stressLevel,
+			event = event,
+			eventDetail = eventDetail,
+			manageEvent = manageEvent,
+			idealEventScenario = idealEventScenario,
+			reason = reason,
+			reasonDetail = reasonDetail,
+			date = date
+		)
+		try {
 			detailJournalViewModel.updateJournal(journal)
-
+		} catch (e: Exception) {
+			print("GABISA $e")
 		}
 
 	}
@@ -94,9 +92,11 @@ class EditJournalActivity : AppCompatActivity() {
 		findViewById<MaterialButton>(R.id.back_button).setOnClickListener {
 			super.onBackPressed()
 		}
-		findViewById<TextView>(R.id.journal_title).text =
-			getString(R.string.journal,
-				journalEntity?.let { DateUtils.convertMillisToString(journalEntity.date) })
+		findViewById<TextView>(R.id.journal_title).text = getString(R.string.edit_journal,
+			journalEntity?.date?.let { DateUtils.convertMillisToString(it) })
+		journalEntity?.let {
+			binding.eventDetailTextEdit.setText(journalEntity.eventDetail)
+		}
 	}
 
 	companion object {
