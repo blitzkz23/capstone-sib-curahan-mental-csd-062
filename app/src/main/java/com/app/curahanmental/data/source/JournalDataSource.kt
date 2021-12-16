@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface JournalDataSource {
     fun insertJournal(journalEntity: JournalEntity)
+    fun updateJournal(journalEntity: JournalEntity)
     fun deleteJournal(journalEntity: JournalEntity)
     fun getALlJournal(): LiveData<List<JournalEntity>>
     fun getJournalWithSorting(sortType: JournalsSortType): LiveData<PagingData<JournalEntity>>

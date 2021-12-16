@@ -81,7 +81,8 @@
     <string name="stress_level">Tingkat Stress</string>
     <string name="event">Kejadian</string>
     <string name="journal">Journal\n %s</string>
-    <string name="manage_event">Sikap Anda</string>
+    <string name="edit_journal">Edit Journal %s</string>
+    <string name="manage_event">Skenario Ideal</string>
     <string name="reason">Penyebab Asli</string>
     <string name="stress_percentage">%d %% </string>
     <string name="title_placeholder">Title</string>
@@ -112,6 +113,7 @@
     <string name="del_journal">Hapus jurnal ini?</string>
     <string name="no">Tidak</string>
     <string name="yes">Ya</string>
+    <string name="update">Perbarui</string>
 
     <!-- Spinner array -->
     <string-array name="event">
@@ -125,6 +127,12 @@
         <item>Ujian</item>
         <item>Kemacetan</item>
         <item>Lainnya…</item>
+    </string-array>
+
+    <string-array name="manage_event">
+        <item>Bagus</item>
+        <item>Kebingungan</item>
+        <item>Buruk</item>
     </string-array>
 
     <string-array name="reason">

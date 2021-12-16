@@ -1,5 +1,6 @@
 package com.app.curahanmental.ui.journal.detail
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
@@ -22,6 +23,7 @@ class DetailJournalActivity : AppCompatActivity() {
 		)
 	}
 	private lateinit var detailJournalViewModel: DetailJournalViewModel
+	private var journalId: Int = 0
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -30,7 +32,7 @@ class DetailJournalActivity : AppCompatActivity() {
 		detailJournalViewModel =
 			ViewModelProvider(this, viewModelFactory)[DetailJournalViewModel::class.java]
 
-		val journalId = intent.getIntExtra(JOURNAL, 0)
+		journalId = intent.getIntExtra(JOURNAL, 0)
 
 		detailJournalViewModel.setSelectedJournal(journalId)
 		detailJournalViewModel.journalDetail.observe(this, { journalEntity ->
@@ -83,6 +85,11 @@ class DetailJournalActivity : AppCompatActivity() {
 	private fun loadActionBar(journalEntity: JournalEntity?) {
 		findViewById<MaterialButton>(R.id.back_button).setOnClickListener {
 			super.onBackPressed()
+		}
+		findViewById<MaterialButton>(R.id.edit_button).setOnClickListener {
+			val intent = Intent(this, EditJournalActivity::class.java)
+			intent.putExtra(EditJournalActivity.JOURNAL, journalId)
+			startActivity(intent)
 		}
 		findViewById<MaterialButton>(R.id.delete_button).setOnClickListener {
 			AlertDialog.Builder(this).apply {

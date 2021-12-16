@@ -22,6 +22,10 @@ class JournalRepository(
         localDataSource.insertJournal(journalEntity)
     }
 
+    override fun updateJournal(journalEntity: JournalEntity) = executeThread {
+        localDataSource.updateJournal(journalEntity)
+    }
+
     override fun deleteJournal(journalEntity: JournalEntity) {
         localDataSource.deleteJournal(journalEntity)
     }

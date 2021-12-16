@@ -23,4 +23,10 @@ class DetailJournalViewModel(private val repository: JournalRepository) : ViewMo
 			}
 		}
 	}
+
+	fun updateJournal(journal: JournalEntity) {
+		viewModelScope.launch {
+			repository.updateJournal(journal)
+		}
+	}
 }

@@ -13,6 +13,8 @@ class LocalDataSource private constructor(private val journalDao: JournalDao){
 
     fun insertJournal(journal: JournalEntity) = journalDao.insertJournal(journal)
 
+    fun updateJournal(journal: JournalEntity) = journalDao.updateJournal(journal)
+
     fun deleteJournal(journal: JournalEntity) = journalDao.deleteJournal(journal)
 
     fun getAllJournal() = journalDao.getAllJournal()

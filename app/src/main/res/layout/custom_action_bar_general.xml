@@ -13,7 +13,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/back_button_fragment"
+        app:layout_constraintStart_toEndOf="@+id/back_button"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         android:text="@string/title_placeholder" />
@@ -33,7 +33,7 @@
         app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/back_button_fragment"
+        android:id="@+id/back_button"
         android:layout_width="@dimen/dimens_32dp"
         android:layout_height="@dimen/dimens_32dp"
         android:contentDescription="@string/logout_button"

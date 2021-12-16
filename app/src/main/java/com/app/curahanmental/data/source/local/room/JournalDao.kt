@@ -14,6 +14,9 @@ interface JournalDao {
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
 	fun insertJournal(journal: JournalEntity)
 
+	@Update
+	fun updateJournal(journal: JournalEntity)
+
 	@Delete
 	fun deleteJournal(journal: JournalEntity)
 

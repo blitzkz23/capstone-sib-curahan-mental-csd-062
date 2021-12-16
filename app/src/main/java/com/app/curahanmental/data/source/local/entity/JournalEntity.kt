@@ -14,6 +14,6 @@ data class JournalEntity(
 	val idealEventScenario: String? = "",
 	val reason: String,
 	val reasonDetail: String? = "",
-	val date: Long,
+	var date: Long,
 
 	)

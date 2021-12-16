@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <include
-            layout="@layout/custom_action_bar_home"
+            layout="@layout/custom_action_bar_home_logo_only"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
