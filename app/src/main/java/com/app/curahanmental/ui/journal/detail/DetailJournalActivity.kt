@@ -2,6 +2,7 @@ package com.app.curahanmental.ui.journal.detail
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -38,6 +39,7 @@ class DetailJournalActivity : AppCompatActivity() {
 		detailJournalViewModel.journalDetail.observe(this, { journalEntity ->
 			populateJournal(journalEntity)
 		})
+		window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
 	}
 
 	private fun populateJournal(journalEntity: JournalEntity?) {
