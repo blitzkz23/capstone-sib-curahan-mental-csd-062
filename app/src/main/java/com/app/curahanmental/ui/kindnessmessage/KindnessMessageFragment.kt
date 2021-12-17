@@ -38,6 +38,7 @@ class KindnessMessageFragment : Fragment() {
 		binding.fabAdd.setOnClickListener { view ->
 			view.findNavController().navigate(R.id.action_navigation_support_message_to_addKindnessMessageActivity)
 		}
+		supportMessageViewModel.getALlUser()
 	}
 
 	override fun onDestroyView() {
