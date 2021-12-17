@@ -60,6 +60,7 @@
     <string name="message_home_tips2">Yuk, lihat apa saja tips-nya</string>
     <string name="title_tips">Tips</string>
     <string name="title_tips_detail">Detail Tips</string>
+    <string name="go_to_kindness_message">lihat sekarang juga!</string>
 
     <!-- settings -->
     <string name="title_settings">Settings</string>

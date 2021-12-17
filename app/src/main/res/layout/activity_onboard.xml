@@ -50,9 +50,12 @@
         android:layout_marginEnd="@dimen/activity_vertical_margin"
         android:text="@string/skip_onboarding"
         android:textColor="@color/white"
+        android:clickable="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:focusable="true" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/onboard_view_pager"

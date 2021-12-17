@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.curahanmental.R
 import com.app.curahanmental.data.source.Resource
@@ -67,6 +68,9 @@ class HomeFragment : Fragment() {
 		}
 		binding.homeTipsButton.setOnClickListener {
 			startActivity(Intent(activity, TipsActivity::class.java))
+		}
+		binding.homeBtnToKindnessMsg.setOnClickListener {
+			view.findNavController().navigate(R.id.navigation_support_message)
 		}
 		showRecycleViewArticle()
 

@@ -43,7 +43,8 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/guideline_top"
-        app:layout_constraintLeft_toLeftOf="@id/guideline_left"/>
+        app:layout_constraintLeft_toLeftOf="@id/guideline_left"
+        android:focusable="true" />
 
     <TextView
         android:id="@+id/tv_title_article"
