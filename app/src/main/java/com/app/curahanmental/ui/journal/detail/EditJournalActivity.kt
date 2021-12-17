@@ -1,6 +1,7 @@
 package com.app.curahanmental.ui.journal.detail
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -71,6 +72,7 @@ class EditJournalActivity : AppCompatActivity() {
 		val reasonDetail = binding.reasonDetailTextEdit.text.toString().trim()
 
 		val journal = JournalEntity(
+			id = journalId,
 			stressLevel = stressLevel,
 			event = event,
 			eventDetail = eventDetail,
@@ -80,11 +82,8 @@ class EditJournalActivity : AppCompatActivity() {
 			reasonDetail = reasonDetail,
 			date = date
 		)
-		try {
-			detailJournalViewModel.updateJournal(journal)
-		} catch (e: Exception) {
-			print("GABISA $e")
-		}
+		Log.i("Ini cara mendebug room", "$journal")
+		detailJournalViewModel.updateJournal(journal)
 
 	}
 
