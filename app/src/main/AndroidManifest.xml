@@ -16,7 +16,7 @@
             android:name=".ui.journal.detail.EditJournalActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.kindnessmessage.add.AddKindnessMessageActivity"
+            android:name=".ui.kindlinessmessage.add.AddKindlinessMessageActivity"
             android:exported="false" />
         <activity
             android:name=".ui.journal.detail.DetailJournalActivity"

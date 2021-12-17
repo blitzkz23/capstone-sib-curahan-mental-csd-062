@@ -10,9 +10,8 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.coroutines.flow.callbackFlow
 
-class KindnessMessageViewModel : ViewModel() {
+class KindlinessMessageViewModel : ViewModel() {
 	val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
 	private val db : FirebaseDatabase by lazy { FirebaseDatabase.getInstance() }
 	private var listUser: MutableList<UserEntity?> = mutableListOf()
