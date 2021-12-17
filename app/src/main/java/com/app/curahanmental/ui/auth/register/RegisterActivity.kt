@@ -5,6 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -29,7 +31,7 @@ class RegisterActivity : AppCompatActivity() {
 			this,
 			ViewModelProvider.NewInstanceFactory()
 		)[RegisterViewModel::class.java]
-
+		showProgressBar(false)
 
 		registerActivityBinding.registerButton.setOnClickListener {
 			registerUser()
@@ -92,9 +94,13 @@ class RegisterActivity : AppCompatActivity() {
 				}
 				else -> {
 					registerViewModel.signUpUser(firstName, lastName, email, password)
+					showProgressBar(true)
 				}
 			}
 		}
 	}
 
+	private fun showProgressBar(loading: Boolean){
+		registerActivityBinding.progressBar.visibility = if (loading) VISIBLE else GONE
+	}
 }
