@@ -6,35 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".ui.journal.add.component.AddJournalEventFragment">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar_home"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="@dimen/constraint_guide_top_percent" />
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/custom_action_bar_add_journal_help"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/constraint_guide_left_percent"/>
 
-    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent" />
+
+
+    <ImageView
+        android:id="@+id/back_button_fragment"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_baseline_arrow_back"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_top"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_left"
+        android:focusable="true" />
+
+    <TextView
+        android:id="@+id/journal_title"
+        style="@style/Text.Header1"
+        android:text="@string/stress_level"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="60dp"
+        android:textColor="@color/grey_700"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_left"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_top" />
+
 
     <TextView
         android:id="@+id/stress_page_header"
         style="@style/Text.Header3"
         android:layout_width="@dimen/dimens_0dp"
         android:layout_marginStart="@dimen/dimens_16dp"
-        android:layout_marginTop="@dimen/dimens_24dp"
+        android:layout_marginTop="45dp"
         android:layout_marginEnd="@dimen/dimens_16dp"
         android:text="@string/reaction"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/app_bar_home" />
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top" />
 
     <Spinner
         android:id="@+id/spinner"
@@ -47,8 +84,8 @@
         android:minHeight="@dimen/dimens_48dp"
         android:paddingTop="@dimen/dimens_12dp"
         android:paddingBottom="@dimen/dimens_12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/stress_page_header" />
 
     <TextView
@@ -60,9 +97,9 @@
         android:layout_marginEnd="@dimen/dimens_16dp"
         android:text="@string/reaction_question"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@id/spinner" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -74,8 +111,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/detail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:boxCornerRadiusBottomStart="@dimen/dimens_24dp"
+        app:boxCornerRadiusBottomEnd="@dimen/dimens_24dp"
+        app:boxCornerRadiusTopEnd="@dimen/dimens_24dp"
+        app:boxCornerRadiusTopStart="@dimen/dimens_24dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@id/detailquestion">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -99,10 +140,11 @@
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/selesai"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/reason_detail_column" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
