@@ -116,6 +116,10 @@
     <string name="yes">Ya</string>
     <string name="update">Perbarui</string>
 
+    <!-- Kindliness Message -->
+    <string name="message_content">Isi Pesan</string>
+    <string name="name">Nama</string>
+
     <!-- Spinner array -->
     <string-array name="event">
         <item>Deadline pada kerja/studi</item>
