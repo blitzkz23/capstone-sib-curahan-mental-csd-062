@@ -6,30 +6,89 @@
     android:layout_height="match_parent"
     tools:context=".ui.journal.add.component.AddJournalStressLevelFragment">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar_home"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="@dimen/constraint_guide_top_percent" />
 
-        <include layout="@layout/custom_action_bar_add_journal_help" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/constraint_guide_left_percent"/>
 
-    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent" />
+
+
+    <ImageView
+        android:id="@+id/back_button_fragment"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_baseline_arrow_back"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_top"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_left"
+        android:focusable="true" />
+
+    <TextView
+        android:id="@+id/journal_title"
+        style="@style/Text.Header1"
+        android:text="@string/stress_level"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="60dp"
+        android:textColor="@color/grey_700"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_left"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_top" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/help_button"
+        android:layout_width="@dimen/dimens_32dp"
+        android:layout_height="@dimen/dimens_32dp"
+        android:contentDescription="@string/logout_button"
+        android:insetTop="@dimen/dimens_0dp"
+        android:insetBottom="@dimen/dimens_0dp"
+        app:cornerRadius="@dimen/dimens_8dp"
+        app:icon="@drawable/ic_question_mark"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="24dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_top"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.483"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/stress_page_header"
         style="@style/Text.Header3"
         android:layout_width="@dimen/dimens_0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="45dp"
         android:layout_marginEnd="16dp"
         android:text="@string/stress_level_header"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/app_bar_home" />
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/stress_indicator"
@@ -40,8 +99,12 @@
         android:layout_marginTop="@dimen/dimens_16dp"
         android:layout_marginEnd="16dp"
         android:enabled="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:boxCornerRadiusBottomStart="@dimen/dimens_24dp"
+        app:boxCornerRadiusBottomEnd="@dimen/dimens_24dp"
+        app:boxCornerRadiusTopEnd="@dimen/dimens_24dp"
+        app:boxCornerRadiusTopStart="@dimen/dimens_24dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@id/stress_page_header">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -67,9 +130,9 @@
         android:stepSize="10.0"
         android:valueFrom="0.0"
         android:valueTo="100.0"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/pokemin" />
 
     <ImageView
@@ -83,7 +146,7 @@
         app:layout_constraintEnd_toStartOf="@+id/godzimax"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/stress_indicator" />
 
     <ImageView
@@ -106,7 +169,7 @@
         android:layout_marginEnd="16dp"
         android:contentDescription="@string/joker"
         android:src="@drawable/joker"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/godzimax"
         app:layout_constraintTop_toBottomOf="@+id/stress_indicator" />
@@ -121,10 +184,11 @@
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/selanjutnya"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/slider" />
 
 

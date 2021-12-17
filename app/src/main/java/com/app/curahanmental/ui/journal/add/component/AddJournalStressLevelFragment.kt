@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -58,7 +59,7 @@ class AddJournalStressLevelFragment : Fragment() {
 
 	private fun loadActionBar() {
 		view?.findViewById<TextView>(R.id.journal_title)?.text = getString(R.string.stress_level)
-		view?.findViewById<MaterialButton>(R.id.back_button_fragment)?.setOnClickListener {
+		view?.findViewById<ImageView>(R.id.back_button_fragment)?.setOnClickListener {
 			activity?.finish()
 		}
 	}
