@@ -3,6 +3,7 @@ package com.app.curahanmental.ui.journal.detail
 import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -70,7 +71,6 @@ class DetailJournalActivity : AppCompatActivity() {
 			}
 
 			journalEntity?.apply {
-				detailJournalDate.text = DateUtils.convertMillisToString(journalEntity.date)
 				detailStressPercentage.text =
 					getString(R.string.stress_percentage, journalEntity.stressLevel)
 				eventOptionText.text = journalEntity.event
@@ -85,7 +85,7 @@ class DetailJournalActivity : AppCompatActivity() {
 	}
 
 	private fun loadActionBar(journalEntity: JournalEntity?) {
-		findViewById<MaterialButton>(R.id.back_button).setOnClickListener {
+		findViewById<ImageView>(R.id.back_button_fragment).setOnClickListener {
 			super.onBackPressed()
 		}
 		findViewById<MaterialButton>(R.id.edit_button).setOnClickListener {

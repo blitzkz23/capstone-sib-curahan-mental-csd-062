@@ -2,6 +2,7 @@ package com.app.curahanmental.ui.journal.detail
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -88,7 +89,7 @@ class EditJournalActivity : AppCompatActivity() {
 	}
 
 	private fun loadActionBar(journalEntity: JournalEntity?) {
-		findViewById<MaterialButton>(R.id.back_button).setOnClickListener {
+		findViewById<ImageView>(R.id.back_button_fragment).setOnClickListener {
 			super.onBackPressed()
 		}
 		findViewById<TextView>(R.id.journal_title).text = getString(R.string.edit_journal,

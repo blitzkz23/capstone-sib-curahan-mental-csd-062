@@ -1,210 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".ui.journal.add.component.AddJournalStressLevelFragment">
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="@dimen/constraint_guide_top_percent" />
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/app_bar_detail_edit"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/constraint_guide_left_percent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent"/>
+
+
+    <ImageView
+        android:id="@+id/back_button_fragment"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_baseline_arrow_back"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_top"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_left"
+        android:focusable="true" />
+
+    <TextView
+        android:id="@+id/journal_title"
+        style="@style/Text.Header1"
+        android:text="@string/stress_level"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="60dp"
+        android:textColor="@color/grey_700"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_left"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_top" />
+
+    <ScrollView
+        android:id="@+id/sv_detail_journal"
+        android:layout_width="@dimen/dimens_0dp"
+        android:layout_height="@dimen/dimens_0dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top"
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:orientation="vertical">
 
-            <include layout="@layout/custom_action_bar_general" />
+            <TextView
+                android:id="@+id/stress_title"
+                style="@style/Text.SubHeader2"
+                android:layout_marginTop="@dimen/dimens_24dp"
+                android:text="@string/stress_level" />
 
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_left"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="@dimen/constraint_guide_left_percent" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_right"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent" />
-
-        <TextView
-            android:id="@+id/stress_title"
-            style="@style/Text.SubHeader2"
-            android:layout_marginTop="@dimen/dimens_24dp"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/app_bar_detail_edit"
-            android:text="@string/stress_level" />
-
-        <com.google.android.material.slider.Slider
-            android:id="@+id/slider_edit"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimens_8dp"
-            android:contentDescription="@string/stress_slider"
-            android:stepSize="10.0"
-            android:valueFrom="0.0"
-            android:valueTo="100.0"
-            app:layout_constraintEnd_toEndOf="@id/guideline_right"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@+id/stress_title" />
-
-        <TextView
-            android:id="@+id/event_title"
-            style="@style/Text.SubHeader2"
-            android:layout_marginTop="@dimen/dimens_16dp"
-            android:text="@string/event"
-            app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/slider_edit" />
-
-        <Spinner
-            android:id="@+id/spinner_edit"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:entries="@array/event"
-            android:minHeight="@dimen/dimens_48dp"
-            android:paddingTop="@dimen/dimens_12dp"
-            android:paddingBottom="@dimen/dimens_12dp"
-            app:layout_constraintEnd_toEndOf="@id/guideline_right"
-            app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@+id/event_title" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/event_detail_column"
-            style="@style/TextInputLayoutStyle1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="@string/detail"
-            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/spinner_edit">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/event_detail_text_edit"
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:lines="3"
-                android:maxLength="255"
-                android:maxLines="4"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:layout_marginTop="@dimen/dimens_8dp"
+                android:contentDescription="@string/stress_slider"
+                android:stepSize="10.0"
+                android:valueFrom="0.0"
+                android:valueTo="100.0"/>
 
-        </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/event_title"
+                style="@style/Text.SubHeader2"
+                android:layout_marginTop="@dimen/dimens_16dp"
+                android:text="@string/event" />
 
-        <TextView
-            android:id="@+id/manage_event_title"
-            style="@style/Text.SubHeader2"
-            android:layout_marginTop="@dimen/dimens_16dp"
-            android:text="@string/manage_event"
-            app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/event_detail_column" />
-
-        <Spinner
-            android:id="@+id/spinner2_edit"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:entries="@array/manage_event"
-            android:minHeight="@dimen/dimens_48dp"
-            android:paddingTop="@dimen/dimens_12dp"
-            android:paddingBottom="@dimen/dimens_12dp"
-            app:layout_constraintEnd_toEndOf="@id/guideline_right"
-            app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@+id/manage_event_title" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/manage_event_detail_column"
-            style="@style/TextInputLayoutStyle1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="@string/manage_event"
-            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/spinner2_edit">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/manage_event_detail_text_edit"
+            <Spinner
+                android:id="@+id/spinner_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:lines="3"
-                android:maxLength="255"
-                android:maxLines="4"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:layout_marginTop="8dp"
+                android:entries="@array/event"
+                android:minHeight="@dimen/dimens_48dp"
+                android:paddingTop="@dimen/dimens_12dp"
+                android:paddingBottom="@dimen/dimens_12dp" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/reason_title"
-            style="@style/Text.SubHeader2"
-            android:layout_marginTop="@dimen/dimens_16dp"
-            android:text="@string/reason"
-            app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/manage_event_detail_column" />
-
-        <Spinner
-            android:id="@+id/spinner3_edit"
-            android:layout_width="@dimen/dimens_0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimens_16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="@dimen/dimens_16dp"
-            android:entries="@array/reason"
-            android:minHeight="@dimen/dimens_48dp"
-            android:paddingTop="@dimen/dimens_12dp"
-            android:paddingBottom="@dimen/dimens_12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/reason_title" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/reason_detail_column"
-            style="@style/TextInputLayoutStyle1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="@string/reason"
-            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/spinner3_edit">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/reason_detail_text_edit"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/event_detail_column"
+                style="@style/TextInputLayoutStyle1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:lines="3"
-                android:maxLength="255"
-                android:maxLines="4"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:layout_marginTop="8dp"
+                android:hint="@string/detail"
+                app:boxCornerRadiusBottomStart="@dimen/dimens_24dp"
+                app:boxCornerRadiusBottomEnd="@dimen/dimens_24dp"
+                app:boxCornerRadiusTopEnd="@dimen/dimens_24dp"
+                app:boxCornerRadiusTopStart="@dimen/dimens_24dp">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/event_detail_text_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="3"
+                    android:maxLength="255"
+                    android:maxLines="4"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/update_button"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="@dimen/dimens_48dp"
-            android:layout_marginBottom="@dimen/dimens_48dp"
-            android:backgroundTint="@color/button_state_color"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/update"
-            android:textAllCaps="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/guideline_right"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@+id/reason_detail_column" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            <TextView
+                android:id="@+id/manage_event_title"
+                style="@style/Text.SubHeader2"
+                android:layout_marginTop="@dimen/dimens_16dp"
+                android:text="@string/manage_event"/>
+
+            <Spinner
+                android:id="@+id/spinner2_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:entries="@array/manage_event"
+                android:minHeight="@dimen/dimens_48dp"
+                android:paddingTop="@dimen/dimens_12dp"
+                android:paddingBottom="@dimen/dimens_12dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/manage_event_detail_column"
+                style="@style/TextInputLayoutStyle1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@string/manage_event"
+                app:boxCornerRadiusTopStart="@dimen/dimens_24dp"
+                app:boxCornerRadiusTopEnd="@dimen/dimens_24dp"
+                app:boxCornerRadiusBottomEnd="@dimen/dimens_24dp"
+                app:boxCornerRadiusBottomStart="@dimen/dimens_24dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/manage_event_detail_text_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="3"
+                    android:maxLength="255"
+                    android:maxLines="4"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/reason_title"
+                style="@style/Text.SubHeader2"
+                android:layout_marginTop="@dimen/dimens_16dp"
+                android:text="@string/reason"/>
+
+            <Spinner
+                android:id="@+id/spinner3_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/dimens_16dp"
+                android:entries="@array/reason"
+                android:minHeight="@dimen/dimens_48dp"
+                android:paddingTop="@dimen/dimens_12dp"
+                android:paddingBottom="@dimen/dimens_12dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/reason_detail_column"
+                style="@style/TextInputLayoutStyle1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@string/reason"
+                app:boxCornerRadiusBottomStart="@dimen/dimens_24dp"
+                app:boxCornerRadiusBottomEnd="@dimen/dimens_24dp"
+                app:boxCornerRadiusTopEnd="@dimen/dimens_24dp"
+                app:boxCornerRadiusTopStart="@dimen/dimens_24dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/reason_detail_text_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="3"
+                    android:maxLength="255"
+                    android:maxLines="4"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/update_button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="@dimen/dimens_48dp"
+                android:layout_marginBottom="@dimen/dimens_48dp"
+                android:backgroundTint="@color/button_state_color"
+                android:fontFamily="@font/poppins_semibold"
+                app:cornerRadius="@dimen/dimens_12dp"
+                android:text="@string/update"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
