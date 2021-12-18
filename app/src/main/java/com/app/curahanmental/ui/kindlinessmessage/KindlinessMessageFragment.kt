@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.app.curahanmental.R
 import com.app.curahanmental.databinding.FragmentKindlinessMessageBinding
-import com.app.curahanmental.ui.notifications.KindlinessMessageViewModel
 
 class KindlinessMessageFragment : Fragment() {
 

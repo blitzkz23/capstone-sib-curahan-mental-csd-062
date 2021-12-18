@@ -1,4 +1,4 @@
-package com.app.curahanmental.ui.notifications
+package com.app.curahanmental.ui.kindlinessmessage
 
 import android.util.Log
 import androidx.lifecycle.LiveData

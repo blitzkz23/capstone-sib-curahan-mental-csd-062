@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
@@ -20,7 +19,6 @@ import com.app.curahanmental.utils.DateUtils
 class JournalAdapter :
 	PagingDataAdapter<JournalEntity, JournalAdapter.JournalViewHolder>(DIFF_CALLBACK) {
 	private lateinit var context: Context
-	private lateinit var journalE: JournalEntity
 
 	override fun onBindViewHolder(holder: JournalViewHolder, position: Int) {
 		context = holder.itemView.context
@@ -34,8 +32,10 @@ class JournalAdapter :
 	}
 
 	inner class JournalViewHolder(private val binding: ItemJournalListBinding) : RecyclerView.ViewHolder(binding.root) {
+		private lateinit var journal: JournalEntity
+
 		fun bind(journal: JournalEntity) {
-			journalE = journal
+			this.journal = journal
 
 			with(binding){
 				journalDate.text = DateUtils.convertMillisToString(journal.date)
@@ -60,7 +60,7 @@ class JournalAdapter :
 			}
 		}
 
-		fun getJournal(): JournalEntity = journalE
+		fun getJournal(): JournalEntity = journal
 	}
 
 	companion object {
