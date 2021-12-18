@@ -1,6 +1,9 @@
 # Curahan Mental
 Curahan Mental is an application that adopt "Journaling for Mental Health" concept as its main feature and are centered around dealing with mental health issues in general.  
 
+### Architecture:
+- MVVM Pattern
+
 ### Library used:
 - Kotlin Coroutines
 - Kotlin Flow
@@ -10,5 +13,5 @@ Curahan Mental is an application that adopt "Journaling for Mental Health" conce
 - Firebase Auth
 - Firebase Realtime Database
 
-### Architecture:
-- MVVM Pattern
+### External API:
+- [News API](https://newsapi.org/)
