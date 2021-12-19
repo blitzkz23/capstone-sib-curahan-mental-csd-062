@@ -50,6 +50,7 @@
             android:layout_height="wrap_content"
             android:lines="3"
             android:maxLength="255"
+            android:textColor="@color/black"
             android:maxLines="4"
             tools:ignore="SpeakableTextPresentCheck" />
 
