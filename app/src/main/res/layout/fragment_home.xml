@@ -81,11 +81,12 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="bottom|left"
+                    android:layout_gravity="bottom|start"
                     android:layout_marginStart="@dimen/dimens_10dp"
-                    android:layout_marginEnd="60dp"
                     android:layout_marginTop="@dimen/dimens_24dp"
+                    android:layout_marginEnd="60dp"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/kind_message_image"
                     android:src="@drawable/curahan_banner" />
 
                 <TextView
@@ -95,9 +96,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:layout_marginStart="@dimen/dimens_24dp"
+                    android:layout_marginBottom="@dimen/dimens_48dp"
                     android:text="@string/title_home_banner"
                     android:textColor="@color/white"
-                    android:layout_marginBottom="@dimen/dimens_48dp"
                     android:textSize="20sp" />
 
                 <com.google.android.material.button.MaterialButton
@@ -149,6 +150,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="@dimen/dimens_10dp"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/logo_name"
                     android:src="@drawable/curahan_logo1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
