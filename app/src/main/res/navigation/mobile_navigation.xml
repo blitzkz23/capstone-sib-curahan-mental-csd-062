@@ -24,19 +24,10 @@
     <fragment
         android:id="@+id/navigation_support_message"
         android:name="com.app.curahanmental.ui.kindlinessmessage.KindlinessMessageFragment"
-        android:label="@string/title_support_message" >
-        <action
-            android:id="@+id/action_navigation_support_message_to_addKindnessMessageActivity"
-            app:destination="@id/addKindnessMessageActivity" />
-    </fragment>
+        android:label="@string/title_support_message" />
     <activity
         android:id="@+id/addJournalActivity"
         android:name="com.app.curahanmental.ui.journal.add.AddJournalActivity"
         android:label="activity_add_journal"
         tools:layout="@layout/activity_add_journal" />
-    <activity
-        android:id="@+id/addKindnessMessageActivity"
-        android:name="com.app.curahanmental.ui.kindlinessmessage.add.AddKindlinessMessageActivity"
-        android:label="activity_add_kindness_message"
-        tools:layout="@layout/activity_add_kindliness_message" />
 </navigation>

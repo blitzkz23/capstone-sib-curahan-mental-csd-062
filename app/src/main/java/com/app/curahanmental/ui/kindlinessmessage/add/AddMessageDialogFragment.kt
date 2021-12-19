@@ -14,13 +14,13 @@ class AddMessageDialogFragment : DialogFragment() {
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		setStyle(STYLE_NORMAL, android.R.style.Theme_DeviceDefault_Dialog_MinWidth)
+		setStyle(STYLE_NO_FRAME, android.R.style.Theme_DeviceDefault_Dialog_MinWidth)
 	}
 
 	override fun onCreateView(
 		inflater: LayoutInflater, container: ViewGroup?,
 		savedInstanceState: Bundle?
-	): View? {
+	): View {
 		// Inflate the layout for this fragment
 		_binding = FragmentAddMessageDialogBinding.inflate(layoutInflater, container, false)
 
