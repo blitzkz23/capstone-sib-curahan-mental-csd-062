@@ -1,0 +1,30 @@
+package com.app.curahanmental.ui.kindlinessmessage
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.app.curahanmental.data.source.remote.entity.KindlinessMessageEntity
+import com.app.curahanmental.databinding.ItemKindlinessMessageBinding
+
+class KindlinessMessageAdapter : RecyclerView.Adapter<KindlinessMessageAdapter.ViewHolder>() {
+
+	private var listMessage = ArrayList<KindlinessMessageEntity>()
+
+	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+		val binding = ItemKindlinessMessageBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+		return ViewHolder(binding)
+	}
+
+	override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+		val message = listMessage[position]
+		holder.bind(message)
+	}
+
+	override fun getItemCount(): Int = listMessage.size
+
+	inner class ViewHolder(private var binding: ItemKindlinessMessageBinding) : RecyclerView.ViewHolder(binding.root){
+		fun bind(messageEntity: KindlinessMessageEntity) {
+			binding.apply {  }
+		}
+	}
+}

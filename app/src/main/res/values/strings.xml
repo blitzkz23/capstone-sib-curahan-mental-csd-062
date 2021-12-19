@@ -119,6 +119,8 @@
     <!-- Kindliness Message -->
     <string name="message_content">Isi Pesan</string>
     <string name="name">Nama</string>
+    <string name="kindliness_message">Pesan Kebaikan</string>
+    <string name="add_message">Tambahkan Pesan</string>
 
     <!-- Spinner array -->
     <string-array name="event">

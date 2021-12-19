@@ -38,5 +38,5 @@
         android:id="@+id/addKindnessMessageActivity"
         android:name="com.app.curahanmental.ui.kindlinessmessage.add.AddKindlinessMessageActivity"
         android:label="activity_add_kindness_message"
-        tools:layout="@layout/activity_add_kindness_message" />
+        tools:layout="@layout/activity_add_kindliness_message" />
 </navigation>
