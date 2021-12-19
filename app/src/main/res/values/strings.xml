@@ -125,6 +125,9 @@
     <string name="cancel">Batalkan</string>
     <string name="kindliness_message_board_title">Papan Pesan Kebaikan</string>
     <string name="kind_message_image">Kind Message Image</string>
+    <string name="success_message">Pesan telah berhasil ditambahkan</string>
+    <string name="failure_message">Maaf, pesan gagal ditambahkan</string>
+    <string name="douzo_meseji_haire_kudasai">Silahkan masukkan pesan terlebih dahulu</string>
 
     <!-- Spinner array -->
     <string-array name="event">
