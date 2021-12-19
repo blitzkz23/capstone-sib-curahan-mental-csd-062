@@ -101,9 +101,9 @@
     <string name="journal_added">Jurnal telah ditambahkan</string>
     <string name="stress_percent">Stress: %d %%</string>
     <string name="article_continue_read">lanjut baca artikel</string>
-    <string name="all_journal">All Journal</string>
-    <string name="by_stress_levels">By Stress Levels</string>
-    <string name="by_date">By Date</string>
+    <string name="all_journal">Semua jurnal</string>
+    <string name="by_stress_levels">Berdasarkan tingkat stres</string>
+    <string name="by_date">Berdasarkan tanggal</string>
     <string name="date_placeholder">Kamis, 09 Desember 2021</string>
     <string name="delete_button">Delete Button</string>
     <string name="percent_20">20%</string>
@@ -123,6 +123,7 @@
     <string name="add_message">Tambahkan Pesan</string>
     <string name="add">Tambahkan</string>
     <string name="cancel">Batalkan</string>
+    <string name="kindliness_message_board_title">Papan Pesan Kebaikan</string>
 
     <!-- Spinner array -->
     <string-array name="event">

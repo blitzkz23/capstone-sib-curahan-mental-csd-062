@@ -18,14 +18,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="@dimen/constraint_guide_left_percent"/>
+            app:layout_constraintGuide_percent="@dimen/constraint_guide_left_percent" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_right"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent"/>
+            app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent" />
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar_home"
@@ -47,7 +47,6 @@
         <TextView
             android:id="@+id/home_greetings1"
             style="@style/Text.Header2"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:text="@string/title_home_greetings"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
@@ -64,16 +63,16 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/home_card_banner"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="24dp"
             android:elevation="@dimen/dimens_10dp"
             app:cardCornerRadius="@dimen/dimens_24dp"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/home_greetings2">
 
-            <RelativeLayout
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -82,47 +81,46 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom|left"
                     android:layout_marginStart="@dimen/dimens_10dp"
                     android:layout_marginEnd="60dp"
-                    android:layout_marginBottom="18dp"
+                    android:layout_marginTop="@dimen/dimens_24dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/curahan_banner" />
 
                 <TextView
                     android:id="@+id/home_banner_text"
                     style="@style/Text.SubHeader1"
-                    android:layout_width="400dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginTop="100dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="@dimen/dimens_24dp"
                     android:text="@string/title_home_banner"
                     android:textColor="@color/white"
-                    android:textSize="20sp"/>
+                    android:layout_marginBottom="@dimen/dimens_48dp"
+                    android:textSize="20sp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/home_btn_to_kindness_msg"
                     android:layout_width="200dp"
                     android:layout_height="36dp"
-                    android:layout_marginStart="14dp"
-                    android:textSize="11sp"
-                    android:textAllCaps="false"
-                    android:layout_marginTop="130dp"
-                    android:layout_marginBottom="4dp"
-                    android:textColor="@color/curahan_black_text"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="@dimen/dimens_24dp"
+                    android:layout_marginBottom="@dimen/dimens_16dp"
                     android:backgroundTint="@color/curahan_bg_white"
                     android:text="@string/go_to_kindness_message"
-                    app:cornerRadius="@dimen/dimens_24dp"/>
+                    android:textAllCaps="false"
+                    android:textColor="@color/curahan_black_text"
+                    android:textSize="11sp"
+                    app:cornerRadius="@dimen/dimens_24dp" />
 
-            </RelativeLayout>
+            </FrameLayout>
 
         </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/home_tips_title"
             style="@style/Text.Header3"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:text="@string/title_home_tips"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
@@ -130,13 +128,13 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/home_card_tips"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="80dp"
-            android:layout_marginStart="24dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="24dp"
             android:elevation="@dimen/dimens_10dp"
             app:cardCornerRadius="@dimen/dimens_24dp"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/home_tips_title">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -200,7 +198,6 @@
         <TextView
             android:id="@+id/home_article_title"
             style="@style/Text.Header3"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="20dp"
             android:text="@string/title_home_article"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
@@ -208,13 +205,13 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_home_article"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
             android:layout_marginTop="@dimen/dimens_10dp"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/home_article_title"
-            tools:listitem="@layout/item_article_home"/>
+            tools:listitem="@layout/item_article_home" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

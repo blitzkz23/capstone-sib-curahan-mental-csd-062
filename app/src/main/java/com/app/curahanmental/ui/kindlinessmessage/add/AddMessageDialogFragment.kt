@@ -24,7 +24,11 @@ class AddMessageDialogFragment : DialogFragment() {
 		// Inflate the layout for this fragment
 		_binding = FragmentAddMessageDialogBinding.inflate(layoutInflater, container, false)
 
-
+		binding.apply {
+			cancelButton.setOnClickListener {
+				dismiss()
+			}
+		}
 
 		return binding.root
 	}
