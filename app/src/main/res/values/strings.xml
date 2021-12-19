@@ -121,6 +121,8 @@
     <string name="name">Nama</string>
     <string name="kindliness_message">Pesan Kebaikan</string>
     <string name="add_message">Tambahkan Pesan</string>
+    <string name="add">Tambahkan</string>
+    <string name="cancel">Batalkan</string>
 
     <!-- Spinner array -->
     <string-array name="event">
