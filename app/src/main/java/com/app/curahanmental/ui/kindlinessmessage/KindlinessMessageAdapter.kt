@@ -28,7 +28,8 @@ class KindlinessMessageAdapter : RecyclerView.Adapter<KindlinessMessageAdapter.V
 			binding.apply {
 				username.text = message.poster
 				userMessage.text = message.messages
-				messageDate.text = message.time?.let { DateUtils.convertTime(it) }
+				messageDate.text = message.time?.let { DateUtils.convertMillisToString(it) }
+				messageTime.text = message.time?.let { DateUtils.convertTime(it) }
 			}
 		}
 	}

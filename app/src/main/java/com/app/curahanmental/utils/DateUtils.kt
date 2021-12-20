@@ -14,7 +14,7 @@ object DateUtils {
 	fun convertTime(timeMillis: Long): String {
 		val calendar = Calendar.getInstance()
 		calendar.timeInMillis = timeMillis
-		val formatter = SimpleDateFormat("HH:mm:ss")
+		val formatter = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
 		return formatter.format(calendar.time)
 	}
 }

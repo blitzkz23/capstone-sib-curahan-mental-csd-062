@@ -30,17 +30,24 @@
                 tools:text="@string/name" />
 
             <TextView
+                android:id="@+id/message_date"
+                style="@style/Text.SubText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/username"
+                tools:text="@string/date_placeholder" />
+
+            <TextView
                 android:id="@+id/user_message"
                 style="@style/Text.Paragraph"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimens_8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/username"
+                app:layout_constraintTop_toBottomOf="@id/message_date"
                 tools:text="@string/message_content" />
 
             <TextView
-                android:id="@+id/message_date"
+                android:id="@+id/message_time"
                 style="@style/Text.SubText"
                 android:layout_width="@dimen/dimens_0dp"
                 android:layout_height="wrap_content"
