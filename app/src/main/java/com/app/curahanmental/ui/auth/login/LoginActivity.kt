@@ -33,11 +33,11 @@ class LoginActivity : AppCompatActivity() {
 			finish()
 		}
 
-		loginViewModel.authRes.observe(this){
+		loginViewModel.authRes.observe(this){ it ->
 			if (it.isSuccessful){
-				showProgressBar(false)
-				startActivity(Intent(this@LoginActivity, MainActivity::class.java).also {
-					it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+				showProgressBar(true)
+				startActivity(Intent(this@LoginActivity, MainActivity::class.java).also { intent ->
+					intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 				})
 				finish()
 			}else{
@@ -79,7 +79,6 @@ class LoginActivity : AppCompatActivity() {
 			}
 
 			loginViewModel.signInUser(email, pass)
-			showProgressBar(true)
 		}
 
 		binding.signinToRegisterFlow.setOnClickListener{

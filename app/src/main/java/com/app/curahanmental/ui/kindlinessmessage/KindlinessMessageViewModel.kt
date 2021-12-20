@@ -45,7 +45,7 @@ class KindlinessMessageViewModel : ViewModel() {
 
 	fun getALlMessage() {
 		val reference = db.reference
-		reference.child(NODE_MESSAGE).orderByValue().addListenerForSingleValueEvent(object : ValueEventListener {
+		reference.child(NODE_MESSAGE).limitToLast(100).addListenerForSingleValueEvent(object : ValueEventListener {
 			override fun onDataChange(snapshot: DataSnapshot) {
 				val children = snapshot.children
 				val list = ArrayList<KindlinessMessageEntity>()
