@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.app.curahanmental.data.source.remote.entity.KindlinessMessageEntity
 import com.app.curahanmental.databinding.FragmentKindlinessMessageBinding
 import com.app.curahanmental.ui.kindlinessmessage.add.AddMessageDialogFragment
 
@@ -40,6 +41,10 @@ class KindlinessMessageFragment : Fragment() {
 			AddMessageDialogFragment().show(childFragmentManager, "")
 		}
 		supportMessageViewModel.getALlUser()
+		supportMessageViewModel.listUser.observe(viewLifecycleOwner, { res ->
+			messageAdapter.setMessageData(res as List<KindlinessMessageEntity>?)
+		})
+
 	}
 
 	private fun showRecycleViewMessage() {

@@ -20,7 +20,7 @@ class KindlinessMessageViewModel : ViewModel() {
 	private val db: FirebaseDatabase by lazy { FirebaseDatabase.getInstance() }
 	private val messageRef = db.getReference(NODE_MESSAGE)
 
-	private var _listUser: MutableList<UserEntity?> = mutableListOf()
+	private val _listUser = MutableLiveData<List<KindlinessMessageEntity?>>()
 
 	private val _result = MutableLiveData<Exception?>()
 	val result: LiveData<Exception?> get() = _result
@@ -45,13 +45,15 @@ class KindlinessMessageViewModel : ViewModel() {
 
 	fun getALlUser() {
 		val reference = db.reference
-		reference.child(NODE_USER).addListenerForSingleValueEvent(object : ValueEventListener {
+		reference.child(NODE_MESSAGE).addListenerForSingleValueEvent(object : ValueEventListener {
 			override fun onDataChange(snapshot: DataSnapshot) {
 				val children = snapshot.children
-				children.forEach {
-					_listUser.add(it.getValue(UserEntity::class.java))
+				val list = ArrayList<KindlinessMessageEntity>()
+				children.forEach{
+					it.getValue(KindlinessMessageEntity::class.java)?.let { it1 -> list.add(it1) }
 				}
-				Log.d("USERS", "$_listUser")
+				_listUser.postValue(list)
+				Log.d("USERS", "$list")
 			}
 
 			override fun onCancelled(error: DatabaseError) {
@@ -60,11 +62,13 @@ class KindlinessMessageViewModel : ViewModel() {
 		})
 	}
 
+	var listUser: LiveData<List<KindlinessMessageEntity?>> = _listUser
+
 	fun getCurrentUserDisplayName(){
 		val reference = db.reference
 		val userId = auth.currentUser.let { it?.uid }
 		if (userId != null) {
-			reference.child("users").child(userId).addListenerForSingleValueEvent(object :
+			reference.child(NODE_USER).child(userId).addListenerForSingleValueEvent(object :
 				ValueEventListener {
 				override fun onDataChange(snapshot: DataSnapshot) {
 					val userProfile = snapshot.getValue<UserEntity>()

@@ -1,8 +1,10 @@
 package com.app.curahanmental.ui.kindlinessmessage
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.app.curahanmental.data.source.local.entity.ArticlesModel
 import com.app.curahanmental.data.source.remote.entity.KindlinessMessageEntity
 import com.app.curahanmental.databinding.ItemKindlinessMessageBinding
 import com.app.curahanmental.utils.DateUtils
@@ -32,5 +34,12 @@ class KindlinessMessageAdapter : RecyclerView.Adapter<KindlinessMessageAdapter.V
 				messageTime.text = message.time?.let { DateUtils.convertTime(it) }
 			}
 		}
+	}
+	@SuppressLint("NotifyDataSetChanged")
+	fun setMessageData(newMessage: List<KindlinessMessageEntity>?){
+		if (newMessage == null) return
+		listMessage.clear()
+		listMessage.addAll(newMessage)
+		notifyDataSetChanged()
 	}
 }
