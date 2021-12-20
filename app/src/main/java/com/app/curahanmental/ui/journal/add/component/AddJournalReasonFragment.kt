@@ -17,8 +17,7 @@ import com.app.curahanmental.R
 import com.app.curahanmental.data.source.local.entity.JournalEntity
 import com.app.curahanmental.databinding.FragmentAddJournalReasonBinding
 import com.app.curahanmental.ui.journal.add.AddJournalViewModel
-import com.app.curahanmental.ui.viemodel.ViewModelFactory
-import com.google.android.material.button.MaterialButton
+import com.app.curahanmental.ui.viewmodel.ViewModelFactory
 import java.util.*
 
 class AddJournalReasonFragment : Fragment() {

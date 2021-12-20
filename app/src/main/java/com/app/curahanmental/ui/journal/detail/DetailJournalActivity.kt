@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.app.curahanmental.R
 import com.app.curahanmental.data.source.local.entity.JournalEntity
 import com.app.curahanmental.databinding.ActivityDetailJournalBinding
-import com.app.curahanmental.ui.viemodel.ViewModelFactory
+import com.app.curahanmental.ui.viewmodel.ViewModelFactory
 import com.app.curahanmental.utils.Constants.EXTRA_JOURNAL
 import com.app.curahanmental.utils.DateUtils
 import com.google.android.material.button.MaterialButton

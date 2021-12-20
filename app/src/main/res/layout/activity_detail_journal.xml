@@ -18,39 +18,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="@dimen/constraint_guide_left_percent"/>
+        app:layout_constraintGuide_percent="@dimen/constraint_guide_left_percent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_right"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent"/>
+        app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent" />
 
 
     <ImageView
         android:id="@+id/back_button_fragment"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/ic_baseline_arrow_back"
-        app:layout_constraintTop_toTopOf="parent"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_baseline_arrow_back"
         app:layout_constraintBottom_toBottomOf="@id/guideline_top"
         app:layout_constraintLeft_toLeftOf="@id/guideline_left"
-        android:focusable="true" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/journal_title"
         style="@style/Text.Header1"
-        android:text="@string/stress_level"
-        android:layout_marginTop="4dp"
         android:layout_marginStart="60dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/stress_level"
         android:textColor="@color/grey_700"
         android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_top"
         app:layout_constraintLeft_toLeftOf="@id/guideline_left"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_top" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/delete_button"
@@ -94,21 +94,15 @@
         android:layout_width="@dimen/dimens_0dp"
         android:layout_height="@dimen/dimens_0dp"
         android:scrollbars="none"
-        app:layout_constraintTop_toBottomOf="@id/guideline_top"
-        app:layout_constraintStart_toStartOf="@id/guideline_left"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline_right"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-<!--            <TextView-->
-<!--                android:id="@+id/detail_journal_date"-->
-<!--                style="@style/Text.SubHeader2"-->
-<!--                android:layout_marginTop="@dimen/dimens_24dp"-->
-<!--                tools:text="@string/date_placeholder" />-->
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/stress_card"
@@ -183,11 +177,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                app:boxCornerRadiusTopStart="@dimen/dimens_24dp"
-                app:boxCornerRadiusTopEnd="@dimen/dimens_24dp"
+                android:hint="@string/detail"
                 app:boxCornerRadiusBottomEnd="@dimen/dimens_24dp"
                 app:boxCornerRadiusBottomStart="@dimen/dimens_24dp"
-                android:hint="@string/detail">
+                app:boxCornerRadiusTopEnd="@dimen/dimens_24dp"
+                app:boxCornerRadiusTopStart="@dimen/dimens_24dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/event_detail_text"
@@ -219,8 +213,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:hint="@string/manage_event"
-                app:boxCornerRadiusBottomStart="@dimen/dimens_24dp"
                 app:boxCornerRadiusBottomEnd="@dimen/dimens_24dp"
+                app:boxCornerRadiusBottomStart="@dimen/dimens_24dp"
                 app:boxCornerRadiusTopEnd="@dimen/dimens_24dp"
                 app:boxCornerRadiusTopStart="@dimen/dimens_24dp">
 
@@ -240,7 +234,7 @@
                 android:id="@+id/reason_title"
                 style="@style/Text.SubHeader2"
                 android:layout_marginTop="@dimen/dimens_16dp"
-                android:text="@string/reason"/>
+                android:text="@string/reason" />
 
             <TextView
                 android:id="@+id/reason_option_text"
@@ -255,10 +249,10 @@
                 android:layout_marginTop="@dimen/dimens_8dp"
                 android:layout_marginBottom="@dimen/dimens_24dp"
                 android:hint="@string/reason"
-                app:boxCornerRadiusTopStart="@dimen/dimens_24dp"
-                app:boxCornerRadiusTopEnd="@dimen/dimens_24dp"
                 app:boxCornerRadiusBottomEnd="@dimen/dimens_24dp"
-                app:boxCornerRadiusBottomStart="@dimen/dimens_24dp">
+                app:boxCornerRadiusBottomStart="@dimen/dimens_24dp"
+                app:boxCornerRadiusTopEnd="@dimen/dimens_24dp"
+                app:boxCornerRadiusTopStart="@dimen/dimens_24dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/reason_detail_text"

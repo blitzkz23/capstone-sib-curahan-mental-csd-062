@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.curahanmental.R
 import com.app.curahanmental.data.source.local.entity.JournalEntity
 import com.app.curahanmental.databinding.FragmentJournalBinding
-import com.app.curahanmental.ui.viemodel.ViewModelFactory
+import com.app.curahanmental.ui.viewmodel.ViewModelFactory
 import com.app.curahanmental.utils.JournalsSortType
 import com.google.android.material.button.MaterialButton
 import kotlinx.coroutines.launch

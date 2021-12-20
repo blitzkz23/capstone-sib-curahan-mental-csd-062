@@ -1,4 +1,4 @@
-package com.app.curahanmental.ui.viemodel
+package com.app.curahanmental.ui.viewmodel
 
 import android.content.Context
 import androidx.lifecycle.ViewModel

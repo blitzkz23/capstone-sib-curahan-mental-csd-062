@@ -22,7 +22,7 @@ import com.app.curahanmental.ui.home.articles.ArticleActivity
 import com.app.curahanmental.ui.home.articles.ArticleAdapter
 import com.app.curahanmental.ui.home.tips.TipsActivity
 import com.app.curahanmental.ui.settings.SettingsActivity
-import com.app.curahanmental.ui.viemodel.ViewModelFactory
+import com.app.curahanmental.ui.viewmodel.ViewModelFactory
 import com.google.android.material.button.MaterialButton
 
 class HomeFragment : Fragment() {
