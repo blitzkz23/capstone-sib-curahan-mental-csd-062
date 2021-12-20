@@ -61,63 +61,14 @@
             app:layout_constraintStart_toStartOf="@+id/home_greetings1"
             app:layout_constraintTop_toBottomOf="@id/home_greetings1" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/home_card_banner"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_banner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:elevation="@dimen/dimens_10dp"
-            app:cardCornerRadius="@dimen/dimens_24dp"
+            android:layout_marginTop="@dimen/dimens_10dp"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/home_greetings2">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:background="#C78478">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="bottom|start"
-                    android:layout_marginStart="@dimen/dimens_10dp"
-                    android:layout_marginTop="@dimen/dimens_24dp"
-                    android:layout_marginEnd="60dp"
-                    android:adjustViewBounds="true"
-                    android:contentDescription="@string/kind_message_image"
-                    android:src="@drawable/curahan_banner" />
-
-                <TextView
-                    android:id="@+id/home_banner_text"
-                    style="@style/Text.SubHeader1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginStart="@dimen/dimens_24dp"
-                    android:layout_marginBottom="@dimen/dimens_48dp"
-                    android:text="@string/title_home_banner"
-                    android:textColor="@color/white"
-                    android:textSize="20sp" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/home_btn_to_kindness_msg"
-                    android:layout_width="200dp"
-                    android:layout_height="36dp"
-                    android:layout_gravity="bottom"
-                    android:layout_marginStart="@dimen/dimens_24dp"
-                    android:layout_marginBottom="@dimen/dimens_16dp"
-                    android:backgroundTint="@color/curahan_bg_white"
-                    android:text="@string/go_to_kindness_message"
-                    android:textAllCaps="false"
-                    android:textColor="@color/curahan_black_text"
-                    android:textSize="11sp"
-                    app:cornerRadius="@dimen/dimens_24dp" />
-
-            </FrameLayout>
-
-        </androidx.cardview.widget.CardView>
+            app:layout_constraintTop_toBottomOf="@id/home_greetings2" />
 
         <TextView
             android:id="@+id/home_tips_title"
@@ -125,7 +76,7 @@
             android:layout_marginTop="24dp"
             android:text="@string/title_home_tips"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/home_card_banner" />
+            app:layout_constraintTop_toBottomOf="@id/rv_banner" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/home_card_tips"

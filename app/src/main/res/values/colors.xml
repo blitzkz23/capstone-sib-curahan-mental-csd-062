@@ -23,5 +23,6 @@
     <color name="curahan_linktext">#FF6E5DE7</color>
 
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true" >#FF2A6049</color>
+    <color name="curahan_soft_brown">#C78478</color>
 
 </resources>

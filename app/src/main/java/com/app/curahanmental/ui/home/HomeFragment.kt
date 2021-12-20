@@ -13,13 +13,15 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.curahanmental.R
 import com.app.curahanmental.data.source.Resource
 import com.app.curahanmental.databinding.FragmentHomeBinding
 import com.app.curahanmental.ui.home.articles.ArticleActivity
 import com.app.curahanmental.ui.home.articles.ArticleAdapter
+import com.app.curahanmental.ui.home.banner.BannerAdapter
+import com.app.curahanmental.ui.home.banner.BannerData
+import com.app.curahanmental.ui.home.banner.BannerModel
 import com.app.curahanmental.ui.home.tips.TipsActivity
 import com.app.curahanmental.ui.settings.SettingsActivity
 import com.app.curahanmental.ui.viewmodel.ViewModelFactory
@@ -30,6 +32,7 @@ class HomeFragment : Fragment() {
 	private lateinit var homeViewModel: HomeViewModel
 	private var _binding: FragmentHomeBinding? = null
 	private val articleAdapter = ArticleAdapter()
+	private var listBanner: ArrayList<BannerModel> = arrayListOf()
 
 	private val binding get() = _binding!!
 
@@ -43,6 +46,8 @@ class HomeFragment : Fragment() {
 		val viewModelFactory = requireContext().let { ViewModelFactory.getInstance(it) }
 		homeViewModel = ViewModelProvider(this, viewModelFactory)[HomeViewModel::class.java]
 		initArticleContent()
+
+		listBanner.addAll(BannerData.bannerList)
 		return binding.root
 	}
 
@@ -69,11 +74,20 @@ class HomeFragment : Fragment() {
 		binding.homeTipsButton.setOnClickListener {
 			startActivity(Intent(activity, TipsActivity::class.java))
 		}
-		binding.homeBtnToKindnessMsg.setOnClickListener {
-			view.findNavController().navigate(R.id.navigation_support_message)
-		}
+//		binding.homeBtnToKindnessMsg.setOnClickListener {
+//			view.findNavController().navigate(R.id.navigation_support_message)
+//		}
+		showRecycleViewBanner()
 		showRecycleViewArticle()
 
+	}
+
+	private fun showRecycleViewBanner() {
+		with(binding) {
+			rvBanner.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+			val bannerAdapter = BannerAdapter(listBanner)
+			rvBanner.adapter = bannerAdapter
+		}
 	}
 
 	override fun onDestroyView() {

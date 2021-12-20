@@ -1,6 +1,5 @@
 package com.app.curahanmental.ui.home.tips
 
-import android.graphics.drawable.Drawable
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
