@@ -35,6 +35,7 @@ class BannerAdapter(private val listBanner: ArrayList<BannerModel>) :
 					banner.ctaLink?.let { view.findNavController().navigate(it) }
 				}
 				banner.color?.let { container.setBackgroundColor(it) }
+				homeBtnCta.text = banner.btnTxt
 			}
 		}
 	}

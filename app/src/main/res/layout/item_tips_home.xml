@@ -22,6 +22,7 @@
             tools:src="@drawable/tips_image1"
             android:layout_width="113dp"
             android:layout_height="75dp"
+            android:contentDescription="@string/tips_image"
             android:layout_marginStart="14dp"
             android:layout_gravity="center_vertical"/>
 
