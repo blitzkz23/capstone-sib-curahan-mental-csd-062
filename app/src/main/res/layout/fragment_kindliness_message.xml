@@ -47,6 +47,7 @@
         android:drawablePadding="@dimen/dimens_4dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_message"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/dimens_8dp"
@@ -54,7 +55,6 @@
         app:layout_constraintEnd_toEndOf="@id/guideline_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toBottomOf="@id/message_board_title"
-        tools:layout_editor_absoluteY="81dp"
         tools:listitem="@layout/item_kindliness_message" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.curahanmental.databinding.FragmentKindlinessMessageBinding
 import com.app.curahanmental.ui.kindlinessmessage.add.AddMessageDialogFragment
 
@@ -13,6 +14,7 @@ class KindlinessMessageFragment : Fragment() {
 
 	private lateinit var supportMessageViewModel: KindlinessMessageViewModel
 	private var _binding: FragmentKindlinessMessageBinding? = null
+	private val messageAdapter = KindlinessMessageAdapter()
 
 	// This property is only valid between onCreateView and
 	// onDestroyView.
@@ -27,6 +29,7 @@ class KindlinessMessageFragment : Fragment() {
 			ViewModelProvider(this)[KindlinessMessageViewModel::class.java]
 
 		_binding = FragmentKindlinessMessageBinding.inflate(inflater, container, false)
+		showRecycleViewMessage()
 
 		return binding.root
 	}
@@ -37,6 +40,14 @@ class KindlinessMessageFragment : Fragment() {
 			AddMessageDialogFragment().show(childFragmentManager, "")
 		}
 		supportMessageViewModel.getALlUser()
+	}
+
+	private fun showRecycleViewMessage() {
+		with(binding) {
+			rvMessage.layoutManager = LinearLayoutManager(context)
+			rvMessage.setHasFixedSize(false)
+			rvMessage.adapter = messageAdapter
+		}
 	}
 
 	override fun onDestroyView() {

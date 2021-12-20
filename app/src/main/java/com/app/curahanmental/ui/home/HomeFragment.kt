@@ -82,19 +82,19 @@ class HomeFragment : Fragment() {
 	}
 
 	private fun initArticleContent() {
-			homeViewModel.articles.observe(viewLifecycleOwner, { res ->
-				if (res != null) {
-					when (res) {
-						is Resource.Success -> {
-							Log.d("GET_DATA", "Success get data")
-							articleAdapter.setArticleData(res.data)
-						}
-						is Resource.Error -> Log.d("GET_DATA", "Unable to get data")
-						else -> Log.d("GET_DATA", "Something wrong!")
+		homeViewModel.articles.observe(viewLifecycleOwner, { res ->
+			if (res != null) {
+				when (res) {
+					is Resource.Success -> {
+						Log.d("GET_DATA", "Success get data")
+						articleAdapter.setArticleData(res.data)
 					}
-
+					is Resource.Error -> Log.d("GET_DATA", "Unable to get data")
+					else -> Log.d("GET_DATA", "Something wrong!")
 				}
-			})
+
+			}
+		})
 	}
 
 	private fun showRecycleViewArticle() {

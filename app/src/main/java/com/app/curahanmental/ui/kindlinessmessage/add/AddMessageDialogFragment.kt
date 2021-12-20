@@ -17,7 +17,7 @@ class AddMessageDialogFragment : DialogFragment() {
 
 	private var _binding: FragmentAddMessageDialogBinding? = null
 	private val binding get() = _binding!!
-	private lateinit var supportMessageViewModel: KindlinessMessageViewModel
+	private lateinit var kindlinessMessageViewModel: KindlinessMessageViewModel
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -31,10 +31,10 @@ class AddMessageDialogFragment : DialogFragment() {
 		// Inflate the layout for this fragment
 		_binding = FragmentAddMessageDialogBinding.inflate(layoutInflater, container, false)
 
-		supportMessageViewModel =
+		kindlinessMessageViewModel =
 			ViewModelProvider(this)[KindlinessMessageViewModel::class.java]
 
-		supportMessageViewModel.result.observe(viewLifecycleOwner) {
+		kindlinessMessageViewModel.result.observe(viewLifecycleOwner) {
 			if (it == null) {
 				Toast.makeText(
 					requireContext(),
@@ -50,6 +50,7 @@ class AddMessageDialogFragment : DialogFragment() {
 			}
 			dismiss()
 		}
+		kindlinessMessageViewModel.getCurrentUserDisplayName()
 
 		return binding.root
 	}
@@ -70,18 +71,25 @@ class AddMessageDialogFragment : DialogFragment() {
 	private fun saveMessage() {
 		val messageText = binding.kindlinessText.text.toString().trim()
 		val currentTime = Calendar.getInstance().timeInMillis
+		lateinit var poster: String
+
+		kindlinessMessageViewModel.currentData.observe(viewLifecycleOwner) {
+			poster = "${it?.firstName} ${it?.lastName}"
+		}
 
 		val message = KindlinessMessageEntity(
 			messages = messageText,
-			time = currentTime
+			time = currentTime,
+			poster = poster
 		)
 
 		if (messageText.isEmpty()) {
 			binding.kindlinessColumn.requestFocus()
-			binding.kindlinessText.error = getString(R.string.douzo_meseji_haire_kudasai)
+			binding.kindlinessText.error = getString(R.string.enter_message)
 		} else {
-			supportMessageViewModel.addMessage(message)
+			kindlinessMessageViewModel.addMessage(message)
 		}
+
 	}
 
 }

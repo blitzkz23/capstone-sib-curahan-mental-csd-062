@@ -13,48 +13,77 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.getValue
 
 class KindlinessMessageViewModel : ViewModel() {
 	val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
-	private val db : FirebaseDatabase by lazy { FirebaseDatabase.getInstance() }
+	private val db: FirebaseDatabase by lazy { FirebaseDatabase.getInstance() }
 	private val messageRef = db.getReference(NODE_MESSAGE)
 
-	private var listUser: MutableList<UserEntity?> = mutableListOf()
+	private var _listUser: MutableList<UserEntity?> = mutableListOf()
 
 	private val _result = MutableLiveData<Exception?>()
 	val result: LiveData<Exception?> get() = _result
+
+	private val _currentData = MutableLiveData<UserEntity?>()
 
 	fun addMessage(message: KindlinessMessageEntity) {
 		// Generate auto key id for the object
 		message.id = messageRef.push().key
 
-		auth.currentUser?.let {
-			message.id?.let { it1 ->
-				db.reference.child(NODE_USER).child(it.uid).child(NODE_MESSAGE).child(it1).setValue(message).addOnCompleteListener { task ->
+		message.id?.let {
+			db.reference.child(NODE_MESSAGE).child(it).setValue(message)
+				.addOnCompleteListener { task ->
 					if (task.isSuccessful) {
 						_result.value = null
 					} else {
 						_result.value = task.exception
 					}
 				}
-			}
 		}
 	}
 
-	fun getALlUser(){
+	fun getALlUser() {
 		val reference = db.reference
-		reference.child("users").addListenerForSingleValueEvent(object : ValueEventListener {
+		reference.child(NODE_USER).addListenerForSingleValueEvent(object : ValueEventListener {
 			override fun onDataChange(snapshot: DataSnapshot) {
 				val children = snapshot.children
 				children.forEach {
-					listUser.add(it.getValue(UserEntity::class.java))
+					_listUser.add(it.getValue(UserEntity::class.java))
 				}
-				Log.d("USERS", "$listUser")
+				Log.d("USERS", "$_listUser")
 			}
+
 			override fun onCancelled(error: DatabaseError) {
 				Log.e("ERROR", error.message)
 			}
 		})
 	}
+
+	fun getCurrentUserDisplayName(){
+		val reference = db.reference
+		val userId = auth.currentUser.let { it?.uid }
+		if (userId != null) {
+			reference.child("users").child(userId).addListenerForSingleValueEvent(object :
+				ValueEventListener {
+				override fun onDataChange(snapshot: DataSnapshot) {
+					val userProfile = snapshot.getValue<UserEntity>()
+					lateinit var user: UserEntity
+					if (userProfile != null) {
+						user = UserEntity(userProfile.firstName, userProfile.lastName, userProfile.email)
+					}
+					_currentData.postValue(user)
+
+					Log.i("Firebase", "Got users value $userProfile")
+				}
+
+				override fun onCancelled(error: DatabaseError) {
+					Log.e("Firebase", "Failed to load users data")
+				}
+			})
+		}
+	}
+
+	val currentData: LiveData<UserEntity?> = _currentData
 
 }

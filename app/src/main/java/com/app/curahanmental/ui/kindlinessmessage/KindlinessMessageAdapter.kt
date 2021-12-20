@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.curahanmental.data.source.remote.entity.KindlinessMessageEntity
 import com.app.curahanmental.databinding.ItemKindlinessMessageBinding
+import com.app.curahanmental.utils.DateUtils
 
 class KindlinessMessageAdapter : RecyclerView.Adapter<KindlinessMessageAdapter.ViewHolder>() {
 
@@ -23,8 +24,12 @@ class KindlinessMessageAdapter : RecyclerView.Adapter<KindlinessMessageAdapter.V
 	override fun getItemCount(): Int = listMessage.size
 
 	inner class ViewHolder(private var binding: ItemKindlinessMessageBinding) : RecyclerView.ViewHolder(binding.root){
-		fun bind(messageEntity: KindlinessMessageEntity) {
-			binding.apply {  }
+		fun bind(message: KindlinessMessageEntity) {
+			binding.apply {
+				username.text = message.poster
+				userMessage.text = message.messages
+				messageDate.text = message.time?.let { DateUtils.convertTime(it) }
+			}
 		}
 	}
 }
