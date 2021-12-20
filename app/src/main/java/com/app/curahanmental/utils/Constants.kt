@@ -13,6 +13,7 @@ object Constants {
     const val EXTRA_TIPS = "extra_tips"
     const val NODE_MESSAGE = "kindliness_messages"
     const val NODE_USER = "users"
+    const val NODE_TIME = "time"
 
     private val SINGLE_EXECUTOR = Executors.newSingleThreadExecutor()
 

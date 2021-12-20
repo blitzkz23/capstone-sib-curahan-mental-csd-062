@@ -5,11 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:elevation="@dimen/dimens_24dp"
-    android:layout_marginTop="@dimen/dimens_8dp"
-    android:layout_marginBottom="@dimen/dimens_8dp"
-    android:layout_marginStart="@dimen/dimens_8dp"
-    android:layout_marginEnd="@dimen/dimens_8dp"
-    app:cardCornerRadius="@dimen/dimens_24dp"
+    android:layout_margin="@dimen/dimens_8dp"
+    app:cardCornerRadius="@dimen/dimens_16dp"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent">

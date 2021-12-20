@@ -77,6 +77,13 @@
         <item name="android:textColor">@color/curahan_subtext</item>
     </style>
 
+    <style name="Text.SubText2">
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">-0.013</item>
+        <item name="android:textColor">@color/curahan_subtext</item>
+    </style>
+
     <style name="Text.Paragraph">
         <item name="android:textSize">13.5sp</item>
         <item name="fontFamily">@font/poppins_regular</item>

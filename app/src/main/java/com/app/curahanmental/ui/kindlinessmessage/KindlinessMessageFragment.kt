@@ -40,7 +40,7 @@ class KindlinessMessageFragment : Fragment() {
 		binding.fabAdd.setOnClickListener {
 			AddMessageDialogFragment().show(childFragmentManager, "")
 		}
-		supportMessageViewModel.getALlUser()
+		supportMessageViewModel.getALlMessage()
 		supportMessageViewModel.listUser.observe(viewLifecycleOwner, { res ->
 			messageAdapter.setMessageData(res as List<KindlinessMessageEntity>?)
 		})
