@@ -1,9 +1,9 @@
 <resources>
     <!-- General -->
     <string name="app_name">Curahan Mental</string>
-    <string name="title_home">Home</string>
-    <string name="title_journal">Journal</string>
-    <string name="title_support_message">Support Message</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_journal">Jurnal</string>
+    <string name="title_kindliness_message">Pesan Kebaikan</string>
     <string name="logo_name">Curahan Mental Logo</string>
 
     <!-- Onboarding Section -->

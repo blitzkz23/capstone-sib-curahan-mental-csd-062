@@ -14,6 +14,6 @@
     <item
         android:id="@+id/navigation_support_message"
         android:icon="@drawable/ic_curahan_support_message"
-        android:title="@string/title_support_message" />
+        android:title="@string/title_kindliness_message" />
 
 </menu>

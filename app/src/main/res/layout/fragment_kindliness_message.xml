@@ -40,11 +40,11 @@
         android:id="@+id/message_board_title"
         style="@style/Text.Header2"
         android:layout_marginTop="16dp"
+        android:drawablePadding="@dimen/dimens_4dp"
         android:text="@string/kindliness_message_board_title"
-        app:layout_constraintStart_toStartOf="@id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@id/app_bar_message"
         app:drawableStartCompat="@drawable/ic_board"
-        android:drawablePadding="@dimen/dimens_4dp"/>
+        app:layout_constraintStart_toStartOf="@id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_message" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_message"
@@ -74,5 +74,16 @@
         app:rippleColor="@android:color/white"
         app:tint="@color/white"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

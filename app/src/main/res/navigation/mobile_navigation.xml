@@ -24,7 +24,7 @@
     <fragment
         android:id="@+id/navigation_support_message"
         android:name="com.app.curahanmental.ui.kindlinessmessage.KindlinessMessageFragment"
-        android:label="@string/title_support_message" />
+        android:label="@string/title_kindliness_message" />
     <activity
         android:id="@+id/addJournalActivity"
         android:name="com.app.curahanmental.ui.journal.add.AddJournalActivity"

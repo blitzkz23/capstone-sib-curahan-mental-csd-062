@@ -33,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
 			finish()
 		}
 
-		loginViewModel.authRes.observe(this){ it ->
+		loginViewModel.authRes.observe(this){
 			if (it.isSuccessful){
 				showProgressBar(true)
 				startActivity(Intent(this@LoginActivity, MainActivity::class.java).also { intent ->
