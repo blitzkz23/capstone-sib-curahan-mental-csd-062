@@ -9,10 +9,7 @@ import com.app.curahanmental.data.source.remote.entity.UserEntity
 import com.app.curahanmental.utils.Constants.NODE_MESSAGE
 import com.app.curahanmental.utils.Constants.NODE_USER
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
 
 class KindlinessMessageViewModel : ViewModel() {
@@ -20,12 +17,14 @@ class KindlinessMessageViewModel : ViewModel() {
 	private val db: FirebaseDatabase by lazy { FirebaseDatabase.getInstance() }
 	private val messageRef = db.getReference(NODE_MESSAGE)
 
-	private val _listUser = MutableLiveData<List<KindlinessMessageEntity?>>()
-
 	private val _result = MutableLiveData<Exception?>()
 	val result: LiveData<Exception?> get() = _result
 
 	private val _currentData = MutableLiveData<UserEntity?>()
+	val currentData: LiveData<UserEntity?> = _currentData
+
+	private val _message = MutableLiveData<KindlinessMessageEntity?>()
+	val message: LiveData<KindlinessMessageEntity?> get() = _message
 
 	fun addMessage(message: KindlinessMessageEntity) {
 		// Generate auto key id for the object
@@ -43,29 +42,34 @@ class KindlinessMessageViewModel : ViewModel() {
 		}
 	}
 
-	fun getALlMessage() {
-		val reference = db.reference
-		reference.child(NODE_MESSAGE).limitToLast(100).addListenerForSingleValueEvent(object : ValueEventListener {
-			override fun onDataChange(snapshot: DataSnapshot) {
-				val children = snapshot.children
-				val list = ArrayList<KindlinessMessageEntity>()
-				children.forEach{
-					it.getValue(KindlinessMessageEntity::class.java)?.let { it1 -> list.add(it1) }
-					list.reverse()
-				}
-				_listUser.postValue(list)
-				Log.d("USERS", "$list")
-			}
+	private val childEventListener = object : ChildEventListener {
+		override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
+			val message = snapshot.getValue(KindlinessMessageEntity::class.java)
 
-			override fun onCancelled(error: DatabaseError) {
-				Log.e("ERROR", error.message)
-			}
-		})
+			message?.id = snapshot.key
+			_message.value = message
+		}
+
+		override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {}
+
+		override fun onChildRemoved(snapshot: DataSnapshot) {}
+
+		override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {}
+
+		override fun onCancelled(error: DatabaseError) {}
+
 	}
 
-	var listUser: LiveData<List<KindlinessMessageEntity?>> = _listUser
+	fun getRealtimeMessage() {
+		messageRef.addChildEventListener(childEventListener)
+	}
 
-	fun getCurrentUserDisplayName(){
+	override fun onCleared() {
+		super.onCleared()
+		messageRef.removeEventListener(childEventListener)
+	}
+
+	fun getCurrentUserDisplayName() {
 		val reference = db.reference
 		val userId = auth.currentUser.let { it?.uid }
 		if (userId != null) {
@@ -75,7 +79,11 @@ class KindlinessMessageViewModel : ViewModel() {
 					val userProfile = snapshot.getValue<UserEntity>()
 					lateinit var user: UserEntity
 					if (userProfile != null) {
-						user = UserEntity(userProfile.firstName, userProfile.lastName, userProfile.email)
+						user = UserEntity(
+							userProfile.firstName,
+							userProfile.lastName,
+							userProfile.email
+						)
 					}
 					_currentData.postValue(user)
 
@@ -88,7 +96,4 @@ class KindlinessMessageViewModel : ViewModel() {
 			})
 		}
 	}
-
-	val currentData: LiveData<UserEntity?> = _currentData
-
 }

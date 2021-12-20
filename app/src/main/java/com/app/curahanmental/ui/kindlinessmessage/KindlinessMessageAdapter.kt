@@ -4,14 +4,13 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.app.curahanmental.data.source.local.entity.ArticlesModel
 import com.app.curahanmental.data.source.remote.entity.KindlinessMessageEntity
 import com.app.curahanmental.databinding.ItemKindlinessMessageBinding
 import com.app.curahanmental.utils.DateUtils
 
 class KindlinessMessageAdapter : RecyclerView.Adapter<KindlinessMessageAdapter.ViewHolder>() {
 
-	private var listMessage = ArrayList<KindlinessMessageEntity>()
+	private var listMessage = mutableListOf<KindlinessMessageEntity>()
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 		val binding = ItemKindlinessMessageBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -36,10 +35,10 @@ class KindlinessMessageAdapter : RecyclerView.Adapter<KindlinessMessageAdapter.V
 		}
 	}
 	@SuppressLint("NotifyDataSetChanged")
-	fun setMessageData(newMessage: List<KindlinessMessageEntity>?){
+	fun setMessageData(newMessage: KindlinessMessageEntity?){
 		if (newMessage == null) return
-		listMessage.clear()
-		listMessage.addAll(newMessage)
+		listMessage.add(newMessage)
+		listMessage.reverse()
 		notifyDataSetChanged()
 	}
 }
