@@ -18,3 +18,14 @@ Curahan Mental is an application that adopt "Journaling for Mental Health" conce
 
 ### External API:
 - [News API](https://newsapi.org/)
+
+### License and Attributions:
+<a href="https://icons8.com/illustrations/style--dizzy">Dizzy Series Illustration</a>
+- <a href="https://icons8.com/illustrations/illustration/dizzy-education">Illustration</a> by <a href="https://icons8.com/illustrations/author/613f61cc05152f67565035d0">Ekaterina Ziyatova</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
+- <a href="https://icons8.com/illustrations/illustration/dizzy-lots-of-letters">Illustration</a> by <a href="https://icons8.com/illustrations/author/602a6c5b01d0363186d3d950">Альбина Шайгарданова</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
+- <a href="https://icons8.com/illustrations/illustration/dizzy-meditation">Illustration</a> by <a href="https://icons8.com/illustrations/author/602a6c5b01d0363186d3d950">Viktoriya Belyakova</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
+- <a href="https://icons8.com/illustrations/illustration/dizzy-gifts">Illustration</a> by <a href="https://icons8.com/illustrations/author/602a6c5b01d0363186d3d950">Альбина Шайгарданова</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
+- <a href="https://icons8.com/illustrations/illustration/dizzy-designer">Illustration</a> by <a href="https://icons8.com/illustrations/author/5eb423ee01d03600140dff88">Tatiana Vinogradova</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
+- <a href="https://icons8.com/illustrations/illustration/dizzy-healthy-life">Illustration</a> by <a href="https://icons8.com/illustrations/author/602a6c5b01d0363186d3d950">Viktoriya Belyakova</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
+- <a href="https://icons8.com/illustrations/illustration/dizzy-online-shopping">Illustration</a> by <a href="https://icons8.com/illustrations/author/602a6c5b01d0363186d3d950">Альбина Шайгарданова</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
+- <a href="https://icons8.com/illustrations/illustration/dizzy-web-design">Illustration</a> by <a href="https://icons8.com/illustrations/author/5eb423ee01d03600140dff88">Tatiana Vinogradova</a> from <a href="https://icons8.com/illustrations">Ouch!</a>
