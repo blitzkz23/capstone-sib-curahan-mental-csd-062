@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/addJournalStressLevel"
-        android:name="com.naufaldystd.curahanmental.ui.journal.add.component.AddJournalStressLevelFragment"
+        android:name="com.app.curahanmental.ui.journal.add.component.AddJournalStressLevelFragment"
         android:label="fragment_add_journal_stress_level"
         tools:layout="@layout/fragment_add_journal_stress_level">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/addJournalEventFragment"
-        android:name="com.naufaldystd.curahanmental.ui.journal.add.component.AddJournalEventFragment"
+        android:name="com.app.curahanmental.ui.journal.add.component.AddJournalEventFragment"
         android:label="fragment_add_journal_event"
         tools:layout="@layout/fragment_add_journal_event" >
         <argument
@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/addJournalManageEventFragment"
-        android:name="com.naufaldystd.curahanmental.ui.journal.add.component.AddJournalManageEventFragment"
+        android:name="com.app.curahanmental.ui.journal.add.component.AddJournalManageEventFragment"
         android:label="fragment_add_journal_manage_event"
         tools:layout="@layout/fragment_add_journal_manage_event" >
         <action
@@ -56,7 +56,7 @@
     </fragment>
     <fragment
         android:id="@+id/addJournalReasonFragment"
-        android:name="com.naufaldystd.curahanmental.ui.journal.add.component.AddJournalReasonFragment"
+        android:name="com.app.curahanmental.ui.journal.add.component.AddJournalReasonFragment"
         android:label="fragment_add_journal_reason"
         tools:layout="@layout/fragment_add_journal_reason">
         <argument

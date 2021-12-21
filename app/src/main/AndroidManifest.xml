@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.naufaldystd.curahanmental">
+    package="com.app.curahanmental">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -13,40 +13,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CurahanMental">
         <activity
-            android:name="com.naufaldystd.curahanmental.ui.journal.detail.EditJournalActivity"
+            android:name="com.app.curahanmental.ui.journal.detail.EditJournalActivity"
             android:exported="false" />
         <activity
-            android:name="com.naufaldystd.curahanmental.ui.journal.detail.DetailJournalActivity"
+            android:name="com.app.curahanmental.ui.journal.detail.DetailJournalActivity"
             android:exported="false" />
         <activity
-            android:name="com.naufaldystd.curahanmental.ui.home.tips.DetailTipsActivity"
+            android:name="com.app.curahanmental.ui.home.tips.DetailTipsActivity"
             android:exported="false" />
         <activity
-            android:name="com.naufaldystd.curahanmental.ui.home.tips.TipsActivity"
+            android:name="com.app.curahanmental.ui.home.tips.TipsActivity"
             android:exported="true" />
         <activity
-            android:name="com.naufaldystd.curahanmental.ui.home.articles.ArticleActivity"
+            android:name="com.app.curahanmental.ui.home.articles.ArticleActivity"
             android:exported="true" />
         <activity
-            android:name="com.naufaldystd.curahanmental.ui.settings.SettingsActivity"
+            android:name="com.app.curahanmental.ui.settings.SettingsActivity"
             android:exported="true" />
         <activity
-            android:name="com.naufaldystd.curahanmental.ui.journal.add.AddJournalActivity"
+            android:name="com.app.curahanmental.ui.journal.add.AddJournalActivity"
             android:exported="false" />
         <activity
-            android:name="com.naufaldystd.curahanmental.ui.welcome.onboarding.OnboardActivity"
+            android:name="com.app.curahanmental.ui.welcome.onboarding.OnboardActivity"
             android:exported="true"
             android:theme="@style/FullScreen" />
         <activity
-            android:name="com.naufaldystd.curahanmental.ui.auth.register.RegisterActivity"
+            android:name="com.app.curahanmental.ui.auth.register.RegisterActivity"
             android:exported="false"
             android:theme="@style/FullScreen" />
         <activity
-            android:name="com.naufaldystd.curahanmental.ui.auth.login.LoginActivity"
+            android:name="com.app.curahanmental.ui.auth.login.LoginActivity"
             android:exported="false"
             android:theme="@style/FullScreen" />
         <activity
-            android:name="com.naufaldystd.curahanmental.ui.welcome.SplashActivity"
+            android:name="com.app.curahanmental.ui.welcome.SplashActivity"
             android:exported="true"
             android:theme="@style/FullScreen">
             <intent-filter>
@@ -56,7 +56,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.naufaldystd.curahanmental.ui.main.MainActivity"
+            android:name="com.app.curahanmental.ui.main.MainActivity"
             android:exported="true"
             android:label="@string/app_name" />
     </application>
