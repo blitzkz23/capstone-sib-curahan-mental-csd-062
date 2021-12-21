@@ -42,8 +42,8 @@ class RegisterActivity : AppCompatActivity() {
 						getString(R.string.account_created),
 						Toast.LENGTH_SHORT
 					).show()
-					startActivity(Intent(this@RegisterActivity, LoginActivity::class.java).also {
-						it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+					startActivity(Intent(this@RegisterActivity, LoginActivity::class.java).also { intent ->
+						intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 					})
 					finish()
 				} else {

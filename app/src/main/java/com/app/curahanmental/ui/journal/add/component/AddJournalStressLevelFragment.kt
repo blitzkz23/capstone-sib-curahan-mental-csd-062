@@ -17,7 +17,7 @@ class AddJournalStressLevelFragment : Fragment() {
 
 	private var _binding: FragmentAddJournalStressLevelBinding? = null
 	private val binding get() = _binding!!
-	var percentageArg = 0
+	private var percentageArg = 0
 
 	override fun onCreateView(
 		inflater: LayoutInflater, container: ViewGroup?,
