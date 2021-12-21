@@ -106,11 +106,9 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/reason_detail_column"
         style="@style/TextInputLayoutStyle1"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
         android:hint="@string/detail"
         app:boxCornerRadiusBottomEnd="@dimen/dimens_24dp"
         app:boxCornerRadiusBottomStart="@dimen/dimens_24dp"
