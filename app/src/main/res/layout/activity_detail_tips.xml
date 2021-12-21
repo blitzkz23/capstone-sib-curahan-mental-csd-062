@@ -104,6 +104,7 @@
                 style="@style/Text.Paragraph"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:justificationMode="inter_word"
                 android:layout_marginStart="@dimen/dimens_8dp"
                 android:layout_marginTop="@dimen/dimens_24dp"
                 android:text="@string/article_description_home"

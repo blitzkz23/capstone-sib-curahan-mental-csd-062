@@ -1,5 +1,7 @@
 package com.app.curahanmental.ui.home.tips
 
+import android.graphics.text.LineBreaker.JUSTIFICATION_MODE_INTER_WORD
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.curahanmental.databinding.ActivityDetailTipsBinding
@@ -27,6 +29,9 @@ class DetailTipsActivity : AppCompatActivity() {
 
             btnTipsDetailBack.setOnClickListener {
                 finish()
+            }
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
+                tipsContentDetail.justificationMode = JUSTIFICATION_MODE_INTER_WORD
             }
         }
     }
