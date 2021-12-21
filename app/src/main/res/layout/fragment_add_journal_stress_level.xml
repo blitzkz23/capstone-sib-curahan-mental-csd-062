@@ -94,11 +94,9 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/stress_indicator"
         style="@style/TextInputLayoutStyle1"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="@dimen/dimens_16dp"
-        android:layout_marginEnd="16dp"
         android:enabled="false"
         app:boxCornerRadiusBottomEnd="@dimen/dimens_24dp"
         app:boxCornerRadiusBottomStart="@dimen/dimens_24dp"

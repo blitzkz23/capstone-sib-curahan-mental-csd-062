@@ -6,11 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.app.curahanmental.R
 import com.app.curahanmental.databinding.FragmentAddJournalStressLevelBinding
-import com.google.android.material.button.MaterialButton
 
 class AddJournalStressLevelFragment : Fragment() {
 
@@ -61,6 +62,19 @@ class AddJournalStressLevelFragment : Fragment() {
 		view?.findViewById<TextView>(R.id.journal_title)?.text = getString(R.string.stress_level)
 		view?.findViewById<ImageView>(R.id.back_button_fragment)?.setOnClickListener {
 			activity?.finish()
+		}
+		view?.findViewById<TextView>(R.id.help_button)?.setOnClickListener {
+			context?.let { it1 ->
+				AlertDialog.Builder(it1).apply {
+					setMessage(getString(R.string.help_journal))
+					setNegativeButton(getString(R.string.detail)) { _, _ ->
+						Toast.makeText(activity, getString(R.string.not_available), Toast.LENGTH_SHORT)
+							.show()
+					}
+					setPositiveButton(getString(R.string.ok), null)
+					show()
+				}
+			}
 		}
 	}
 

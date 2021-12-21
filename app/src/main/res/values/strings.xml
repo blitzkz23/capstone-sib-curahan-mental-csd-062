@@ -112,8 +112,15 @@
     <string name="reason_event_option">Pilihan Opsi Penyebab</string>
     <string name="joker">Joker</string>
     <string name="del_journal">Hapus jurnal ini?</string>
+    <string name="help_journal">
+        Silahkan nilai tingkat stres berdasarkan feeling Anda saat ini:\n\n
+        <b>0-40%</b> Keadaan paling relax\n
+        <b>50-70%</b> Keadaan paling produktif atau termotivasi\n
+        <b>80-100%</b> Keadaan tingkat stres tinggi atau depresi
+    </string>
     <string name="no">Tidak</string>
     <string name="yes">Ya</string>
+    <string name="ok">Oke</string>
     <string name="update">Perbarui</string>
 
     <!-- Kindliness Message -->
@@ -130,6 +137,7 @@
     <string name="enter_message">Silahkan masukkan pesan terlebih dahulu</string>
     <string name="back_button">Back Button</string>
     <string name="tips_image">Tips Image</string>
+    <string name="not_available">Konten belum tersedia</string>
 
     <!-- Spinner array -->
     <string-array name="event">
