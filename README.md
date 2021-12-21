@@ -12,15 +12,15 @@ Curahan Mental is an application that adopt "Journaling for Mental Health" conce
 - Add messages to firebase realtime database
 - Get recent articles related to mental health
 - Filter journal based on type
-- Showing tips to handle stress and mental health issue
+- Showing tips to handle stress and mental health issues
 
 
 ## Library:
-- Kotlin Coroutines
-- Kotlin Flow
+- Kotlin Coroutines Flow
 - Retrofit2
 - Room
 - Paging
+- Glide
 - Firebase Auth
 - Firebase Realtime Database
 
