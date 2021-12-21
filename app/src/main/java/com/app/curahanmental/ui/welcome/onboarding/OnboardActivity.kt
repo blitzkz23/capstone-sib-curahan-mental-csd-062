@@ -1,6 +1,7 @@
 package com.app.curahanmental.ui.welcome.onboarding
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View.GONE
@@ -14,6 +15,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.app.curahanmental.R
 import com.app.curahanmental.databinding.ActivityOnboardBinding
 import com.app.curahanmental.ui.auth.login.LoginActivity
+import com.app.curahanmental.ui.main.MainActivity
 
 
 class OnboardActivity : AppCompatActivity() {
@@ -38,16 +40,16 @@ class OnboardActivity : AppCompatActivity() {
 
 	override fun onResume() {
 		super.onResume()
-//        val sharedPreferences = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE)
-//        if (!sharedPreferences.getBoolean(state, false)){
-//            sharedPreferences.edit().apply{
-//                putBoolean(state, true)
-//                apply()
-//            }
-//        }else{
-//            startActivity(Intent(this@OnboardActivity, MainActivity::class.java))
-//            finish()
-//        }
+        val sharedPreferences = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE)
+        if (!sharedPreferences.getBoolean(state, false)){
+            sharedPreferences.edit().apply{
+                putBoolean(state, true)
+                apply()
+            }
+        }else{
+            startActivity(Intent(this@OnboardActivity, MainActivity::class.java))
+            finish()
+        }
 	}
 
 	@SuppressLint("UseCompatLoadingForDrawables")
