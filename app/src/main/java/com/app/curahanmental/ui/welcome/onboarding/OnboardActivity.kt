@@ -16,6 +16,7 @@ import com.app.curahanmental.R
 import com.app.curahanmental.databinding.ActivityOnboardBinding
 import com.app.curahanmental.ui.auth.login.LoginActivity
 import com.app.curahanmental.ui.main.MainActivity
+import com.google.firebase.auth.FirebaseAuth
 
 
 class OnboardActivity : AppCompatActivity() {
@@ -24,6 +25,9 @@ class OnboardActivity : AppCompatActivity() {
 			layoutInflater
 		)
 	}
+
+	private val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
+
 	private lateinit var onboardAdapter: OnboardAdapter
 	private lateinit var onboardDots: LinearLayout
 	private var state = "true"
@@ -47,8 +51,13 @@ class OnboardActivity : AppCompatActivity() {
                 apply()
             }
         }else{
-            startActivity(Intent(this@OnboardActivity, MainActivity::class.java))
-            finish()
+        	if(auth.currentUser != null) {
+				startActivity(Intent(this@OnboardActivity, MainActivity::class.java))
+				finish()
+			}else{
+				startActivity(Intent(this@OnboardActivity, LoginActivity::class.java))
+				finish()
+			}
         }
 	}
 
