@@ -11,15 +11,29 @@
         android:layout_height="wrap_content"
         tools:context=".ui.auth.register.RegisterActivity">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/constraint_guide_left_percent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/constraint_guide_right_percent" />
+
         <ImageView
             android:id="@+id/cm_icon"
             android:layout_width="165dp"
             android:layout_height="150dp"
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:contentDescription="@string/logo_name"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/curahan_logo2" />
 
@@ -28,31 +42,29 @@
             style="@style/Text.Header1"
             android:text="@string/create_account"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
             app:layout_constraintTop_toBottomOf="@+id/cm_icon" />
 
         <TextView
             android:id="@+id/header2"
             style="@style/Text.SubHeader2"
             android:text="@string/create_account_tagline"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
             app:layout_constraintTop_toBottomOf="@+id/header" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimens_24dp"
             android:layout_marginTop="@dimen/dimens_48dp"
-            android:layout_marginEnd="@dimen/dimens_24dp"
             android:hint="@string/hint_firstname"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/header2">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -68,14 +80,12 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout1"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimens_24dp"
             android:layout_marginTop="@dimen/dimens_16dp"
-            android:layout_marginEnd="@dimen/dimens_24dp"
             android:hint="@string/hint_lastname"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/textInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -91,14 +101,12 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout2"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimens_24dp"
             android:layout_marginTop="@dimen/dimens_16dp"
-            android:layout_marginEnd="@dimen/dimens_24dp"
             android:hint="@string/hint_email"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/textInputLayout1">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -113,16 +121,14 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout3"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimens_24dp"
             android:layout_marginTop="@dimen/dimens_16dp"
-            android:layout_marginEnd="@dimen/dimens_24dp"
             android:hint="@string/hint_password"
-            app:passwordToggleEnabled="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textInputLayout2">
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayout2"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/register_ed_password"
@@ -135,16 +141,16 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/register_button"
-            android:layout_width="350dp"
+            android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginTop="@dimen/dimens_48dp"
             android:backgroundTint="@color/curahan_btn_orange"
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/buat_akun2"
             android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
 
         <TextView
@@ -157,7 +163,7 @@
             app:layout_constraintEnd_toStartOf="@+id/register_to_login_flow"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@+id/register_button" />
 
         <TextView
@@ -169,7 +175,7 @@
             android:text="@string/login"
             android:textColor="@color/curahan_linktext"
             app:layout_constraintBottom_toBottomOf="@+id/haveaccount"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/haveaccount"
             app:layout_constraintTop_toTopOf="@+id/haveaccount" />
@@ -179,10 +185,10 @@
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="invisible"
             android:indeterminate="true"
-            android:indeterminateTintMode="src_atop"
             android:indeterminateTint="@color/curahan_btn_orange"
+            android:indeterminateTintMode="src_atop"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
