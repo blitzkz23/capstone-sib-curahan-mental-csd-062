@@ -128,8 +128,8 @@
     <string name="name">Nama</string>
     <string name="kindliness_message">Pesan Kebaikan</string>
     <string name="add_message">Tambahkan Pesan</string>
-    <string name="add">Tambahkan</string>
-    <string name="cancel">Batalkan</string>
+    <string name="add">Tambah</string>
+    <string name="cancel">Batal</string>
     <string name="kindliness_message_board_title">Papan Pesan Kebaikan</string>
     <string name="kind_message_image">Kind Message Image</string>
     <string name="success_message">Pesan telah berhasil ditambahkan</string>

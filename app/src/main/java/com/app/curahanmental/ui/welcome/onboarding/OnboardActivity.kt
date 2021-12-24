@@ -44,21 +44,22 @@ class OnboardActivity : AppCompatActivity() {
 
 	override fun onResume() {
 		super.onResume()
-        val sharedPreferences = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE)
-        if (!sharedPreferences.getBoolean(state, false)){
-            sharedPreferences.edit().apply{
-                putBoolean(state, true)
-                apply()
-            }
-        }else{
-        	if(auth.currentUser != null) {
+		val sharedPreferences =
+			getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE)
+		if (!sharedPreferences.getBoolean(state, false)) {
+			sharedPreferences.edit().apply {
+				putBoolean(state, true)
+				apply()
+			}
+		} else {
+			if (auth.currentUser != null) {
 				startActivity(Intent(this@OnboardActivity, MainActivity::class.java))
 				finish()
-			}else{
+			} else {
 				startActivity(Intent(this@OnboardActivity, LoginActivity::class.java))
 				finish()
 			}
-        }
+		}
 	}
 
 	@SuppressLint("UseCompatLoadingForDrawables")

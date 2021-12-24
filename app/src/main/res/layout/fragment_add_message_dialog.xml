@@ -58,9 +58,11 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/add_button"
-        android:layout_width="140dp"
+        android:layout_width="120dp"
         android:layout_height="60dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="@dimen/dimens_16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/button_state_color"
         android:fontFamily="@font/poppins_semibold"
@@ -74,9 +76,11 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/cancel_button"
-        android:layout_width="140dp"
+        android:layout_width="120dp"
         android:layout_height="60dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="@dimen/dimens_16dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/curahan_alter_gray"
         android:fontFamily="@font/poppins_semibold"
