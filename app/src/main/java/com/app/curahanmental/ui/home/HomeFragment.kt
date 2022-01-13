@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -48,7 +49,23 @@ class HomeFragment : Fragment() {
 		initArticleContent()
 
 		listBanner.addAll(BannerData.bannerList)
+		initAnimation()
 		return binding.root
+	}
+
+	private fun initAnimation() {
+		val fromTop = AnimationUtils.loadAnimation(context, R.anim.anim_from_top)
+		val fromBottom = AnimationUtils.loadAnimation(context, R.anim.anim_from_bottom)
+		val fromLeft = AnimationUtils.loadAnimation(context, R.anim.anim_from_left)
+		val fromRight = AnimationUtils.loadAnimation(context, R.anim.anim_from_right)
+
+		binding.homeGreetings1.animation = fromTop
+		binding.homeGreetings2.animation = fromTop
+		binding.rvBanner.animation = fromRight
+		binding.homeCardTips.animation = fromLeft
+		binding.homeTipsTitle.animation = fromLeft
+		binding.homeArticleTitle.animation = fromBottom
+		binding.rvHomeArticle.animation = fromBottom
 	}
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -74,9 +91,7 @@ class HomeFragment : Fragment() {
 		binding.homeTipsButton.setOnClickListener {
 			startActivity(Intent(activity, TipsActivity::class.java))
 		}
-//		binding.homeBtnToKindnessMsg.setOnClickListener {
-//			view.findNavController().navigate(R.id.navigation_support_message)
-//		}
+
 		showRecycleViewBanner()
 		showRecycleViewArticle()
 

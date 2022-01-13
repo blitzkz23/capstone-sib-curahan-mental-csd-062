@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -41,9 +42,19 @@ class JournalFragment : Fragment() {
 		val root: View = binding.root
 		val viewModelFactory = requireContext().let { ViewModelFactory.getInstance(it) }
 		journalViewModel = ViewModelProvider(this, viewModelFactory)[JournalViewModel::class.java]
-
+		initAnimation()
 
 		return root
+	}
+
+	private fun initAnimation() {
+		val fromTop = AnimationUtils.loadAnimation(context, R.anim.anim_from_top)
+		val fromBottom = AnimationUtils.loadAnimation(context, R.anim.anim_from_bottom)
+		val fromLeft = AnimationUtils.loadAnimation(context, R.anim.anim_from_left)
+		val fromRight = AnimationUtils.loadAnimation(context, R.anim.anim_from_right)
+
+		binding.rvJournal.animation = fromRight
+		binding.fabAdd.animation = fromBottom
 	}
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
