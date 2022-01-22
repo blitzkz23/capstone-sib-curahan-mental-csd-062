@@ -1,7 +1,6 @@
 package com.app.curahanmental.ui.home.articles
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.app.curahanmental.data.source.local.entity.ArticlesModel
@@ -30,7 +29,10 @@ class ArticleActivity : AppCompatActivity() {
             articleAuthorDetail.text = articleContent?.author
 
             btnContinueRead.setOnClickListener {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(articleContent?.url)))
+                val intent = Intent(this@ArticleActivity, ArticleWebView::class.java)
+                intent.putExtra(ArticleWebView.URL, articleContent?.url)
+                startActivity(intent)
+//                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(articleContent?.url)))
             }
             btnArticleBack.setOnClickListener{
                 finish()

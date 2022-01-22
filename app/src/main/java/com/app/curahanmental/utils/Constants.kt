@@ -10,6 +10,7 @@ object Constants {
     const val PARAMS = BuildConfig.PARAMS
     const val EXTRA_ARTICLE = "extra_article"
     const val EXTRA_JOURNAL = "extra_journal"
+    const val EXTRA_URL = "extra_url"
     const val EXTRA_TIPS = "extra_tips"
     const val NODE_MESSAGE = "kindliness_messages"
     const val NODE_USER = "users"

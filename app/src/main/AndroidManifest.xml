@@ -13,40 +13,43 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CurahanMental">
         <activity
-            android:name="com.app.curahanmental.ui.journal.detail.EditJournalActivity"
+            android:name=".ui.home.articles.ArticleWebView"
             android:exported="false" />
         <activity
-            android:name="com.app.curahanmental.ui.journal.detail.DetailJournalActivity"
+            android:name=".ui.journal.detail.EditJournalActivity"
             android:exported="false" />
         <activity
-            android:name="com.app.curahanmental.ui.home.tips.DetailTipsActivity"
+            android:name=".ui.journal.detail.DetailJournalActivity"
             android:exported="false" />
         <activity
-            android:name="com.app.curahanmental.ui.home.tips.TipsActivity"
+            android:name=".ui.home.tips.DetailTipsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.tips.TipsActivity"
             android:exported="true" />
         <activity
-            android:name="com.app.curahanmental.ui.home.articles.ArticleActivity"
+            android:name=".ui.home.articles.ArticleActivity"
             android:exported="true" />
         <activity
-            android:name="com.app.curahanmental.ui.settings.SettingsActivity"
+            android:name=".ui.settings.SettingsActivity"
             android:exported="true" />
         <activity
-            android:name="com.app.curahanmental.ui.journal.add.AddJournalActivity"
+            android:name=".ui.journal.add.AddJournalActivity"
             android:exported="false" />
         <activity
-            android:name="com.app.curahanmental.ui.welcome.onboarding.OnboardActivity"
+            android:name=".ui.welcome.onboarding.OnboardActivity"
             android:exported="true"
             android:theme="@style/FullScreen" />
         <activity
-            android:name="com.app.curahanmental.ui.auth.register.RegisterActivity"
+            android:name=".ui.auth.register.RegisterActivity"
             android:exported="false"
             android:theme="@style/FullScreen" />
         <activity
-            android:name="com.app.curahanmental.ui.auth.login.LoginActivity"
+            android:name=".ui.auth.login.LoginActivity"
             android:exported="false"
             android:theme="@style/FullScreen" />
         <activity
-            android:name="com.app.curahanmental.ui.welcome.SplashActivity"
+            android:name=".ui.welcome.SplashActivity"
             android:exported="true"
             android:theme="@style/FullScreen">
             <intent-filter>
@@ -56,7 +59,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.app.curahanmental.ui.main.MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="true"
             android:label="@string/app_name" />
     </application>
