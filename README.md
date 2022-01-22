@@ -3,6 +3,9 @@ Curahan Mental is an application that adopt "Journaling for Mental Health" conce
 
 ## Project Preview:
  <img src="https://raw.githubusercontent.com/blitzkz23/capstone-sib-curahan-mental-csd-062/main/app/src/main/res/drawable/ui_preview.png" alt="project"/> </img>
+ 
+## Try Our Application:
+https://play.google.com/store/apps/details?id=com.app.curahanmental
 
 ## Architecture:
 - MVVM Pattern
