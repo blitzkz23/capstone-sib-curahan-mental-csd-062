@@ -60,34 +60,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_account_settings"
-        style="@style/Text.Header2"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="@dimen/dimens_16dp"
-        android:text="@string/title_settings_account"
-        app:layout_constraintLeft_toLeftOf="@id/guideline_left"
-        app:layout_constraintTop_toTopOf="@id/guideline_top" />
-
-    <TextView
         android:id="@+id/settings_user_name"
-        style="@style/Text2"
+        style="@style/Text.Header1"
         android:layout_width="0dp"
-        android:layout_height="29dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="@dimen/dimens_16dp"
-        android:textColor="@color/grey_700"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
         app:layout_constraintStart_toEndOf="@id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@id/tv_account_settings"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
         tools:text="Nama User" />
 
     <TextView
         android:id="@+id/settings_user_email"
         style="@style/Text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:textColor="@color/grey_700"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
         app:layout_constraintStart_toEndOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@id/settings_user_name"
         tools:text="emailuser@email.com" />
@@ -108,5 +103,15 @@
         app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top"
+        app:srcCompat="@drawable/icon_profile" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

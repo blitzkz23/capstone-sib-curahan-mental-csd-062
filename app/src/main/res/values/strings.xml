@@ -63,7 +63,7 @@
     <string name="go_to_kindness_message">lihat sekarang juga!</string>
 
     <!-- settings -->
-    <string name="title_settings">Settings</string>
+    <string name="title_settings">Account\'s Setting</string>
     <string name="settings_logout">Log Out</string>
     <string name="title_settings_account">Akun Anda</string>
     <string name="title_home_banner">Temukan pesan dukungan</string>
