@@ -49,6 +49,7 @@ class RegisterActivity : AppCompatActivity() {
 				} else {
 					Log.e(ContentValues.TAG, "createUserWithEmail:failure", it.exception)
 					Toast.makeText(this, getString(R.string.account_existed), Toast.LENGTH_SHORT).show()
+					showProgressBar(false)
 				}
 			}
 		}
