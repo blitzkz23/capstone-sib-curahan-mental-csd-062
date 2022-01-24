@@ -24,6 +24,15 @@ class LoginActivity : AppCompatActivity() {
 
 		loginViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[LoginViewModel::class.java]
 
+//		val currentUser = loginViewModel.currentUser
+//		if (currentUser != null) {
+//			Toast.makeText(this, "Kamu sudah login", Toast.LENGTH_SHORT).show()
+//			startActivity(Intent(this@LoginActivity, MainActivity::class.java).also {
+//				it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//			})
+//			finish()
+//		}
+
 		loginViewModel.authRes.observe(this){
 			if (it.isSuccessful){
 				showProgressBar(true)

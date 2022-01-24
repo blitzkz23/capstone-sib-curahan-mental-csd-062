@@ -31,6 +31,10 @@ class RegisterViewModel : ViewModel() {
 
 		auth.createUserWithEmailAndPassword(email, password)
 			.addOnCompleteListener { task ->
+//				auth.currentUser?.sendEmailVerification()?.addOnCompleteListener {
+//					Log.d(TAG, "E-mail verification sent.")
+//				}?.addOnFailureListener { e -> e.printStackTrace() }
+
 				val user = UserEntity(
 					firstName = firstName,
 					lastName = lastName,
@@ -43,6 +47,7 @@ class RegisterViewModel : ViewModel() {
 			}.addOnFailureListener { e ->
 				e.printStackTrace()
 			}
+
 	}
 
 	val authRes: LiveData<Task<AuthResult>> = _authRes

@@ -46,16 +46,21 @@
         <TextView
             android:id="@+id/home_greetings1"
             style="@style/Text.Header2"
+            android:layout_width="0dp"
+            android:maxLines="2"
+            android:ellipsize="end"
             android:layout_marginTop="16dp"
             android:text="@string/title_home_greetings"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
             app:layout_constraintTop_toBottomOf="@id/app_bar_home" />
 
         <TextView
             android:id="@+id/home_greetings2"
             style="@style/Text.SubHeader2"
+            android:layout_width="0dp"
             android:text="@string/title_home_greetings2"
-            app:layout_constraintEnd_toEndOf="@+id/home_greetings1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/home_greetings1"
             app:layout_constraintTop_toBottomOf="@id/home_greetings1" />

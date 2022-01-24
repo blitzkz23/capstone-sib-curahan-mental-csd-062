@@ -113,10 +113,19 @@
     <string name="joker">Joker</string>
     <string name="del_journal">Hapus jurnal ini?</string>
     <string name="help_journal">
-        Silahkan nilai tingkat stres berdasarkan feeling Anda saat ini:\n\n
-        <b>0-40%</b> Keadaan paling relax\n
-        <b>50-70%</b> Keadaan paling produktif atau termotivasi\n
-        <b>80-100%</b> Keadaan tingkat stres tinggi atau depresi
+        Silahkan nilai tingkat stres berdasarkan perasaan Anda saat ini:\n\n
+        <b>0:</b> Keadaan paling relax dan damai.\n
+        <b>10:</b> Keadaan tidak stres dan terfokus.\n
+        <b>20:</b> Keadaan sedikit sedih dan terganggu.\n
+        <b>30:</b> Keadaan khawatir atau kesal;namun masih bisa berfungsi.\n
+        <b>40:</b> Keadaan khawatir dan cemas tingkat sedang.\n
+        <b>50:</b> Keadaan cemas dan tidak nyaman.\n
+        <b>60:</b> Keadaan tidak nyaman tingkat sedang ke kuat.\n
+        <b>70:</b> Keadaan tidak nyaman mendominasi dan kesulitan untuk berfungsi normal.\n
+        <b>80:</b> Keadaan cemas dan panik, hilang fokus dan cemas pada tubuh.\n
+        <b>90:</b> Keadaan sangat cemas dan putus asa hingga tidak dapat menangani.\n
+        <b>100:</b> Keadaan depresi dan hampir breakdown\n
+
     </string>
     <string name="no">Tidak</string>
     <string name="yes">Ya</string>
