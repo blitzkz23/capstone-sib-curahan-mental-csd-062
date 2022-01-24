@@ -42,12 +42,10 @@
             android:theme="@style/FullScreen" />
         <activity
             android:name=".ui.auth.register.RegisterActivity"
-            android:exported="false"
-            android:theme="@style/FullScreen" />
+            android:exported="false"/>
         <activity
             android:name=".ui.auth.login.LoginActivity"
-            android:exported="false"
-            android:theme="@style/FullScreen" />
+            android:exported="false" />
         <activity
             android:name=".ui.welcome.SplashActivity"
             android:exported="true"

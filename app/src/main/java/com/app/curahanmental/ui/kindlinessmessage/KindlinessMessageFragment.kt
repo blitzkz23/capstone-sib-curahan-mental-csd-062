@@ -40,11 +40,8 @@ class KindlinessMessageFragment : Fragment() {
 	private fun initAnimation() {
 		val fromTop = AnimationUtils.loadAnimation(context, R.anim.anim_from_top)
 		val fromBottom = AnimationUtils.loadAnimation(context, R.anim.anim_from_bottom)
-		val fromLeft = AnimationUtils.loadAnimation(context, R.anim.anim_from_left)
-		val fromRight = AnimationUtils.loadAnimation(context, R.anim.anim_from_right)
 
 		binding.messageBoardTitle.animation = fromTop
-		binding.rvMessage.animation = fromRight
 		binding.fabAdd.animation = fromBottom
 	}
 

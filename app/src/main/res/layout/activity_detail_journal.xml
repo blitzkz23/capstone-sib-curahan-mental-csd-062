@@ -34,8 +34,8 @@
         android:layout_height="30dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:clickable="true"
-        android:focusable="true"
         android:contentDescription="@string/back_button"
+        android:focusable="true"
         android:src="@drawable/ic_baseline_arrow_back"
         app:layout_constraintBottom_toBottomOf="@id/guideline_top"
         app:layout_constraintLeft_toLeftOf="@id/guideline_left"
@@ -178,11 +178,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:hint="@string/detail"
-                app:boxCornerRadiusBottomEnd="@dimen/dimens_24dp"
-                app:boxCornerRadiusBottomStart="@dimen/dimens_24dp"
-                app:boxCornerRadiusTopEnd="@dimen/dimens_24dp"
-                app:boxCornerRadiusTopStart="@dimen/dimens_24dp">
+                android:hint="@string/detail">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/event_detail_text"
@@ -213,11 +209,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:hint="@string/manage_event"
-                app:boxCornerRadiusBottomEnd="@dimen/dimens_24dp"
-                app:boxCornerRadiusBottomStart="@dimen/dimens_24dp"
-                app:boxCornerRadiusTopEnd="@dimen/dimens_24dp"
-                app:boxCornerRadiusTopStart="@dimen/dimens_24dp">
+                android:hint="@string/manage_event">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/manage_event_detail_text"
@@ -249,11 +241,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimens_8dp"
                 android:layout_marginBottom="@dimen/dimens_24dp"
-                android:hint="@string/reason"
-                app:boxCornerRadiusBottomEnd="@dimen/dimens_24dp"
-                app:boxCornerRadiusBottomStart="@dimen/dimens_24dp"
-                app:boxCornerRadiusTopEnd="@dimen/dimens_24dp"
-                app:boxCornerRadiusTopStart="@dimen/dimens_24dp">
+                android:hint="@string/reason">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/reason_detail_text"

@@ -6,6 +6,7 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -51,6 +52,7 @@ class JournalAdapter :
 					stressBar.progressTintList = ColorStateList.valueOf(Color.rgb(255, 20, 35))
 				}
 
+				itemView.animation = AnimationUtils.loadAnimation(itemView.context, R.anim.recycler_anim)
 				itemView.setOnClickListener {
 					val intent = Intent(itemView.context, DetailJournalActivity::class.java)
 					intent.putExtra(DetailJournalActivity.JOURNAL, journal.id)
